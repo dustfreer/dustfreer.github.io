@@ -209,7 +209,7 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2020/05/13/Median-of-Two-Sorted-Arrays/" itemprop="url">
+          <a class="post-title-link" href="/2020/05/13/Median-Of-Two-Sorted-Arrays/" itemprop="url">
             <span itemprop="name">Median of Two Sorted Arrays</span>
           </a>
       </div>
@@ -386,7 +386,7 @@
         return decodeURI(element.id);
       });
 
-      Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
           for (let url of entries) {

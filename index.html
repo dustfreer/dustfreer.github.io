@@ -245,7 +245,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/Median-of-Two-Sorted-Arrays/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/13/Median-Of-Two-Sorted-Arrays/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -259,7 +259,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2020/05/13/Median-of-Two-Sorted-Arrays/" class="post-title-link" itemprop="url">Median of Two Sorted Arrays</a>
+            <a href="/2020/05/13/Median-Of-Two-Sorted-Arrays/" class="post-title-link" itemprop="url">Median of Two Sorted Arrays</a>
         </h2>
 
         <div class="post-meta">
@@ -276,7 +276,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-05-14 01:01:29" itemprop="dateModified" datetime="2020-05-14T01:01:29-07:00">2020-05-14</time>
+                <time title="修改时间：2020-05-14 02:06:30" itemprop="dateModified" datetime="2020-05-14T02:06:30-07:00">2020-05-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
             </span>
 
           
-            <span id="/2020/05/13/Median-of-Two-Sorted-Arrays/" class="post-meta-item leancloud_visitors" data-flag-title="Median of Two Sorted Arrays" title="阅读次数">
+            <span id="/2020/05/13/Median-Of-Two-Sorted-Arrays/" class="post-meta-item leancloud_visitors" data-flag-title="Median of Two Sorted Arrays" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -489,7 +489,7 @@
         return decodeURI(element.id);
       });
 
-      Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
           for (let url of entries) {

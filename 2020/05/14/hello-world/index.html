@@ -247,7 +247,7 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/05/13/Median-of-Two-Sorted-Arrays/" rel="prev" title="Median of Two Sorted Arrays">
+    <a href="/2020/05/13/Median-Of-Two-Sorted-Arrays/" rel="prev" title="Median of Two Sorted Arrays">
       <i class="fa fa-chevron-left"></i> Median of Two Sorted Arrays
     </a></div>
       <div class="post-nav-item"></div>
@@ -421,7 +421,7 @@
         return decodeURI(element.id);
       });
 
-      Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
         .then(response => response.json())
         .then(({ results }) => {
           for (let url of entries) {
