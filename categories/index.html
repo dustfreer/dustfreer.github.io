@@ -28,7 +28,7 @@
 <meta property="og:description" content="Northeast University China University Of Geoscience">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-05-14T04:25:37.000Z">
-<meta property="article:modified_time" content="2020-05-14T08:01:29.494Z">
+<meta property="article:modified_time" content="2020-05-14T08:36:10.442Z">
 <meta property="article:author" content="dustfree">
 <meta name="twitter:card" content="summary">
 
@@ -211,7 +211,6 @@
 
           </div>
           
-    <div class="comments" id="gitalk-container"></div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -368,7 +367,7 @@
         return decodeURI(element.id);
       });
 
-      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+      Counter('get', `?where=${encodeURIComponent(JSON.stringify({ url: { '$in': entries } }))}`)
         .then(response => response.json())
         .then(({ results }) => {
           for (let url of entries) {
@@ -460,25 +459,6 @@
 
   
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
-
-<script>
-NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
-    var gitalk = new Gitalk({
-      clientID    : '57f254644f8a7da277ec',
-      clientSecret: '1b3ce839a091c78c7424834f3fa21ea54d403b72',
-      repo        : 'dustfreer.github.io',
-      owner       : 'dustfreer',
-      admin       : ['dustfreer'],
-      id          : 'a676607444a8bc8b150c9a3aff884e61',
-        language: '',
-      distractionFreeMode: true
-    });
-    gitalk.render('gitalk-container');
-  }, window.Gitalk);
-});
-</script>
 
 </body>
 </html>
