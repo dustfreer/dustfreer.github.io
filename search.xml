@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Median Of Two Sorted Arrays</title>
+    <url>/2020/05/14/Median-Of-Two-Sorted-Arrays/</url>
+    <content><![CDATA[<p><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/" target="_blank" rel="noopener">https://leetcode.com/problems/median-of-two-sorted-arrays/</a></p>
+<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>There are two sorted arrays nums1 and nums2 of size m and n respectively.</p>
+<p>Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).</p>
+<p>You may assume nums1 and nums2 cannot be both empty.</p>
+<p>Example 1:<br>nums1 = [1, 3]<br>nums2 = [2]<br>The median is 2.0</p>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[] nums1, int[] nums2: input two sorted array;</span></span><br><span class="line"><span class="comment">@return: median.</span></span><br><span class="line"><span class="comment">Algorithm: can be expended to find kth smallest element in two sorted array;</span></span><br><span class="line"><span class="comment">in this case, median is k/2;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">double</span> <span class="title">findMedianSortedArrays</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">    <span class="comment">//corner case</span></span><br><span class="line">    <span class="keyword">if</span> (nums1.length == <span class="number">0</span> &amp;&amp; nums2.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> k = nums1.length + nums2.length;</span><br><span class="line">    <span class="keyword">if</span> (k % <span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> (findKthNumber(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, k/<span class="number">2</span>) +</span><br><span class="line">                findKthNumber(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, k/<span class="number">2</span>+<span class="number">1</span>)) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> findKthNumber(nums1, <span class="number">0</span>, nums2, <span class="number">0</span>, k/<span class="number">2</span>+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//find kth Number not index, index should be k-1;</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findKthNumber</span><span class="params">(<span class="keyword">int</span>[] A, <span class="keyword">int</span> startOfA,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">int</span>[] B, <span class="keyword">int</span> startOfB,</span></span></span><br><span class="line"><span class="function"><span class="params">                         <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (startOfA &gt;= A.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> B[startOfB + k-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (startOfB &gt;= B.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> A[startOfA + k-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// should consider last case;</span></span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> Math.min(A[startOfA], B[startOfB]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> halfOfA = (startOfA + k/<span class="number">2</span>-<span class="number">1</span> &gt;= A.length) ? Integer.MAX_VALUE : A[startOfA + k/<span class="number">2</span>-<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">int</span> halfOfB = (startOfB + k/<span class="number">2</span>-<span class="number">1</span> &gt;= B.length) ? Integer.MAX_VALUE : B[startOfB + k/<span class="number">2</span>-<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// be careful here, start should be index + number(not index),</span></span><br><span class="line">    <span class="comment">// next k should be k - k/2 (not k/2);</span></span><br><span class="line">    <span class="keyword">if</span> (halfOfA &lt; halfOfB) &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNumber(A, startOfA + k/<span class="number">2</span>, B, startOfB, k - k/<span class="number">2</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> findKthNumber(A, startOfA, B, startOfB + k/<span class="number">2</span>, k - k/<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>LeetCode</category>
+      </categories>
+      <tags>
+        <tag>Arrays</tag>
+        <tag>Kth</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2020/05/14/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<figure class="highlight plain"><figcaption><span>[title] [] [url] [link text] [additional options]</span></figcaption><table><tr><td class="code"><pre><span class="line">code snippet</span><br></pre></td></tr></table></figure>
+
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+      <tags>
+        <tag>Arrays</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>About</title>
+    <url>/about/index.html</url>
+    <content><![CDATA[<p>I’ve always believed in numbers, in the equations and logics that lead to reason.</p>
+<p>But what truly is logic? who decides reasons?</p>
+<p>It has taken me through the physical, the metaphysical, the delusional and back.</p>
+<p>Ultimately, I have made the most important discovery of my career, the most important discovery of my life:</p>
+<p>It is only in the mysterious equations of LOVE that any logical reasons can be found.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+</search>
