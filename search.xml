@@ -1,6 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Best Time to Buy and Sell Stock II</title>
+    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock-II/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array prices for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 7<br>Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">联想一下直方图，求最大的差距</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxprofit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>])</span><br><span class="line">            maxprofit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxprofit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3Sum</title>
+    <url>/2020/05/14/3Sum/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.<br>Note:<br>The solution set must not contain duplicate triplets.<br>Example:<br>Given array nums = [-1, 0, 1, 2, -1, -4],<br>A solution set is:<br>[<br>  [-1, 0, 1],<br>  [-1, -1, 2]<br>]</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">leetcode.com/problems/3sum</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: First, get two sum by 0 - nums[index];</span></span><br><span class="line"><span class="comment">then, similarly solve two sum problem;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (nums.length &lt; <span class="number">3</span>) <span class="keyword">return</span> result;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//[-1, 0, 1, 2, -1, -4]</span></span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> target = <span class="number">0</span> - nums[i];        </span><br><span class="line">        <span class="keyword">int</span> left = i + <span class="number">1</span>, right = nums.length - <span class="number">1</span>;            </span><br><span class="line">        CalculateTwoSum(nums, target, left, right, result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">CalculateTwoSum</span><span class="params">(<span class="keyword">int</span>[] nums,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> target,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> left, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> right, </span></span></span><br><span class="line"><span class="function"><span class="params">                            List&lt;List&lt;Integer&gt;&gt; result)</span> </span>&#123;        </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;            </span><br><span class="line">        <span class="keyword">if</span> (nums[left] + nums[right] == target) &#123;</span><br><span class="line">            List&lt;Integer&gt; candidate = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            candidate.add(-target);</span><br><span class="line">            candidate.add(nums[left]);</span><br><span class="line">            candidate.add(nums[right]);                                        </span><br><span class="line">            result.add(candidate);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">            <span class="keyword">while</span> (left &lt; right &amp;&amp; nums[left] == nums[left-<span class="number">1</span>]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (left &lt; right &amp;&amp; nums[right] == nums[right+<span class="number">1</span>]) &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nums[left] + nums[right] &lt; target) &#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;        </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Sum</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>1-bit and 2-bit Characters</title>
     <url>/2020/05/16/1-bit-and-2-bit-Characters/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>We have two special characters. The first character can be represented by one bit 0. The second character can be represented by two bits (10 or 11).</p>
@@ -32,55 +64,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Best Time to Buy and Sell Stock IV</title>
-    <url>/2020/05/16/Best-Time-to-Buy-and-Sell-Stock-IV/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the i-th element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete at most k transactions.<br>Note:<br>You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
-<p>Example 1:<br>Input: [2,4,1], k = 2<br>Output: 2<br>Explanation: Buy on day 1 (price = 2) and sell on day 2 (price = 4), profit = 4-2 = 2.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-iv</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (k &gt;= prices.length / <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                profit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        best[i][j] 表示前i天，至多进行j次交易时的最大获益</span></span><br><span class="line"><span class="comment">        sell[i][j] 表示前i天，至多进行j次交易，并且第i天卖出手中的股票时的最大获益</span></span><br><span class="line"><span class="comment">        状态转移:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        sell[i][j] = max(best[i - 1][j - 1], sell[i - 1][j]) + prices[i] - prices[i - 1]</span></span><br><span class="line"><span class="comment">        best[i][j] = max(best[i - 1][j], sell[i][j])</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">int</span> n = prices.length;</span><br><span class="line">    <span class="keyword">int</span>[][] sell = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][n + <span class="number">1</span>]; <span class="comment">// sell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益</span></span><br><span class="line">    <span class="keyword">int</span>[][] best = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][n + <span class="number">1</span>]; <span class="comment">// best[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益</span></span><br><span class="line"></span><br><span class="line">    sell[<span class="number">0</span>][<span class="number">0</span>] = best[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">        sell[<span class="number">0</span>][i] = best[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> gainorlose = prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">        sell[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= k; j++) &#123;</span><br><span class="line">            sell[i][j] = Math.max(best[(i - <span class="number">1</span>)][j - <span class="number">1</span>] + gainorlose, sell[(i - <span class="number">1</span>)][j] + gainorlose);</span><br><span class="line">            best[i][j] = Math.max(best[(i - <span class="number">1</span>)][j], sell[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> best[(n - <span class="number">1</span>)][k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3Sum</title>
-    <url>/2020/05/14/3Sum/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array nums of n integers, are there elements a, b, c in nums such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.<br>Note:<br>The solution set must not contain duplicate triplets.<br>Example:<br>Given array nums = [-1, 0, 1, 2, -1, -4],<br>A solution set is:<br>[<br>  [-1, 0, 1],<br>  [-1, -1, 2]<br>]</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/3sum/" target="_blank" rel="noopener">leetcode.com/problems/3sum</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: First, get two sum by 0 - nums[index];</span></span><br><span class="line"><span class="comment">then, similarly solve two sum problem;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> List&lt;List&lt;Integer&gt;&gt; threeSum(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">    List&lt;List&lt;Integer&gt;&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (nums.length &lt; <span class="number">3</span>) <span class="keyword">return</span> result;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//[-1, 0, 1, 2, -1, -4]</span></span><br><span class="line">    Arrays.sort(nums);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length - <span class="number">2</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i &gt; <span class="number">0</span> &amp;&amp; nums[i] == nums[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> target = <span class="number">0</span> - nums[i];        </span><br><span class="line">        <span class="keyword">int</span> left = i + <span class="number">1</span>, right = nums.length - <span class="number">1</span>;            </span><br><span class="line">        CalculateTwoSum(nums, target, left, right, result);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">CalculateTwoSum</span><span class="params">(<span class="keyword">int</span>[] nums,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> target,</span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> left, </span></span></span><br><span class="line"><span class="function"><span class="params">                            <span class="keyword">int</span> right, </span></span></span><br><span class="line"><span class="function"><span class="params">                            List&lt;List&lt;Integer&gt;&gt; result)</span> </span>&#123;        </span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;            </span><br><span class="line">        <span class="keyword">if</span> (nums[left] + nums[right] == target) &#123;</span><br><span class="line">            List&lt;Integer&gt; candidate = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            candidate.add(-target);</span><br><span class="line">            candidate.add(nums[left]);</span><br><span class="line">            candidate.add(nums[right]);                                        </span><br><span class="line">            result.add(candidate);</span><br><span class="line">            left++;</span><br><span class="line">            right--;</span><br><span class="line">            <span class="keyword">while</span> (left &lt; right &amp;&amp; nums[left] == nums[left-<span class="number">1</span>]) &#123;</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span> (left &lt; right &amp;&amp; nums[right] == nums[right+<span class="number">1</span>]) &#123;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (nums[left] + nums[right] &lt; target) &#123;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;        </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Sum</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Best Time to Buy and Sell Stock II</title>
-    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock-II/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array prices for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
-<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 7<br>Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">联想一下直方图，求最大的差距</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxprofit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>])</span><br><span class="line">            maxprofit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxprofit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Best Time to Buy and Sell Stock</title>
     <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
@@ -98,53 +81,20 @@
       </tags>
   </entry>
   <entry>
-    <title>HeapSort</title>
-    <url>/2020/05/16/HeapSort/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Build a heap using array. Sort an array by the heap</p>
-</blockquote>
+    <title>Best Time to Buy and Sell Stock IV</title>
+    <url>/2020/05/16/Best-Time-to-Buy-and-Sell-Stock-IV/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the i-th element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete at most k transactions.<br>Note:<br>You may not engage in multiple transactions at the same time (ie, you must sell the stock before you buy again).</p>
+<p>Example 1:<br>Input: [2,4,1], k = 2<br>Output: 2<br>Explanation: Buy on day 1 (price = 2) and sell on day 2 (price = 4), profit = 4-2 = 2.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-iv</a></cite></footer></blockquote>
 
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = arr.length;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Build heap (rearrange array)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        heapify(arr, n, i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// One by one extract an element from heap</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Move current root to end</span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[<span class="number">0</span>];</span><br><span class="line">        arr[<span class="number">0</span>] = arr[i];</span><br><span class="line">        arr[i] = temp;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// call max heapify on the reduced heap</span></span><br><span class="line">        heapify(arr, i, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> largest = i; <span class="comment">// Initialize largest as root</span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">2</span>*i + <span class="number">1</span>; <span class="comment">// left = 2*i + 1</span></span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2</span>*i + <span class="number">2</span>; <span class="comment">// right = 2*i + 2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// If left child is larger than root</span></span><br><span class="line">    <span class="keyword">if</span> (l &lt; n &amp;&amp; arr[l] &gt; arr[largest])</span><br><span class="line">        largest = l;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If right child is larger than largest so far</span></span><br><span class="line">    <span class="keyword">if</span> (r &lt; n &amp;&amp; arr[r] &gt; arr[largest])</span><br><span class="line">        largest = r;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If largest is not root</span></span><br><span class="line">    <span class="keyword">if</span> (largest != i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> swap = arr[i];</span><br><span class="line">        arr[i] = arr[largest];</span><br><span class="line">        arr[largest] = swap;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Recursively heapify the affected sub-tree</span></span><br><span class="line">        heapify(arr, n, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span> k, <span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (k &gt;= prices.length / <span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">int</span> profit = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>]) &#123;</span><br><span class="line">                profit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> profit;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">        best[i][j] 表示前i天，至多进行j次交易时的最大获益</span></span><br><span class="line"><span class="comment">        sell[i][j] 表示前i天，至多进行j次交易，并且第i天卖出手中的股票时的最大获益</span></span><br><span class="line"><span class="comment">        状态转移:</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        sell[i][j] = max(best[i - 1][j - 1], sell[i - 1][j]) + prices[i] - prices[i - 1]</span></span><br><span class="line"><span class="comment">        best[i][j] = max(best[i - 1][j], sell[i][j])</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">    <span class="keyword">int</span> n = prices.length;</span><br><span class="line">    <span class="keyword">int</span>[][] sell = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][n + <span class="number">1</span>]; <span class="comment">// sell[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益</span></span><br><span class="line">    <span class="keyword">int</span>[][] best = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">1</span>][n + <span class="number">1</span>]; <span class="comment">// best[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益</span></span><br><span class="line"></span><br><span class="line">    sell[<span class="number">0</span>][<span class="number">0</span>] = best[<span class="number">0</span>][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">        sell[<span class="number">0</span>][i] = best[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> gainorlose = prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">        sell[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= k; j++) &#123;</span><br><span class="line">            sell[i][j] = Math.max(best[(i - <span class="number">1</span>)][j - <span class="number">1</span>] + gainorlose, sell[(i - <span class="number">1</span>)][j] + gainorlose);</span><br><span class="line">            best[i][j] = Math.max(best[(i - <span class="number">1</span>)][j], sell[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> best[(n - <span class="number">1</span>)][k];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>LeetCode</category>
         <category>Array</category>
       </categories>
       <tags>
-        <tag>Sort</tag>
-        <tag>Heap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Majority Element II</title>
-    <url>/2020/05/15/Majority-Element-II/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.</p>
-<p>Note: The algorithm should run in linear time and in O(1) space.</p>
-<p>Example:<br>Input: [3,2,3]<br>Output: [3]</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/majority-element-ii/" target="_blank" rel="noopener">leetcode.com/problems/majority-element-ii</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">最多2个出现次数超过n/3的元素</span></span><br><span class="line"><span class="comment">算法：类似于Majority Element I, 用两个count， 如果重复则++， 反之--；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count1 = <span class="number">0</span>, count2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> num1 = <span class="number">0</span>, num2 = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums[i];</span><br><span class="line">        <span class="keyword">if</span> (count1 == <span class="number">0</span> &amp;&amp; num2 != n) &#123;</span><br><span class="line">            num1 = n;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num1 == n) &#123;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (count2 == <span class="number">0</span>) &#123;</span><br><span class="line">            num2 = n;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num2 == n) &#123;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            count1--;</span><br><span class="line">            count2--;</span><br><span class="line">        &#125;            </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//最后得到num1,num2不一定是正解，再循环验证一遍</span></span><br><span class="line">    count1 = <span class="number">0</span>;</span><br><span class="line">    count2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == num1) &#123;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == num2) &#123;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count1 &gt; nums.length/<span class="number">3</span>) &#123;</span><br><span class="line">        result.add(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count2 &gt; nums.length/<span class="number">3</span> &amp;&amp; num1 != num2) &#123;</span><br><span class="line">        result.add(num2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Majority</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Check If a Number Is Majority Element in a Sorted Array</title>
-    <url>/2020/05/15/Check-If-a-Number-Is-Majority-Element-in-a-Sorted-Array/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array nums sorted in non-decreasing order, and a number target, return True if and only if target is a majority element.</p>
-<p>A majority element is an element that appears more than N/2 times in an array of length N.</p>
-<p>Example:<br>Input: nums = [2,4,5,5,5,5,5,6,6], target = 5<br>Output: true</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/" target="_blank" rel="noopener">leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMajorityElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>] == target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == target) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (i == len-<span class="number">1</span> || nums[i+<span class="number">1</span>] != target) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i-index+<span class="number">1</span> &gt; len/<span class="number">2</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Majority</tag>
+        <tag>Stock</tag>
       </tags>
   </entry>
   <entry>
@@ -192,6 +142,56 @@
         <category>计算机基础知识</category>
         <category>网络知识</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Check If a Number Is Majority Element in a Sorted Array</title>
+    <url>/2020/05/15/Check-If-a-Number-Is-Majority-Element-in-a-Sorted-Array/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array nums sorted in non-decreasing order, and a number target, return True if and only if target is a majority element.</p>
+<p>A majority element is an element that appears more than N/2 times in an array of length N.</p>
+<p>Example:<br>Input: nums = [2,4,5,5,5,5,5,6,6], target = 5<br>Output: true</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array/" target="_blank" rel="noopener">leetcode.com/problems/check-if-a-number-is-majority-element-in-a-sorted-array</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isMajorityElement</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = nums.length;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (len == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums[<span class="number">0</span>] == target;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> index = -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == target) &#123;</span><br><span class="line">            <span class="keyword">if</span> (index == -<span class="number">1</span>) &#123;</span><br><span class="line">                index = i;</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span> (i == len-<span class="number">1</span> || nums[i+<span class="number">1</span>] != target) &#123;</span><br><span class="line">                <span class="keyword">if</span> (i-index+<span class="number">1</span> &gt; len/<span class="number">2</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Majority</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HeapSort</title>
+    <url>/2020/05/16/HeapSort/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Build a heap using array. Sort an array by the heap</p>
+</blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span> arr[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = arr.length;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Build heap (rearrange array)</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span> - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">        heapify(arr, n, i);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// One by one extract an element from heap</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Move current root to end</span></span><br><span class="line">        <span class="keyword">int</span> temp = arr[<span class="number">0</span>];</span><br><span class="line">        arr[<span class="number">0</span>] = arr[i];</span><br><span class="line">        arr[i] = temp;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// call max heapify on the reduced heap</span></span><br><span class="line">        heapify(arr, i, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">heapify</span><span class="params">(<span class="keyword">int</span> arr[], <span class="keyword">int</span> n, <span class="keyword">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> largest = i; <span class="comment">// Initialize largest as root</span></span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">2</span>*i + <span class="number">1</span>; <span class="comment">// left = 2*i + 1</span></span><br><span class="line">    <span class="keyword">int</span> r = <span class="number">2</span>*i + <span class="number">2</span>; <span class="comment">// right = 2*i + 2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// If left child is larger than root</span></span><br><span class="line">    <span class="keyword">if</span> (l &lt; n &amp;&amp; arr[l] &gt; arr[largest])</span><br><span class="line">        largest = l;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If right child is larger than largest so far</span></span><br><span class="line">    <span class="keyword">if</span> (r &lt; n &amp;&amp; arr[r] &gt; arr[largest])</span><br><span class="line">        largest = r;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// If largest is not root</span></span><br><span class="line">    <span class="keyword">if</span> (largest != i)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> swap = arr[i];</span><br><span class="line">        arr[i] = arr[largest];</span><br><span class="line">        arr[largest] = swap;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Recursively heapify the affected sub-tree</span></span><br><span class="line">        heapify(arr, n, largest);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Sort</tag>
+        <tag>Heap</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Majority Element II</title>
+    <url>/2020/05/15/Majority-Element-II/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.</p>
+<p>Note: The algorithm should run in linear time and in O(1) space.</p>
+<p>Example:<br>Input: [3,2,3]<br>Output: [3]</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/majority-element-ii/" target="_blank" rel="noopener">leetcode.com/problems/majority-element-ii</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">最多2个出现次数超过n/3的元素</span></span><br><span class="line"><span class="comment">算法：类似于Majority Element I, 用两个count， 如果重复则++， 反之--；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; result = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count1 = <span class="number">0</span>, count2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> num1 = <span class="number">0</span>, num2 = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums[i];</span><br><span class="line">        <span class="keyword">if</span> (count1 == <span class="number">0</span> &amp;&amp; num2 != n) &#123;</span><br><span class="line">            num1 = n;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num1 == n) &#123;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (count2 == <span class="number">0</span>) &#123;</span><br><span class="line">            num2 = n;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span> (num2 == n) &#123;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            count1--;</span><br><span class="line">            count2--;</span><br><span class="line">        &#125;            </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//最后得到num1,num2不一定是正解，再循环验证一遍</span></span><br><span class="line">    count1 = <span class="number">0</span>;</span><br><span class="line">    count2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == num1) &#123;</span><br><span class="line">            count1++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (nums[i] == num2) &#123;</span><br><span class="line">            count2++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count1 &gt; nums.length/<span class="number">3</span>) &#123;</span><br><span class="line">        result.add(num1);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (count2 &gt; nums.length/<span class="number">3</span> &amp;&amp; num1 != num2) &#123;</span><br><span class="line">        result.add(num2);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Majority</tag>
+      </tags>
   </entry>
   <entry>
     <title>Java线程池</title>
@@ -331,23 +331,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Majority Element</title>
-    <url>/2020/05/15/Majority-Element/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
-<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
-<p>Example:<br>Input: [3,2,3]<br>Output: 3</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/majority-element/" target="_blank" rel="noopener">leetcode.com/problems/majority-element</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: 某一元素次数大于一半，将数组里看成两种元素，一种是res，另一种是非res。</span></span><br><span class="line"><span class="comment">记录一个count和对应的num，如果后面元素相等，则count++,反之--，最后count &gt;= 1则num记为res</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>, curMajority = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">            curMajority = num;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (num == curMajority) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            count--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> curMajority;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Majority</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Max Area of Island</title>
     <url>/2020/05/16/Max-Area-of-Island/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a non-empty 2D array grid of 0’s and 1’s, an island is a group of 1’s (representing land) connected 4-directionally (horizontal or vertical.) You may assume all four edges of the grid are surrounded by water.</p>
@@ -367,6 +350,23 @@
       <tags>
         <tag>BFS</tag>
         <tag>DFS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Majority Element</title>
+    <url>/2020/05/15/Majority-Element/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array of size n, find the majority element. The majority element is the element that appears more than ⌊ n/2 ⌋ times.</p>
+<p>You may assume that the array is non-empty and the majority element always exist in the array.</p>
+<p>Example:<br>Input: [3,2,3]<br>Output: 3</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/majority-element/" target="_blank" rel="noopener">leetcode.com/problems/majority-element</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: 某一元素次数大于一半，将数组里看成两种元素，一种是res，另一种是非res。</span></span><br><span class="line"><span class="comment">记录一个count和对应的num，如果后面元素相等，则count++,反之--，最后count &gt;= 1则num记为res</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">majorityElement</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums == <span class="keyword">null</span> || nums.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>, curMajority = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : nums) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count == <span class="number">0</span>) &#123;</span><br><span class="line">            curMajority = num;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> (num == curMajority) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            count--;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> curMajority;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Majority</tag>
       </tags>
   </entry>
   <entry>
@@ -422,6 +422,23 @@
       </categories>
   </entry>
   <entry>
+    <title>Task Scheduler</title>
+    <url>/2020/05/14/Task-Scheduler/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks. Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.</p>
+<p>However, there is a non-negative cooling interval n that means between two same tasks, there must be at least n intervals that CPU are doing different tasks or just be idle.</p>
+<p>You need to return the least number of intervals the CPU will take to finish all the given tasks.</p>
+<p>Example:<br>Input: tasks = [“A”,”A”,”A”,”B”,”B”,”B”], n = 2<br>Output: 8<br>Explanation: A -&gt; B -&gt; idle -&gt; A -&gt; B -&gt; idle -&gt; A -&gt; B.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/task-scheduler/" target="_blank" rel="noopener">leetcode.com/problems/task-scheduler</a></cite></footer></blockquote>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">A math problem, what matter is numbers of letter that counts most;</span></span><br><span class="line"><span class="comment">AAABBB</span></span><br><span class="line"><span class="comment">A~~A~~AB</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">leastInterval</span><span class="params">(<span class="keyword">char</span>[] tasks, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (tasks.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> tasks.length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> t : tasks) &#123;</span><br><span class="line">        num[t-<span class="string">'A'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Arrays.sort(num);</span><br><span class="line">    <span class="comment">// calculater numbers of letter that counts most; in this case, 2;</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">25</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; num[i] == num[<span class="number">25</span>]) &#123;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// compare with tasks.length;</span></span><br><span class="line">    <span class="comment">// num[25]-1 is interval;</span></span><br><span class="line">    <span class="comment">// n+1 means A~~A~~, 出现次数最多的字母A，A最后一组之前的数量，</span></span><br><span class="line">    <span class="comment">//再加上与A相同的字母的数量 25-i</span></span><br><span class="line">    <span class="keyword">return</span> Math.max(tasks.length, (num[<span class="number">25</span>]-<span class="number">1</span>) * (n+<span class="number">1</span>) + <span class="number">25</span>-i);        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Unique Paths III</title>
     <url>/2020/05/17/Unique-Paths-III/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>On a 2-dimensional grid, there are 4 types of squares:</p>
@@ -464,21 +481,35 @@
       </tags>
   </entry>
   <entry>
-    <title>Task Scheduler</title>
-    <url>/2020/05/14/Task-Scheduler/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks. Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.</p>
-<p>However, there is a non-negative cooling interval n that means between two same tasks, there must be at least n intervals that CPU are doing different tasks or just be idle.</p>
-<p>You need to return the least number of intervals the CPU will take to finish all the given tasks.</p>
-<p>Example:<br>Input: tasks = [“A”,”A”,”A”,”B”,”B”,”B”], n = 2<br>Output: 8<br>Explanation: A -&gt; B -&gt; idle -&gt; A -&gt; B -&gt; idle -&gt; A -&gt; B.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/task-scheduler/" target="_blank" rel="noopener">leetcode.com/problems/task-scheduler</a></cite></footer></blockquote>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">A math problem, what matter is numbers of letter that counts most;</span></span><br><span class="line"><span class="comment">AAABBB</span></span><br><span class="line"><span class="comment">A~~A~~AB</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">leastInterval</span><span class="params">(<span class="keyword">char</span>[] tasks, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (tasks.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> tasks.length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">26</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">char</span> t : tasks) &#123;</span><br><span class="line">        num[t-<span class="string">'A'</span>]++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Arrays.sort(num);</span><br><span class="line">    <span class="comment">// calculater numbers of letter that counts most; in this case, 2;</span></span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">25</span>;</span><br><span class="line">    <span class="keyword">while</span> (i &gt;= <span class="number">0</span> &amp;&amp; num[i] == num[<span class="number">25</span>]) &#123;</span><br><span class="line">        i--;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// compare with tasks.length;</span></span><br><span class="line">    <span class="comment">// num[25]-1 is interval;</span></span><br><span class="line">    <span class="comment">// n+1 means A~~A~~, 出现次数最多的字母A，A最后一组之前的数量，</span></span><br><span class="line">    <span class="comment">//再加上与A相同的字母的数量 25-i</span></span><br><span class="line">    <span class="keyword">return</span> Math.max(tasks.length, (num[<span class="number">25</span>]-<span class="number">1</span>) * (n+<span class="number">1</span>) + <span class="number">25</span>-i);        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>操作系统</title>
+    <url>/2020/05/16/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
+    <content><![CDATA[<h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程：分配资源的基本单位<br>线程：独立运行和独立调度的基本单位</p>
+<h4 id="进程与线程的区别："><a href="#进程与线程的区别：" class="headerlink" title="进程与线程的区别："></a>进程与线程的区别：</h4><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
+<ul>
+<li>一个程序至少有一个进程,一个进程至少有一个线程.</li>
+<li>线程的划分尺度小于进程，使得多线程程序的并发性高。</li>
+<li>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。</li>
+<li>线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</li>
+<li>从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。<br>优缺点</li>
+</ul>
+<p>线程和进程在使用上各有优缺点：线程执行开销小，但不利于资源的管理和保护；而进程正相反。同时，线程适合于在SMP(多核处理机)机器上运行，而进程则可以跨机器迁移。</p>
+<h3 id="死锁："><a href="#死锁：" class="headerlink" title="死锁："></a>死锁：</h3><ol>
+<li>互斥条件：指进程对所分配到的资源进行排它性使用，即在一段时间内某资源只由一个进程占用。如果此时还有其它进程请求资源，则请求者只能等待，直至占有资源的进程用毕释放。 </li>
+<li>请求和保持条件：指进程已经保持至少一个资源，但又提出了新的资源请求，而该资源已被其它进程占有，此时请求进程阻塞，但又对自己已获得的其它资源保持不放。</li>
+<li>不剥夺条件：指进程已获得的资源，在未使用完之前，不能被剥夺，只能在使用完时由自己释放。</li>
+<li>环路等待条件：指在发生死锁时，必然存在一个进程——资源的环形链，即进程集合{P0，P1，P2，···，Pn}中的P0正在等待一个P1占用的资源；P1正在等待P2占用的资源，……，Pn正在等待已被P0占用的资源。</li>
+</ol>
+<h4 id="银行家算法："><a href="#银行家算法：" class="headerlink" title="银行家算法："></a>银行家算法：</h4><p>信号量<br>初始化，给与它一个非负数的整数值。<br>运行 P（wait()），信号量S的值将被减少。企图进入临界区块的进程，需要先运行 P（wait()）。当信号量S减为负值时，进程会被挡住，不能继续；当信号量S不为负值时，进程可以获准进入临界区块。<br>运行 V（又称signal()），信号量S的值会被增加。结束离开临界区块的进程，将会运行 V（又称signal()）。当信号量S不为负值时，先前被挡住的其他进程，将可获准进入临界区块。</p>
+<h3 id="分页和分段的区别"><a href="#分页和分段的区别" class="headerlink" title="分页和分段的区别"></a>分页和分段的区别</h3><ul>
+<li>段是信息的逻辑单位，它是根据用户的需要划分的，因此段对用户是可见的；页是信息的物理单位，是为了管理主存的方便而划分的，对用户是透明的</li>
+<li>段的大小不固定，有它所完成的功能决定；页大大小固定，由系统决定<br>段向用户提供二维地址空间；页向用户提供的是一维地址空间</li>
+<li>段是信息的逻辑单位，便于存储保护和信息的共享，页的保护和共享受到限制。</li>
+</ul>
+]]></content>
       <categories>
-        <category>LeetCode</category>
-        <category>Mathematics</category>
+        <category>计算机基础知识</category>
+        <category>操作系统</category>
       </categories>
-      <tags>
-        <tag>Mathematics</tag>
-      </tags>
   </entry>
   <entry>
     <title>Weekly Contest 189</title>
@@ -526,42 +557,6 @@
       </tags>
   </entry>
   <entry>
-    <title>操作系统</title>
-    <url>/2020/05/16/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</url>
-    <content><![CDATA[<h3 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h3><p>进程：分配资源的基本单位<br>线程：独立运行和独立调度的基本单位</p>
-<h4 id="进程与线程的区别："><a href="#进程与线程的区别：" class="headerlink" title="进程与线程的区别："></a>进程与线程的区别：</h4><p>进程和线程的主要差别在于它们是不同的操作系统资源管理方式。进程有独立的地址空间，一个进程崩溃后，在保护模式下不会对其它进程产生影响，而线程只是一个进程中的不同执行路径。线程有自己的堆栈和局部变量，但线程之间没有单独的地址空间，一个线程死掉就等于整个进程死掉，所以多进程的程序要比多线程的程序健壮，但在进程切换时，耗费资源较大，效率要差一些。但对于一些要求同时进行并且又要共享某些变量的并发操作，只能用线程，不能用进程。</p>
-<ul>
-<li>一个程序至少有一个进程,一个进程至少有一个线程.</li>
-<li>线程的划分尺度小于进程，使得多线程程序的并发性高。</li>
-<li>进程在执行过程中拥有独立的内存单元，而多个线程共享内存，从而极大地提高了程序的运行效率。</li>
-<li>线程在执行过程中与进程还是有区别的。每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口。但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。</li>
-<li>从逻辑角度来看，多线程的意义在于一个应用程序中，有多个执行部分可以同时执行。但操作系统并没有将多个线程看做多个独立的应用，来实现进程的调度和管理以及资源分配。这就是进程和线程的重要区别。<br>优缺点</li>
-</ul>
-<p>线程和进程在使用上各有优缺点：线程执行开销小，但不利于资源的管理和保护；而进程正相反。同时，线程适合于在SMP(多核处理机)机器上运行，而进程则可以跨机器迁移。</p>
-<h3 id="死锁："><a href="#死锁：" class="headerlink" title="死锁："></a>死锁：</h3><ol>
-<li>互斥条件：指进程对所分配到的资源进行排它性使用，即在一段时间内某资源只由一个进程占用。如果此时还有其它进程请求资源，则请求者只能等待，直至占有资源的进程用毕释放。 </li>
-<li>请求和保持条件：指进程已经保持至少一个资源，但又提出了新的资源请求，而该资源已被其它进程占有，此时请求进程阻塞，但又对自己已获得的其它资源保持不放。</li>
-<li>不剥夺条件：指进程已获得的资源，在未使用完之前，不能被剥夺，只能在使用完时由自己释放。</li>
-<li>环路等待条件：指在发生死锁时，必然存在一个进程——资源的环形链，即进程集合{P0，P1，P2，···，Pn}中的P0正在等待一个P1占用的资源；P1正在等待P2占用的资源，……，Pn正在等待已被P0占用的资源。</li>
-</ol>
-<h4 id="银行家算法："><a href="#银行家算法：" class="headerlink" title="银行家算法："></a>银行家算法：</h4><p>信号量<br>初始化，给与它一个非负数的整数值。<br>运行 P（wait()），信号量S的值将被减少。企图进入临界区块的进程，需要先运行 P（wait()）。当信号量S减为负值时，进程会被挡住，不能继续；当信号量S不为负值时，进程可以获准进入临界区块。<br>运行 V（又称signal()），信号量S的值会被增加。结束离开临界区块的进程，将会运行 V（又称signal()）。当信号量S不为负值时，先前被挡住的其他进程，将可获准进入临界区块。</p>
-<h3 id="分页和分段的区别"><a href="#分页和分段的区别" class="headerlink" title="分页和分段的区别"></a>分页和分段的区别</h3><ul>
-<li>段是信息的逻辑单位，它是根据用户的需要划分的，因此段对用户是可见的；页是信息的物理单位，是为了管理主存的方便而划分的，对用户是透明的</li>
-<li>段的大小不固定，有它所完成的功能决定；页大大小固定，由系统决定<br>段向用户提供二维地址空间；页向用户提供的是一维地址空间</li>
-<li>段是信息的逻辑单位，便于存储保护和信息的共享，页的保护和共享受到限制。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>操作系统</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>Categories</title>
     <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
@@ -575,5 +570,10 @@
 <p>Ultimately, I have made the most important discovery of my career, the most important discovery of my life:</p>
 <p>It is only in the mysterious equations of LOVE that any logical reasons can be found.</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
