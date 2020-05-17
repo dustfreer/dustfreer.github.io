@@ -28,7 +28,7 @@
 <meta property="og:description" content="线程池管理线程，避免增加创建线程和销毁线程的资源损耗。因为线程其实也是一个对象，创建一个对象，需要经过类加载过程，销毁一个对象，需要走GC垃圾回收流程，都是需要资源开销的。提高响应速度。 如果任务到达了，相对于从线程池拿线程，重新去创建一条线程执行，速度肯定慢很多。重复利用。 线程用完，再放回池子，可以达到重复利用的效果，节省资源。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-16T08:30:17.000Z">
-<meta property="article:modified_time" content="2020-05-16T08:31:41.352Z">
+<meta property="article:modified_time" content="2020-05-16T21:34:33.965Z">
 <meta property="article:author" content="dustfree">
 <meta name="twitter:card" content="summary">
 
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-16 01:30:17 / Modified: 01:31:41" itemprop="dateCreated datePublished" datetime="2020-05-16T01:30:17-07:00">2020-05-16</time>
+              <time title="Created: 2020-05-16 01:30:17 / Modified: 14:34:33" itemprop="dateCreated datePublished" datetime="2020-05-16T01:30:17-07:00">2020-05-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,14 +261,14 @@
 
       
         <h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>管理线程，避免增加创建线程和销毁线程的资源损耗。因为线程其实也是一个对象，创建一个对象，需要经过类加载过程，销毁一个对象，需要走GC垃圾回收流程，都是需要资源开销的。<br>提高响应速度。 如果任务到达了，相对于从线程池拿线程，重新去创建一条线程执行，速度肯定慢很多。<br>重复利用。 线程用完，再放回池子，可以达到重复利用的效果，节省资源。</p>
-<h3 id="线程池参数"><a href="#线程池参数" class="headerlink" title="线程池参数"></a>线程池参数</h3><ul>
+<h4 id="线程池参数"><a href="#线程池参数" class="headerlink" title="线程池参数"></a>线程池参数</h4><ul>
 <li>corePoolSize：指定了线程池中的线程数量。</li>
 <li>maximumPoolSize：指定了线程池中的最大线程数量。</li>
 <li>keepAliveTime：当线程池线程数量超过corePoolSize时，多余的空闲线程的存活时间，即超过corePoolSize的空闲线程，在多长时间内会被销毁。</li>
 <li>unit：keepAliveTime的单位。</li>
 <li>workQueue：任务队列，被提交但尚未被执行的任务。</li>
 <li>threadFactory：线程工厂，用于创建线程，一般用默认的即可。</li>
-<li>handler：拒绝策略。当任务太多来不及处理时，如何拒绝任务。<br>线程池</li>
+<li>handler：拒绝策略。当任务太多来不及处理时，如何拒绝任务。<h4 id="线程池类型"><a href="#线程池类型" class="headerlink" title="线程池类型"></a>线程池类型</h4></li>
 <li>newFixedThreadPool (固定数目线程的线程池)</li>
 <li>newCachedThreadPool(可缓存线程的线程池)</li>
 <li>newSingleThreadExecutor(单线程的线程池)</li>
@@ -292,7 +292,10 @@
     <a href="/2020/05/16/Java%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="prev" title="Java虚拟机">
       <i class="fa fa-chevron-left"></i> Java虚拟机
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/05/17/Weekly-Contest-189/" rel="next" title="Weekly Contest 189">
+      Weekly Contest 189 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -352,7 +355,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程池"><span class="nav-number">1.</span> <span class="nav-text">线程池</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程池参数"><span class="nav-number">2.</span> <span class="nav-text">线程池参数</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#线程池"><span class="nav-number">1.</span> <span class="nav-text">线程池</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#线程池参数"><span class="nav-number">1.1.</span> <span class="nav-text">线程池参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#线程池类型"><span class="nav-number">1.2.</span> <span class="nav-text">线程池类型</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -368,20 +371,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>

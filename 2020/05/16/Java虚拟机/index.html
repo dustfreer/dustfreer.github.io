@@ -28,7 +28,7 @@
 <meta property="og:description" content="内存分配 程序计数器 虚拟机栈（java方法服务）与本地方法栈（native方法服务） 堆区 存放实例对象  可达性算法 方法区 (已被加载的类信息，常量，静态变量）运行时常量池（方法区一部分） 直接内存（NIO）">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-16T08:19:44.000Z">
-<meta property="article:modified_time" content="2020-05-16T08:27:22.373Z">
+<meta property="article:modified_time" content="2020-05-17T06:26:03.322Z">
 <meta property="article:author" content="dustfree">
 <meta name="twitter:card" content="summary">
 
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-05-16 01:19:44 / Modified: 01:27:22" itemprop="dateCreated datePublished" datetime="2020-05-16T01:19:44-07:00">2020-05-16</time>
+              <time title="Created: 2020-05-16 01:19:44 / Modified: 23:26:03" itemprop="dateCreated datePublished" datetime="2020-05-16T01:19:44-07:00">2020-05-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -314,11 +314,11 @@
 </ul>
 <p>SafePoint每次垃圾收集用户线程必须到最近的safepoint挂起然后等待回收，之后线程恢复</p>
 <p>虚拟机执行字节码，字节码中包含操作码</p>
-<h3 id="虚拟机类加载机制"><a href="#虚拟机类加载机制" class="headerlink" title="虚拟机类加载机制"></a>虚拟机类加载机制</h3><p>类型的加载，连接，初始化</p>
+<h3 id="虚拟机类加载机制"><a href="#虚拟机类加载机制" class="headerlink" title="虚拟机类加载机制"></a>虚拟机类加载机制</h3><p>类型的加载，链接（验证、准备、解析），初始化</p>
 <p>类加载时机{<br>加载、验证、准备、解析、初始化、使用和卸载<br>}</p>
 <p>类加载触发：</p>
 <ol>
-<li>读取一个New关键字实例化的时候，读取设置静态字段，调用静态方法<br>（final修饰的静态字段，已经在编译期放在了常量池除外）（static修饰的静态方法)</li>
+<li>读取一个New关键字实例化的时候，读取设置静态字段，调用静态方法（final修饰的静态字段，已经在编译期放在了常量池除外）（static修饰的静态方法)</li>
 <li>反射调用的时候，如果没有初始化，则初始化</li>
 <li>父类没有初始化，则进行初始化</li>
 <li>先进行主类main初始化</li>
@@ -462,20 +462,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">22</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
