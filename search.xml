@@ -557,6 +557,232 @@
       </categories>
   </entry>
   <entry>
+    <title>字节跳动</title>
+    <url>/2020/05/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/</url>
+    <content><![CDATA[<p>在2020年1月15日左右找人内推简历，第二天收到HR面试邀请，约了2月上旬，面试岗位：Java后台研发实习（广告业务组）。</p>
+<h3 id="一面技术面（约60分钟）"><a href="#一面技术面（约60分钟）" class="headerlink" title="一面技术面（约60分钟）"></a>一面技术面（约60分钟）</h3><ol>
+<li>简单自我介绍</li>
+<li>关于项目介绍，期间提到并发多线程，所以面试官引出一个问题</li>
+<li>写一个变量i++的代码，要求保证线程同步。<br>——类似于读写锁，楼主用Synchronized 给 object方法写了Lock() 和 UnLock()锁实现。<br>追问：锁的机制是如何实现的：object锁还是方法锁？<br>——回答的object锁，感觉面试官反馈不太对，也没有追问了。</li>
+<li>Http协议，详细介绍下浏览器输入<a href="http://www.baidu.com之后的过程" target="_blank" rel="noopener">www.baidu.com之后的过程</a><br>——DNS，GET, POST方法都涉及到了。<br>追问TCP/IP 三次握手过程，为什么需要三次？<br>—— 介绍TCP/IP过程，然后第三次保证信息同步，服务器需要知道客户端收到response的反馈<br>追问如果第三次握手丢包怎么办？<br>——服务器重新发送response一定次数，直到client回复，若超过次数则断开连接</li>
+<li>为什么说TCP/IP是可靠传输？<br>——拥塞控制，超时重传，滑动窗口</li>
+<li>介绍下Java GC机制<br>——计数器法，可达性算法<br>追问可达性算法<br>——GC root从跟节点树引用遍历，如果没有被引用的对象则被回收，<br>追问如何判断引用？<br>——举例创建一个object会添加一次引用<br>追问jvm如何知道什么时候回收？<br>——举例类似读写操作，可以调用System.gc()方法来触发；</li>
+<li>数据库相关，SQL语句熟不熟？出了一个双表查询算平均分的题<br>——楼主表示不太熟，马马虎虎写了一个select语句，面试官也没有追问了</li>
+<li>数据库事务隔离机制<br>—— 未提交读，提交读，可重复读，序列化, 分别介绍了可能存在的问题依次是脏读，不可重复度，幻读<br>追问MySQL用的哪种？<br>——可重复读<br>追问如何实现的？<br>——不太清楚，某种读写锁？<br>追问MySQL索引怎么实现？<br>——B+ Tree<br>追问能否实现以下？<br>—— 实现B+树。。。放弃，说可以解释下原理，面试官直接说不用解释了。</li>
+</ol>
+<p><strong>算法题：</strong> ABC全排列，dfs+backtracking秒了，少许错误</p>
+<h3 id="二面技术面（约40分钟）"><a href="#二面技术面（约40分钟）" class="headerlink" title="二面技术面（约40分钟）"></a>二面技术面（约40分钟）</h3><ol>
+<li>自我介绍</li>
+<li>楼主之前搞安全的， 追问你知道哪些安全攻击，介绍下xss？<br>——表示某种注入攻击，具体不太熟，然后说 syn, dos, ddos可以<br>追问介绍下dos<br>——拒绝服务攻击，伪造报文向服务器发送大量请求，造成服务器过载，无法提供正常服务，ddos加分布式</li>
+<li>介绍 https<br>——在http基础上添加了ssl ，对称秘钥加密体制，公钥加密，私钥解密，然后又介绍了下非对称加密</li>
+<li>介绍下进程死锁<br>——4个条件：互斥，占有等待，非抢占，循环等待。分别解释了下</li>
+<li>解释下Java创建一个object，如何创建的，内存怎么分配的？<br>——举例创建一个String，系统会给这个Object分配一个内存地址，然后加引用指针，然后存入value值。<br>追问equals 和 hashcode方法<br>——equals判断value是否相等，hashcode通过hash function计算，这里答的不太好…</li>
+<li>介绍信Java如何实现线程同步<br>—— synchronize, lock, volatile, atomic<br>追问解释下volatile<br>——从Java 内存开始解释，然后解释了可见性，原子性，有序性<br>追问乐观锁与悲观锁<br>——乐观锁可以挂起做其他事情，悲观锁一直等待</li>
+</ol>
+<p><strong>算法题：</strong> trap rain，留了20分钟，楼主15分钟不到bug free秒了，用two pointers.</p>
+<h3 id="三面BOSS面（约30分）"><a href="#三面BOSS面（约30分）" class="headerlink" title="三面BOSS面（约30分）"></a>三面BOSS面（约30分）</h3><ol>
+<li>简单自我介绍</li>
+<li>最近有看什么书啊？</li>
+<li>为什么实习，之前的实习收获了什么，想从实习中学什么？</li>
+<li>结束下浏览器是如何知道哪些客户的，与服务器怎么交互？<br>——cookie 和session解释了一通</li>
+<li>linux熟悉哪些指令？</li>
+<li>关于业务有什么想问的？</li>
+</ol>
+<p><strong>算法题：</strong> permution 1234 -&gt; 1243，先要求解释一下算法，大概用了8分钟，然后要求7分钟内写完代码。楼主只完成了一种case。。。</p>
+<p>总体下来感觉还是比较难的，楼主面试美西时间22：00，直到凌晨0：20左右结束，三面考算法题的时候已经非常疲惫，体验一般。也是吃了一堑，后续面试都约到下午了。</p>
+<p>字节是我准备回国实习后面试的第一家公司，没什么面试经验，准备也不太充分，整体表现也一般。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>腾讯</title>
+    <url>/2020/05/17/%E8%85%BE%E8%AE%AF/</url>
+    <content><![CDATA[<p>楼主在2020年2月投递了腾讯后台暑期研发实习生，官网直投。2周后被PCG部门捞，一共面了2轮技术面和1轮HR，3月下旬拿到offer。</p>
+<h3 id="技术面试"><a href="#技术面试" class="headerlink" title="技术面试"></a>技术面试</h3><h4 id="一面技术面-60min"><a href="#一面技术面-60min" class="headerlink" title="一面技术面 60min"></a>一面技术面 60min</h4><ol>
+<li>自我介绍</li>
+<li>详细介绍项目，深挖简历细节</li>
+<li>项目中涉及RabbitMQ/Kafka介绍一下如何实现的，为什么要用？（项目中用了RabbitMQ重点介绍了下）</li>
+<li>说一下Spring，为什么用Spring</li>
+<li>项目中谈到Docker，了解docker底层实现机制吗？</li>
+<li>测试工具有没有用过？介绍了下JUnit，然后介绍了下之前项目是如何研发测试的</li>
+<li>项目中为什么选用MySQL数据库</li>
+<li>MySQL数据库隔离级别</li>
+<li>数据库索引了解吗</li>
+<li>说一下死锁的原因</li>
+<li>倾向于做哪块，后端全栈？（因为楼主投递后端，简历有几个前端/全栈项目）</li>
+</ol>
+<h4 id="二面技术面-70min"><a href="#二面技术面-70min" class="headerlink" title="二面技术面 70min"></a>二面技术面 70min</h4><ol>
+<li>C++了解吗（。。。楼主是java，不了解，就没细问了）</li>
+<li>Linux常用命令说下</li>
+<li>项目中用到maven，如何配置</li>
+<li>介绍下docker常用命令，项目里docker的配置</li>
+<li>docker File命令了解吗</li>
+<li>项目中用到Jenkins，说一下如何配置</li>
+<li>什么时候创建数据库索引，哪些字段适合创建，需要注意什么</li>
+</ol>
+<p><strong>算法题：</strong> 如何求出二叉搜索树的第K大节点<br><strong>算法题：</strong> 实现以下Sqrt()函数  （牛顿迭代秒了）</p>
+<h3 id="HR面"><a href="#HR面" class="headerlink" title="HR面"></a>HR面</h3><ol>
+<li>自我介绍</li>
+<li>工作地点意向</li>
+<li>平时怎么学习，除了课程之外的学习途径</li>
+<li>兴趣爱好</li>
+<li>你最看重公司的哪些特点</li>
+<li>有没有其他公司面试</li>
+</ol>
+<p>总体来说难度适中，一面是个小姐姐非常nice，二面是个技术小哥，也聊得非常愉快，由于技术栈不是c++，也没有刁难，就问了很多关于基础和算法的问题。</p>
+<p>重要一点是腾讯面试每次面试都分开约，我都是约的美西时间下午，这样不会由于时差导致状态差，总体面试体验很好！</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>阿里巴巴</title>
+    <url>/2020/05/17/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</url>
+    <content><![CDATA[<p>找人内推的2020暑期Java研发工程师实习生，新零售国际化事业部，共计2轮OA, 6轮技术面试+交叉面（面试过程还有2轮coding)，1轮HR面。断断续续持续了一个月，非常疲惫。</p>
+<h3 id="OA-测评"><a href="#OA-测评" class="headerlink" title="OA 测评"></a>OA 测评</h3><ol>
+<li>阿里在线测评主要分为四个部分：</li>
+</ol>
+<ul>
+<li>语文</li>
+<li>数字图表</li>
+<li>图形推理</li>
+<li>性格测试<br>前两部分是类似GRE的中文题目，图形推理主要是门萨题目里的智商测试题，最后一部分是职场性格测试。</li>
+</ul>
+<ol start="2">
+<li>在线笔试：我当时是一道斗地主题目和一道多个array求最大合并序列。应该是一道hard和medium，斗地主类似于noip斗地主的简化版本。</li>
+</ol>
+<h3 id="技术面试"><a href="#技术面试" class="headerlink" title="技术面试"></a>技术面试</h3><h4 id="一面技术面-70min"><a href="#一面技术面-70min" class="headerlink" title="一面技术面 70min"></a>一面技术面 70min</h4><ul>
+<li>自我介绍</li>
+<li>项目深挖细节</li>
+<li>项目涉及spring，spring依赖注入方式</li>
+<li>spring如何创建一个bean</li>
+<li>sprint boot特点</li>
+<li>java如何new一个类，内存如何分配</li>
+<li>双亲委派模型介绍一下</li>
+<li>web项目中session和cookie如何实现的，如果浏览器禁用cookie如何处理？</li>
+<li>concurrentHashMap如何实现，解决什么问题？</li>
+</ul>
+<p><strong>算法题：</strong>一面结束发了链接2小时写完4道题目: </p>
+<ol>
+<li>java运行一个cmd命令。 </li>
+<li>两种写法实现单例模式。 </li>
+<li>一道字母消消乐，给String：例如aABbCc，存在相邻的大小写就消除，求最后的string。</li>
+<li>一道拓扑排序的图形题，下一次拓扑要求按字典顺序排序（改用priorityQueue就行了）。</li>
+</ol>
+<h4 id="二面技术面-72min"><a href="#二面技术面-72min" class="headerlink" title="二面技术面 72min"></a>二面技术面 72min</h4><ul>
+<li>自我介绍</li>
+<li>项目挖技术深度</li>
+<li>jvm相关，如何实例化对象，涉及哪些内存区</li>
+<li>项目用到RabbitMq，如何实现？</li>
+<li>无锁队列用过没？如何实现无锁队列</li>
+<li>数据库MySQL引擎介绍一下，涉及数据结构(B+ tree)</li>
+<li>分布式存储了解吗？</li>
+<li>项目中有redis如何用的，如何实现分布式集群？</li>
+<li>项目中有react，为什么要用react，有什么优势？</li>
+</ul>
+<h4 id="三面主管面-70min"><a href="#三面主管面-70min" class="headerlink" title="三面主管面 70min"></a>三面主管面 70min</h4><ul>
+<li>自我介绍</li>
+<li>项目</li>
+<li>场景题：多个线程同时访问一块资源，如何减少性能消耗？（锁优化，CAS角度回答)</li>
+<li>数据库隔离级别</li>
+<li>事务太消耗性能，怎么优化查询？</li>
+<li>threadLocal介绍一下</li>
+<li>concurrent 类包用过没？</li>
+<li>英文交流了10分钟</li>
+<li>课余时间如何学习，GPA怎么保持的？</li>
+<li>flink有没有了解过，机器学习了解哪些?</li>
+</ul>
+<h4 id="四面交叉面-70min"><a href="#四面交叉面-70min" class="headerlink" title="四面交叉面 70min"></a>四面交叉面 70min</h4><ul>
+<li>双亲委派模型，如何打破？</li>
+<li>netty介绍一下</li>
+<li>项目中用到docker，底层如何实现？</li>
+<li>kafka了解吗</li>
+<li>threadlocal</li>
+<li>Spring代理如何实现的？</li>
+<li>jvm调优，线上故障排查</li>
+<li>jvm命令参数熟悉吗</li>
+</ul>
+<p><strong>算法题：</strong> 期间30min完成2道题目，一道单例模式，一道约瑟夫环</p>
+<h4 id="五面交叉面-50min"><a href="#五面交叉面-50min" class="headerlink" title="五面交叉面 50min"></a>五面交叉面 50min</h4><ul>
+<li>说一下知道的object类的方法</li>
+<li>hashcode equals介绍一下，如果不覆写hashcode会怎么样</li>
+<li>sleep 与 wait的区别</li>
+<li>java GC，如果两个object相互引用会被清理吗？</li>
+<li>场景题目：淘宝有1T数据url，只有1G内存，如何求出top 10的访问最高频率的url</li>
+</ul>
+<h4 id="六面交叉面-60min"><a href="#六面交叉面-60min" class="headerlink" title="六面交叉面 60min"></a>六面交叉面 60min</h4><ul>
+<li>jvm和jmm介绍一下</li>
+<li>哪些内存区对应缓存，哪些对应主存</li>
+<li>场景题目：如何提高操作系统缓存利用率，淘宝每天的热度商品放缓存里，设计数据结构实现 （LRU cache)</li>
+<li>职业规划</li>
+</ul>
+<h3 id="HR面"><a href="#HR面" class="headerlink" title="HR面"></a>HR面</h3><ul>
+<li>有什么优缺点</li>
+<li>项目中担任什么角色</li>
+<li>如何学习</li>
+<li>读研最大的收获</li>
+</ul>
+<p>阿里整体感觉还是有难度的，不过面试发挥的很好，跟几位面试官也聊得很愉快，只是流程比较慢。由于一些个人因素最后选择去鹅厂了。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>微软中国</title>
+    <url>/2020/05/18/%E5%BE%AE%E8%BD%AF%E4%B8%AD%E5%9B%BD/</url>
+    <content><![CDATA[<p>在2020年1月中旬官网海投微软苏州SDE intern，在3月上旬收到HR面试邀请。<br>微软面试主要以算法题为主，当时苏州是2轮，第一轮有2次机会，只要其中一次过了就可以进入manager面。</p>
+<h4 id="一面"><a href="#一面" class="headerlink" title="一面"></a>一面</h4><p>一面小哥进来寒暄几句，让我简单自我介绍（中文），介绍了下项目，这部分感觉走过场，不过发挥的挺好，聊得很愉快。</p>
+<p><strong>算法题</strong><br>算法题是一道场景题，以二极管数字灯为背景<br><img src="/images/%E5%BE%AE%E8%BD%AF%E4%B8%AD%E5%9B%BD.png" alt=""><br>有4个数字，每个数字由7个二极管组成（横三竖四）。由于一些原因，二极管坏掉了，所以无法发光。例如8是全部都亮，但是可能某几个二极管坏了，只显示为5，也可能是6，9。</p>
+<p>问：给定4个坏掉二极管板组成的数字，求可能的数字集合。<br>例如显示为5555，每个5可能代表6，8，9三种情况，所以最后可能是3<em>3</em>3*3 = 81，返回81。</p>
+<p><strong>解法:</strong><br>一开始反应有点僵，这题最难的是建模。所有的题目都是面试官口述，得跟面试官一步步确定具体题目需求，题目输入和输入都是自定义，非常考验沟通能力。</p>
+<p>一步步跟面试官沟通之后，沟通的还不错，面试官给了一点提示，最后用二进制解法秒了。<br>结束后问面试官这题解法，面试官说是求subset，二进制也可以。说我能想到二进制解法非常不错了。</p>
+<h4 id="Manager面"><a href="#Manager面" class="headerlink" title="Manager面"></a>Manager面</h4><p>由于一面发挥的非常好，直接给我进入Manager面，有点出乎意料。</p>
+<p>Manager面直接上来二话不说就开始做题，又是一道场景题。说用中文来描述数字，例如一亿五千万六十一百万弎十五。求转成的数字。</p>
+<p>乍一看没什么难度，这题其实是一道corner case题，有很多不按常规的描述。<br>先写了一个解法，面试官说有几个case过不去，后来又改了以下。然后又一种case过不去。</p>
+<p>整体表现我觉得就是跟面试官沟通的不够，看一题没仔细想清楚，就闷头写代码，结果很多corner case点没有跟面试官确定清楚。导致最后改来改去，套进去出不来了，最后也被说代码写的不够优雅…</p>
+<p>后来想了下，应该先想把逻辑想清楚，跟面试官沟通确认一些case，然后再重新整理思路，一气呵成。总之还是算法硬实力不足吧，之前没有重视题目的corner case处理，导致这次措手不及。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>快手</title>
+    <url>/2020/05/18/%E5%BF%AB%E6%89%8B/</url>
+    <content><![CDATA[<p>2020年2月底找朋友直推了快手Java研发实习， 第二天HR发来邮件，约了面试。</p>
+<h4 id="一面技术面"><a href="#一面技术面" class="headerlink" title="一面技术面"></a>一面技术面</h4><ul>
+<li>自我介绍</li>
+<li>Spring介绍一下</li>
+<li>什么是依赖注入和切面编程</li>
+<li>hashmap 和 hashtable区别</li>
+<li>hashmap底层实现</li>
+<li>arraylist和linkedlist区别，优缺点</li>
+<li>项目中为什么使用mysql</li>
+<li>mysql引擎索引底层实现</li>
+<li>什么时候加索引</li>
+<li>Java多线程介绍一下</li>
+<li>线程池参数了解吗</li>
+</ul>
+<p><strong>coding:</strong> 实现一下链表的反转</p>
+<h4 id="二面技术面"><a href="#二面技术面" class="headerlink" title="二面技术面"></a>二面技术面</h4><p>面试官上来就做题，当时是美西时间23：00,不知道为什么当天状态特别差，非常疲惫，一道easy题想复杂了，没有做出来。</p>
+<p>然后面试官问了一些关于系统设计和ood的题目，说做一个评论的点赞系统，让我考虑一下如何实现。当时没有了解太多关于系统设计的知识，以为实习范畴不会涉及。就从一些多用户并发点赞的技术实现细节回答，答了redis或者memcached缓存来优化数据库查询，redis计数器来记录点赞次数；还说到数据库读写使用乐观锁。</p>
+<p>都被面试官否定了，说回答不在点上…</p>
+<p>总之感觉面试体验一般，对我申请职位的考察范围与我的技能栈有些出入。那天又是接近凌晨面试，状态真的差，总之个人不太喜欢连着面好几轮，还都在晚上，对留学生不太友好。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Categories</title>
     <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
