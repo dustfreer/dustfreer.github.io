@@ -928,43 +928,37 @@
       </categories>
   </entry>
   <entry>
-    <title>Java反射</title>
-    <url>/2020/05/21/Java%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性，实现了基本的动态性。<br>有了反射，我们可以做以下事情：</p>
-<ul>
-<li>在运行时检查一个对象</li>
-<li>在运行时，根据一个class构造一个对象</li>
-<li>在运行时，检查一个对象的属性和方法</li>
-<li>在运行时，调用一个对象的任意一个方法</li>
-<li>在运行时，改变对象的构造函数，属性，方法的可见性</li>
+    <title>Redis</title>
+    <url>/2020/05/21/Redis/</url>
+    <content><![CDATA[<h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul>
+<li>RDB(二进制）</li>
+<li>AOF bgrewriteaof</li>
+<li>AOF 重写<br>主从复制<br>slaveof</li>
 </ul>
+<h4 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h4><ul>
+<li>字符串String</li>
+<li>列表lists</li>
+<li>集合 set</li>
+<li>有序集合 sorted set </li>
+<li>哈希 hash</li>
+</ul>
+<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><ul>
+<li>MULTI组装事务</li>
+<li>EXEC执行一个事务</li>
+<li>DISCARD取消一个事务</li>
+<li>WATCH检测key，一旦key执行书屋之前被改变，则取消事务执行</li>
+</ul>
+<h4 id="Redis与memcache的不同"><a href="#Redis与memcache的不同" class="headerlink" title="Redis与memcache的不同"></a>Redis与memcache的不同</h4><p><strong>value大小不同</strong><br>memcache是一个内存缓存，key的长度小于250字符，单个item存储要小于1M，不适合虚拟机使用</p>
+<p><strong>数据一致性不同</strong></p>
+<ul>
+<li>Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis，虽然Redis最近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。 </li>
+<li>redis使用的是单线程模型，保证了数据按顺序提交。</li>
+<li>memcache需要使用cas保证数据一致性。CAS 是一个确保并发一致性的机制，属于“乐观锁”范畴；原理很简单：拿版本号，操作，对比版本号，如果一致就操作，不一致就放弃任何操作 </li>
+</ul>
+<p><strong>cpu利用</strong><br>redis单线程模型只能使用一个cpu，可以开启多个redis进程</p>
 ]]></content>
       <categories>
         <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java多线程</title>
-    <url>/2020/05/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<h4 id="线程与进程区别："><a href="#线程与进程区别：" class="headerlink" title="线程与进程区别："></a>线程与进程区别：</h4><ol>
-<li>进程是资源分配的最小单位,线程是CPU调度的最小单位  </li>
-<li>一个进程由一个或多个线程组成  </li>
-<li>进程之间相互独立，每个进程都有独立的代码和数据空间,但同一进程下的各个线程之间共享进程的代码和内存空间，每个线程有独立的运行栈和程序计数器  </li>
-<li>线程上下文切换比进程上下文切换要快得多</li>
-</ol>
-<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全：就是说多线程访问同一代码，不会产生不确定的结果。（vector, hashTable是线程安全的， arrayList和 hashMap是不安全的）</p>
-<ol>
-<li>synchronized同步方法  即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。   也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类   </li>
-<li>synchronized同步代码块   即有synchronized关键字修饰的语句块。   当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞，但仍然可以访问该object中的非synchronized(this)同步代码块。 </li>
-<li>volatile实现线程同步  用volatile修饰的变量，线程在每次使用变量的时候，都会从主存中读取变量最新值。变量修改后会直接改变主存内容。保证可见性，不能保证原子性 </li>
-<li>使用重入锁实现线程同步ReentrantLock  ReentrantLock 拥有Synchronized相同的并发性和内存语义，此外还多了 锁投票，定时锁等候和中断锁等候,比如可以放弃锁等待先做别的事情（trylock），而Synchronized不能  synchronized是在JVM层面上实现的，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中  在资源竞争很激烈的情况下，ReetrantLock的性能要优于Synchronized  </li>
-<li>使用ThreadLocal管理变量  使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
       </categories>
   </entry>
   <entry>
@@ -1029,40 +1023,6 @@
       </categories>
   </entry>
   <entry>
-    <title>Redis</title>
-    <url>/2020/05/21/Redis/</url>
-    <content><![CDATA[<h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul>
-<li>RDB(二进制）</li>
-<li>AOF bgrewriteaof</li>
-<li>AOF 重写<br>主从复制<br>slaveof</li>
-</ul>
-<h4 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h4><ul>
-<li>字符串String</li>
-<li>列表lists</li>
-<li>集合 set</li>
-<li>有序集合 sorted set </li>
-<li>哈希 hash</li>
-</ul>
-<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><ul>
-<li>MULTI组装事务</li>
-<li>EXEC执行一个事务</li>
-<li>DISCARD取消一个事务</li>
-<li>WATCH检测key，一旦key执行书屋之前被改变，则取消事务执行</li>
-</ul>
-<h4 id="Redis与memcache的不同"><a href="#Redis与memcache的不同" class="headerlink" title="Redis与memcache的不同"></a>Redis与memcache的不同</h4><p><strong>value大小不同</strong><br>memcache是一个内存缓存，key的长度小于250字符，单个item存储要小于1M，不适合虚拟机使用</p>
-<p><strong>数据一致性不同</strong></p>
-<ul>
-<li>Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis，虽然Redis最近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。 </li>
-<li>redis使用的是单线程模型，保证了数据按顺序提交。</li>
-<li>memcache需要使用cas保证数据一致性。CAS 是一个确保并发一致性的机制，属于“乐观锁”范畴；原理很简单：拿版本号，操作，对比版本号，如果一致就操作，不一致就放弃任何操作 </li>
-</ul>
-<p><strong>cpu利用</strong><br>redis单线程模型只能使用一个cpu，可以开启多个redis进程</p>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Tree</title>
     <url>/2020/05/21/Tree/</url>
     <content><![CDATA[<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ol>
@@ -1091,6 +1051,46 @@
       <categories>
         <category>计算机基础知识</category>
         <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java反射</title>
+    <url>/2020/05/21/Java%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性，实现了基本的动态性。<br>有了反射，我们可以做以下事情：</p>
+<ul>
+<li>在运行时检查一个对象</li>
+<li>在运行时，根据一个class构造一个对象</li>
+<li>在运行时，检查一个对象的属性和方法</li>
+<li>在运行时，调用一个对象的任意一个方法</li>
+<li>在运行时，改变对象的构造函数，属性，方法的可见性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java多线程</title>
+    <url>/2020/05/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<h4 id="线程与进程区别："><a href="#线程与进程区别：" class="headerlink" title="线程与进程区别："></a>线程与进程区别：</h4><ol>
+<li>进程是资源分配的最小单位,线程是CPU调度的最小单位  </li>
+<li>一个进程由一个或多个线程组成  </li>
+<li>进程之间相互独立，每个进程都有独立的代码和数据空间,但同一进程下的各个线程之间共享进程的代码和内存空间，每个线程有独立的运行栈和程序计数器  </li>
+<li>线程上下文切换比进程上下文切换要快得多</li>
+</ol>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全：就是说多线程访问同一代码，不会产生不确定的结果。（vector, hashTable是线程安全的， arrayList和 hashMap是不安全的）</p>
+<ol>
+<li>synchronized同步方法  即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。   也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类   </li>
+<li>synchronized同步代码块   即有synchronized关键字修饰的语句块。   当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞，但仍然可以访问该object中的非synchronized(this)同步代码块。 </li>
+<li>volatile实现线程同步  用volatile修饰的变量，线程在每次使用变量的时候，都会从主存中读取变量最新值。变量修改后会直接改变主存内容。保证可见性，不能保证原子性 </li>
+<li>使用重入锁实现线程同步ReentrantLock  ReentrantLock 拥有Synchronized相同的并发性和内存语义，此外还多了 锁投票，定时锁等候和中断锁等候,比如可以放弃锁等待先做别的事情（trylock），而Synchronized不能  synchronized是在JVM层面上实现的，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中  在资源竞争很激烈的情况下，ReetrantLock的性能要优于Synchronized  </li>
+<li>使用ThreadLocal管理变量  使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
       </categories>
   </entry>
   <entry>
