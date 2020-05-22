@@ -306,6 +306,9 @@
 <li>逃逸分析（如果一个方法没有被其他外部方法调用，则可以分配到栈内存，只供当前线程使用，否则就分配到堆内存，线程共享）</li>
 </ul>
 <h3 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h3><p>Synchronized 内部使用monitorenter monitorexit 和锁计数器来实现<br>RentrantLock重入锁<br>CAS</p>
+<h4 id="volitle防止指令重排"><a href="#volitle防止指令重排" class="headerlink" title="volitle防止指令重排"></a>volitle防止指令重排</h4><p>volatile关键字通过提供“内存屏障”的方式来防止指令被重排序，为了实现volatile的内存语义，编译器在生成字节码时，会在指令序列中插入内存屏障来禁止特定类型的处理器重排序。</p>
+<p>大多数的处理器都支持内存屏障的指令。</p>
+<p>对于编译器来说，发现一个最优布置来最小化插入屏障的总数几乎不可能，为此，Java内存模型采取保守策略。下面是基于保守策略的JMM内存屏障插入策略：</p>
 <h3 id="锁优化"><a href="#锁优化" class="headerlink" title="锁优化"></a>锁优化</h3><p>自旋锁和自适应锁<br>锁消除（依靠逃逸分析技术，判断如果数据不会被其他线程访问）<br>锁粗化  内部操作锁比较多，就直接给整体加一个锁<br>轻量级锁CAS操作<br>偏向锁</p>
 ]]></content>
       <categories>
@@ -818,6 +821,277 @@
 <p>考虑到大家在学习过程中可能也会遇到同样的问题，索性将笔记分享出来，以免大家走同样的弯路，犯同样的错误。建站的初衷是为了让自己继续保持记录笔记的习惯，同时督促自己学习。如果这些笔记可以帮助到大家，再好不过了！</p>
 <p>如果大家在学习过程中遇到类似的问题，欢迎发邮件与我交流。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Spring框架</title>
+    <url>/2020/05/21/Spring%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[<h4 id="Spring四种关键策略"><a href="#Spring四种关键策略" class="headerlink" title="Spring四种关键策略"></a>Spring四种关键策略</h4><ul>
+<li>基于POJO (plain old java object) 的轻量级和最小侵入性编程</li>
+<li>通过依赖注入和面向接口实现松耦合</li>
+<li>基于切面和惯例进行声明式编程</li>
+<li>通过切面和模板减少样版式代码 </li>
+</ul>
+<p>依赖注入DI </p>
+<ul>
+<li>构造器注入（参数中传入对象）</li>
+<li>n ID</li>
+</ul>
+<p>应用切面</p>
+<ul>
+<li>关注点分离</li>
+<li>beforeMethod</li>
+<li>afterMethod</li>
+<li>在xml声明AOP属性</li>
+</ul>
+<p>模板消除样版式代码</p>
+<ul>
+<li>使用JDBCTemplate封装JDBC的操作</li>
+</ul>
+<p>Spring容器</p>
+<ul>
+<li>bean工厂（beanFactory）</li>
+<li>应用上下文ApplicationContext(AnnotationApplicationConext, pathContext)</li>
+</ul>
+<h4 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h4><ul>
+<li>实例化</li>
+<li>值与bean引用注入到bean中</li>
+<li>如果实现了BeanNameAware 将Bean传递到SetBeanName()方法中</li>
+<li>如果实现了BeanFactoryAwere则将bean工厂传入</li>
+<li>如果实现了ApplicationConextAware则将上下文引用传入</li>
+<li>如果实现了PostProecess接口则掉调用BeforeInitialization</li>
+<li>如果bean实现了InitializaingBean接口，则调用AfterPropertSet()方法</li>
+<li>如果AfterInitialization方法</li>
+<li>disposable销毁</li>
+</ul>
+<h4 id="如何装配Bean"><a href="#如何装配Bean" class="headerlink" title="如何装配Bean"></a>如何装配Bean</h4><ul>
+<li>xml, </li>
+<li>java显式装配，</li>
+<li>自动化装配</li>
+</ul>
+<p>自动化装配<br>组件扫描<br>自动装备 @component注解，告知Spring创建Bean<br>@componentScan<br>@Autowired 可以修饰构造方法，可以修改普通方法，自动装配参数， 接口</p>
+<h4 id="Spring设计模式"><a href="#Spring设计模式" class="headerlink" title="Spring设计模式"></a>Spring设计模式</h4><ul>
+<li>工厂模式：BeanFactory就是简单工厂模式的体现，用来创建对象的实例</li>
+<li>单例模式：Bean默认为单例模式</li>
+<li>代理模式：Spring的AOP功能用到了JDK的动态代理和CGLIB字节码生成技术</li>
+<li>模板方法：用来解决代码重复的问题。比如. RestTemplate, JmsTemplate, JpaTemplate</li>
+<li>观察者模式：定义对象键一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都会得到通知被制动更新，如Spring中listener的实现–ApplicationListener。</li>
+</ul>
+<p>JDK动态代理要求被代理的类必须实现一个接口：InvocationHandler 接口，Proxy newProxyInstance()，java反射<br>CGLIB通过继承的方式动态代理： cglib.jar, asm.jar。通过MethodInterceptor 接口  Enhancer 类，调用父类，继承的方式实例化</p>
+<h4 id="Spring作用域"><a href="#Spring作用域" class="headerlink" title="Spring作用域"></a>Spring作用域</h4><ul>
+<li>singleton : bean在每个Spring ioc 容器中只有一个实例</li>
+<li>prototype：一个bean的定义可以有多个实例</li>
+<li>request：每次http请求都会创建一个bean，该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li>session：在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li>global-session：在一个全局的HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li><em>注意：*</em> 缺省的Spring bean 的作用域是Singleton。使用 prototype 作用域需要慎重的思考，因为频繁创建和销毁 bean 会带来很大的性能开销。</li>
+</ul>
+<h4 id="IOC容器加载过程"><a href="#IOC容器加载过程" class="headerlink" title="IOC容器加载过程"></a>IOC容器加载过程</h4><ol>
+<li>刷新预处理</li>
+<li>将配置信息解析，注册到BeanFactory</li>
+<li>设置bean的类加载器</li>
+<li>如果有第三方想再bean加载注册完成后，初始化前做点什么(例如修改属性的值，修改bean的scope为单例或者多例。)，提供了相应的模板方法，后面还调用了这个方法的实现，并且把这些个实现类注册到对应的容器中</li>
+<li>初始化当前的事件广播器</li>
+<li>初始化所有的bean</li>
+<li>广播applicationcontext初始化完成。</li>
+</ol>
+<h4 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h4><p>四个特性</p>
+<ul>
+<li>Spring Boot starter 依赖整合，合并Maven Gradle构建</li>
+<li>自动配置，Spring Boot 4对条件化配置的支持，合理推测所需的bean并自动化配置</li>
+<li>命令行接口</li>
+<li>Actuator 管理特性</li>
+</ul>
+<p>Spring Boot为不同的Spring模块提供了许多依赖项。一些最常用的是：<br>spring-boot-starter-data-jpa<br>spring-boot-starter-security<br>spring-boot-starter-test<br>spring-boot-starter-web<br>spring-boot-starter-thymeleaf</p>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>ConcurrentHashMap</title>
+    <url>/2020/05/21/ConcurrentHashMap/</url>
+    <content><![CDATA[<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p>ConcurrentHashMap使用分段锁来实现同步 （ReentrantLock实现CAS来实现的）</p>
+<p>默认16线程<br>get使用volatile实现可见性不需要加锁<br>put使用segmentShift / segmentMask来定位segment<br>HashTable 则对这些方法加synchronize来实现锁，效率很低</p>
+<h4 id="JDK1-8进行了改进"><a href="#JDK1-8进行了改进" class="headerlink" title="JDK1.8进行了改进"></a>JDK1.8进行了改进</h4><p>使用链表头节点加锁，同一时间只有一个线程可以put，解决并发问题</p>
+<ul>
+<li>首先new一个新的hash表(nextTable)出来，大小是原来的2倍。后面的rehash都是针对这个新的hash表操作，不涉及原hash表(table)。</li>
+<li>然后会对原hash表(table)中的每个链表进行rehash，此时会尝试获取头节点的锁。这一步就保证了在rehash的过程中不能对这个链表执行put操作。</li>
+<li>通过sizeCtl控制，使扩容过程中不会new出多个新hash表来。</li>
+<li>最后，将所有键值对重新rehash到新表(nextTable)中后，用nextTable将table替换。这就避免了HashMap中get和扩容并发时，可能get到null的问题。</li>
+<li>在整个过程中，共享变量的存储和读取全部通过volatile或CAS的方式，保证了线程安全。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>数据结构</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java反射</title>
+    <url>/2020/05/21/Java%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性，实现了基本的动态性。<br>有了反射，我们可以做以下事情：</p>
+<ul>
+<li>在运行时检查一个对象</li>
+<li>在运行时，根据一个class构造一个对象</li>
+<li>在运行时，检查一个对象的属性和方法</li>
+<li>在运行时，调用一个对象的任意一个方法</li>
+<li>在运行时，改变对象的构造函数，属性，方法的可见性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java多线程</title>
+    <url>/2020/05/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<h4 id="线程与进程区别："><a href="#线程与进程区别：" class="headerlink" title="线程与进程区别："></a>线程与进程区别：</h4><ol>
+<li>进程是资源分配的最小单位,线程是CPU调度的最小单位  </li>
+<li>一个进程由一个或多个线程组成  </li>
+<li>进程之间相互独立，每个进程都有独立的代码和数据空间,但同一进程下的各个线程之间共享进程的代码和内存空间，每个线程有独立的运行栈和程序计数器  </li>
+<li>线程上下文切换比进程上下文切换要快得多</li>
+</ol>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全：就是说多线程访问同一代码，不会产生不确定的结果。（vector, hashTable是线程安全的， arrayList和 hashMap是不安全的）</p>
+<ol>
+<li>synchronized同步方法  即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。   也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类   </li>
+<li>synchronized同步代码块   即有synchronized关键字修饰的语句块。   当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞，但仍然可以访问该object中的非synchronized(this)同步代码块。 </li>
+<li>volatile实现线程同步  用volatile修饰的变量，线程在每次使用变量的时候，都会从主存中读取变量最新值。变量修改后会直接改变主存内容。保证可见性，不能保证原子性 </li>
+<li>使用重入锁实现线程同步ReentrantLock  ReentrantLock 拥有Synchronized相同的并发性和内存语义，此外还多了 锁投票，定时锁等候和中断锁等候,比如可以放弃锁等待先做别的事情（trylock），而Synchronized不能  synchronized是在JVM层面上实现的，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中  在资源竞争很激烈的情况下，ReetrantLock的性能要优于Synchronized  </li>
+<li>使用ThreadLocal管理变量  使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>JVM调优</title>
+    <url>/2020/05/21/JVM%E8%B0%83%E4%BC%98/</url>
+    <content><![CDATA[<h4 id="程序检测异常"><a href="#程序检测异常" class="headerlink" title="程序检测异常"></a>程序检测异常</h4><ul>
+<li>jvm死机， jvm调优</li>
+<li>内存，cpu占用过高， GC调优</li>
+<li>检测无法停止</li>
+<li>检测无法开始</li>
+<li>磁盘空间出现问题 df -hl</li>
+</ul>
+<h4 id="HotSpot-VM"><a href="#HotSpot-VM" class="headerlink" title="HotSpot VM"></a>HotSpot VM</h4><ul>
+<li>栈区异常： stackOverFlow 如果栈可以动态扩展，直到内存不足会OOM —Xss</li>
+<li>堆区异常：OOM -Xms（min) -Xmx(max)指定内存，实例对象或者数组超出内存</li>
+<li>方法区异常：（存放加载过的类，静态变量，常量）永久代很少出现GC -XX PermSize -XX MaxPermSize</li>
+<li>运行时常量池：String.intern()生成常量导致OOM</li>
+<li>直接内存：虚拟机外内存，NIO有directByteBuffer操作</li>
+</ul>
+<p>Dump文件，内存泄漏查看GC root引用路径为什么无法自动回收<br>内存溢出 对象仍然存活，调大内存，或者降低对象生命周期</p>
+<p><strong>垃圾收集器</strong><br>CMS, ParNew</p>
+<h4 id="如何排查？"><a href="#如何排查？" class="headerlink" title="如何排查？"></a>如何排查？</h4><ul>
+<li>TOP命令查看cpu占用率</li>
+<li>ps查看进程pid， 线程tid</li>
+<li>jstack查看进程信息，可以看到哪一行出现了问题</li>
+<li>jmap 导出dump文件</li>
+<li>jstat查看分代变化情况</li>
+<li>启动时开启gc日志-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps来开启GC日志</li>
+</ul>
+<p>——OOM unable to create new native thread线程池有问题<br>解决：Xss减少单个thread stack的大小<br>——Exception in thread “main” java.lang.OutOfMemoryError: Java heap space<br>解决：这个意思是堆的内存占用已经达到-Xmx设置的最大值，应该是最常见的OOM错误了。解决思路仍然是先应该在代码中找，怀疑存在内存泄漏，通过jstack和jmap去定位问题。如果说一切都正常，才需要通过调整Xmx的值来扩大内存。<br>——Caused by: java.lang.OutOfMemoryError: Meta space<br>解决：这个意思是元数据区的内存占用已经达到XX:MaxMetaspaceSize设置的最大值，排查思路和上面的一致，参数方面可以通过XX:MaxPermSize来进行调整(这里就不说1.8以前的永久代了)</p>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java设计模式</title>
+    <url>/2020/05/21/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更好的解法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line"> 	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"> 	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">testHolder</span></span>&#123;</span><br><span class="line"> 		<span class="keyword">private</span> <span class="keyword">static</span> Singleton intance = <span class="keyword">new</span> Singleton();</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getIntance</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> 		<span class="keyword">return</span> testHolder.intance;</span><br><span class="line"> 	&#125; 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="i-线程同步"><a href="#i-线程同步" class="headerlink" title="i++线程同步"></a>i++线程同步</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"><span class="comment">//    private static AtomicInteger atomicInteger = new AtomicInteger(0);</span></span><br><span class="line"><span class="comment">//    private void increase() &#123;</span></span><br><span class="line"><span class="comment">//        atomicInteger.incrementAndGet();</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//如果是static 则给类加锁，没有static则给方法加锁。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">            increase();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="comment">//给类加锁则可以实现2个实例并行安全</span></span><br><span class="line">        <span class="comment">//给方法加锁只能实现单个实例的线程安全</span></span><br><span class="line">        Test test = <span class="keyword">new</span> Test();</span><br><span class="line">        Thread thread1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line">        Thread thread2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line"></span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="不变模式"><a href="#不变模式" class="headerlink" title="不变模式"></a>不变模式</h3><p>final 修饰变量</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">product</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String no;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Product</span><span class="params">(String no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="生产者消费者模型"><a href="#生产者消费者模型" class="headerlink" title="生产者消费者模型"></a>生产者消费者模型</h3><ul>
+<li>blockQueue（加阻塞锁）</li>
+<li>disruptor（环形队列，CAS实现无锁操作）</li>
+</ul>
+<h3 id="future-模型"><a href="#future-模型" class="headerlink" title="future 模型"></a>future 模型</h3><ul>
+<li>异步调用。如果函数执行的慢，让被调用者立即返回，后台慢慢处理。</li>
+<li>充分利用等待时间</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Redis</title>
+    <url>/2020/05/21/Redis/</url>
+    <content><![CDATA[<h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul>
+<li>RDB(二进制）</li>
+<li>AOF bgrewriteaof</li>
+<li>AOF 重写<br>主从复制<br>slaveof</li>
+</ul>
+<h4 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h4><ul>
+<li>字符串String</li>
+<li>列表lists</li>
+<li>集合 set</li>
+<li>有序集合 sorted set </li>
+<li>哈希 hash</li>
+</ul>
+<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><ul>
+<li>MULTI组装事务</li>
+<li>EXEC执行一个事务</li>
+<li>DISCARD取消一个事务</li>
+<li>WATCH检测key，一旦key执行书屋之前被改变，则取消事务执行</li>
+</ul>
+<h4 id="Redis与memcache的不同"><a href="#Redis与memcache的不同" class="headerlink" title="Redis与memcache的不同"></a>Redis与memcache的不同</h4><p><strong>value大小不同</strong><br>memcache是一个内存缓存，key的长度小于250字符，单个item存储要小于1M，不适合虚拟机使用</p>
+<p><strong>数据一致性不同</strong></p>
+<ul>
+<li>Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis，虽然Redis最近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。 </li>
+<li>redis使用的是单线程模型，保证了数据按顺序提交。</li>
+<li>memcache需要使用cas保证数据一致性。CAS 是一个确保并发一致性的机制，属于“乐观锁”范畴；原理很简单：拿版本号，操作，对比版本号，如果一致就操作，不一致就放弃任何操作 </li>
+</ul>
+<p><strong>cpu利用</strong><br>redis单线程模型只能使用一个cpu，可以开启多个redis进程</p>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Tree</title>
+    <url>/2020/05/21/Tree/</url>
+    <content><![CDATA[<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ol>
+<li>节点是红色或黑色。</li>
+<li>根节点是黑色。</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）。</li>
+<li>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)</li>
+<li>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。<br>插入,变色,左旋转,右旋转</li>
+</ol>
+<p>应用： TreeSet TreeMap<br>平衡二叉树，B树B+树，B*</p>
+<h3 id="B树-B-tree"><a href="#B树-B-tree" class="headerlink" title="B树(B-tree)"></a>B树(B-tree)</h3><p>注意:之前有看到有很多文章把B树和B-tree理解成了两种不同类别的树，其实这两个是同一种树;</p>
+<p><strong>概念：</strong><br>B树和平衡二叉树稍有不同的是B树属于多叉树又名平衡多路查找树（查找路径不只两个），数据库索引技术里大量使用者B树和B+树的数据结构，让我们来看看他有什么特点;</p>
+<p><strong>规则：</strong></p>
+<ol>
+<li>排序方式：所有节点关键字是按递增次序排列，并遵循左小右大原则；</li>
+<li>子节点数：非叶节点的子节点数&gt;1，且&lt;=M ，且M&gt;=2，空树除外（注：M阶代表一个树节点最多有多少个查找路径，M=M路,当M=2则是2叉树,M=3则是3叉）；</li>
+<li>关键字数：枝节点的关键字数量大于等于ceil(m/2)-1个且小于等于M-1个（注：ceil()是个朝正无穷方向取整的函数 如ceil(1.1)结果为2);</li>
+<li>所有叶子节点均在同一层、叶子节点除了包含了关键字和关键字记录的指针外也有指向其子节点的指针只不过其指针地址都为null对应下图最后一层节点的空格子;<br>最后我们用一个图和一个实际的例子来理解B树（这里为了理解方便我就直接用实际字母的大小来排列C&gt;B&gt;A）</li>
+</ol>
+<p><strong>优点：</strong><br>B树相对于平衡二叉树的不同是，每个节点包含的关键字增多了，特别是在B树应用到数据库中的时候，数据库充分利用了磁盘块的原理（磁盘数据存储是采用块的形式存储的，每个块的大小为4K，每次IO进行数据读取时，同一个磁盘块的数据可以一次性读取出来）把节点大小限制和充分使用在磁盘快大小范围；把树的节点关键字增多后树的层级比原来的二叉树少了，减少数据查找的次数和复杂度;</p>
+<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><ol>
+<li>B+跟B树不同B+树的非叶子节点不保存关键字记录的指针，只进行数据索引，这样使得B+树每个非叶子节点所能保存的关键字大大增加；</li>
+<li>B+树叶子节点保存了父节点的所有关键字记录的指针，所有数据地址必须要到叶子节点才能获取到。所以每次数据查询的次数都一样；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>数据结构</category>
+      </categories>
   </entry>
   <entry>
     <title>About</title>
