@@ -1170,20 +1170,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【随笔】1.偏见</title>
-    <url>/2020/05/24/%E3%80%90%E9%9A%8F%E7%AC%94%E3%80%911-%E5%81%8F%E8%A7%81/</url>
-    <content><![CDATA[<p>最近在休息期间看了《王牌对王牌》，让我彻底改变了对歌手华晨宇（花花）的看法，感觉就是一个聪明、单纯、善良、有才华的大男孩。然后听了他的好几首歌曲，莫名觉得特别好听，突然转粉了。回过头来仔细想想，对偏见与刻板印象有了新的理解，也算是这段时间最大的反思和感悟了。</p>
-<p>记得2013年的时候看过几期《快乐男生》，当时不知道为什么对花花印象特别差，认为他是个生活不能自理，台上“发神经”的男孩。其实当时都没有仔细听他唱过几首歌，就是因为镜头上的几个剪辑，对他留下了这种刻板印象，之后就再也没有关注过他。</p>
-<p>现在想来感觉自己真是幼稚。评价一个歌手，主要通过他的歌曲，而我甚至都没有听过他几首歌，就仅由于他的一些行为，就给出了负面评价，形成了刻板印象，导致我否定了他的一切。这种行为跟网络喷子相比，除了没有到处写评论当键盘侠，还有何异？</p>
-<p>留学期间最大的感受是可以接触到来自全球各地的人，刚开始遇到的时候可能会留有之前存在的某种偏见和刻板印象。可是通过接触下来，不管是同学、邻居还是路上的行人，感觉大家都很不错。生活了一段时间后，我对世界观有了新的理解：不轻易的评价别人，即使之前的某些经历给我留下了某种印记，但是在没有深入了解对方之前，带着偏见待人都是不礼貌、不成熟的。</p>
-<p>我又想为什么会存在偏见？这里引用花花说过的话：人们一直以来不断追求新鲜的事物，但是当新鲜的事物来临的时候，一开始却是不愿意接受的。我非常认同，也在反思自己随着年龄的增长是否不愿意接受一些新鲜的事物，心态是否逐渐老化。这种思维模式一旦形成，会阻碍自己接触新鲜事物，甚至去抵触，抨击。</p>
-<p>所以时刻提醒自己要以一种开放的心态对待新鲜的人和事，不轻易评价别人和给别人贴标签，保持包容和尊重，做一个有素质的新青年。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Sqrt(x)</title>
     <url>/2020/05/24/Sqrt-x/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Implement int sqrt(int x).</p>
@@ -1216,6 +1202,34 @@
       <tags>
         <tag>O(n)</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>【随笔】1.偏见</title>
+    <url>/2020/05/24/%E3%80%90%E9%9A%8F%E7%AC%94%E3%80%911-%E5%81%8F%E8%A7%81/</url>
+    <content><![CDATA[<p>最近在休息期间看了《王牌对王牌》，让我彻底改变了对歌手华晨宇（花花）的看法，感觉就是一个聪明、单纯、善良、有才华的大男孩。然后听了他的好几首歌曲，莫名觉得特别好听，突然转粉了。回过头来仔细想想，对偏见与刻板印象有了新的理解，也算是这段时间最大的反思和感悟了。</p>
+<p>记得2013年的时候看过几期《快乐男声》，当时不知道为什么对花花印象特别差，认为他是个生活不能自理，台上“发神经”的男孩。其实当时都没有仔细听他唱过几首歌，就是因为镜头上的几个剪辑，对他留下了这种刻板印象，之后就再也没有关注过他。</p>
+<p>现在想来感觉自己真是幼稚。评价一个歌手，主要通过他的歌曲，而我甚至都没有听过他几首歌，就仅由于他的一些行为，就给出了负面评价，形成了刻板印象，导致我否定了他的一切。这种行为跟网络喷子相比，除了没有到处写评论当键盘侠，还有何异？</p>
+<p>留学期间最大的感受是可以接触到来自全球各地的人，刚开始遇到的时候可能会留有之前存在的某种偏见和刻板印象。可是通过接触下来，不管是同学、邻居还是路上的行人，感觉大家都很不错。生活了一段时间后，我对世界观有了新的理解：不轻易的评价别人，即使之前的某些经历给我留下了某种印记，但是在没有深入了解对方之前，带着偏见待人都是不礼貌、不成熟的。</p>
+<p>我又想为什么会存在偏见？这里引用花花说过的话：人们一直以来不断追求新鲜的事物，但是当新鲜的事物来临的时候，一开始却是不愿意接受的。我非常认同，也在反思自己随着年龄的增长是否不愿意接受一些新鲜的事物，心态是否逐渐老化。这种思维模式一旦形成，会阻碍自己接触新鲜事物，甚至去抵触，抨击。</p>
+<p>所以时刻提醒自己要以一种开放的心态对待新鲜的人和事，不轻易评价别人和给别人贴标签，保持包容和尊重，做一个有素质的新青年。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Add Two Numbers</title>
+    <url>/2020/05/24/Add-Two-Numbers/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p>Example:<br>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">leetcode.com/problems/add-two-numbers</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummyHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode p = l1, q = l2, curr = dummyHead;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span> || q != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> x = (p != <span class="keyword">null</span> ) ? p.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = (q != <span class="keyword">null</span> ) ? q.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = carry + x + y;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        curr = curr.next;</span><br><span class="line">        <span class="keyword">if</span> (p != <span class="keyword">null</span>) p = p.next;</span><br><span class="line">        <span class="keyword">if</span> (q != <span class="keyword">null</span>) q = q.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>LinkedList</category>
+      </categories>
   </entry>
   <entry>
     <title>About</title>
