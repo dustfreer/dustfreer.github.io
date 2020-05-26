@@ -1,14 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Best Time to Buy and Sell Stock III</title>
-    <url>/2020/05/16/Best-Time-to-Buy-and-Sell-Stock-III/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete at most two transactions.<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
-<p>Example 1:<br>Input: [3,3,5,0,0,3,1,4]<br>Output: 6<br>Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3. Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-iii</a></cite></footer></blockquote>
+    <title>2020春招总结与感悟</title>
+    <url>/2020/05/18/2020%E6%98%A5%E6%8B%9B%E6%80%BB%E7%BB%93%E4%B8%8E%E6%84%9F%E6%82%9F/</url>
+    <content><![CDATA[<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>2020春招持续了3个多月，整体感觉下来非常疲惫，主要是由于很多不确定因素导致的心力交瘁。由于美国疫情不断加剧，导致机票被取消，再加上我的签证有效期只有一年，美国签证办理政策尚未明确，入境政策也尚未开放，回国之后也需隔离14天才能实习。综合种种因素，经过慎重考虑，我决定放弃回国，申请远程实习。最后决定去鹅厂了，幸运的是鹅厂接受我远程实习，非常感谢！</p>
+<p>非常感谢春招期间帮我内推的朋友，其中有些是我的同学，有些是地里以及论坛认识的大牛，还有一些是校招宣讲会认识的HR，在他们的帮助下，很顺利拿到了面试。内推的确是拿面试非常有效的手段，所以建议大家能找内推还是尽量找内推。</p>
+<p>我组建的Mock小组里的同学也基本都在去年秋招和今年春招拿到大厂的实习，期间大家相互Mock,相互分享，相互鼓励，相互吐槽，甚至时不时攒个酒局，气氛非常的和谐、愉快。很幸运能有这么一群小伙伴一起奋斗，让我想到了本科期间一起参加竞赛的队友，有这么一群朋友为了共同的目标一起努力奋斗真的是一件很幸运和开心的事情。为了紧跟大家的步伐，我也得好好练练酒量了，哈哈哈！</p>
+<p>接下来的一段时间当然是实习和准备秋招了，虽然当前形势不太乐观，但是做好自己的事情，总会有好运的。疫情当下，一起努力，加油！</p>
+<h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h3><p>面试国内企业坑点：</p>
+<ul>
+<li>约面试注意好时差，最好约北京时间上午，是美西时间下午，有些公司会连着面技术面和coding，太晚面试精力和状态会跟不上</li>
+<li>相比外企的研发岗，国内企业会注重基础和项目，简历上的项目要吃透，提到的每一个技术点要摸清楚原理，要有被面试官刨根问底的准备</li>
+<li>HR面试很关键，尤其是留学生，会问很多关于回国的事项</li>
+</ul>
+<p>经验总结：</p>
+<ul>
+<li>保持自信，面试官一定会问到你不懂的知识点，这时候不要慌，尽量按照自己的理解，结合所学知识回答</li>
+<li>实在没办法回答的点，直接坦白说这块知识点不熟悉，切忌胡编乱造</li>
+<li>面经可以提前刷一下，可以大概了解下面试的范围和高频面试题，但不要太依赖面经。从腾讯和阿里面试来看很多都是面经没有的点，很多都是结合简历来延伸的知识点</li>
+<li>切忌表现出傲慢的姿态，面试官基本都是以后工作的师兄和leader，会给人留下一种不容易沟通的印象</li>
+<li>面试其实一件看运气和缘分的事情，发挥好坏存在很多偶然因素，也得看面试官对你感不感兴趣，总之坦然对待面试结果</li>
+</ul>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>1-bit and 2-bit Characters</title>
+    <url>/2020/05/16/1-bit-and-2-bit-Characters/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>We have two special characters. The first character can be represented by one bit 0. The second character can be represented by two bits (10 or 11).</p>
+<p>Now given a string represented by several bits. Return whether the last character must be a one-bit character or not. The given string will always end with a zero.</p>
+<p>Example 1:<br>Input:<br>bits = [1, 0, 0]<br>Output: True<br>Explanation:<br>The only way to decode it is two-bit character and one-bit character. So the last character is one-bit character.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/1-bit-and-2-bit-characters/" target="_blank" rel="noopener">leetcode.com/problems/1-bit-and-2-bit-characters</a></cite></footer></blockquote>
 
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">brute force的优化</span></span><br><span class="line"><span class="comment">双向dp: 一个从左往右计算max profit, 另一个从右往左计算，最后分割，然后取max</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (prices.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len = prices.length;</span><br><span class="line">    <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>];</span><br><span class="line">    left[<span class="number">0</span>] = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;                        </span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            left[i] = Math.max(prices[i]-min, left[i-<span class="number">1</span>]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            left[i] = left[i-<span class="number">1</span>];</span><br><span class="line">            min = Math.min(min, prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//注意计算从右往左的时候是记录max</span></span><br><span class="line">    <span class="keyword">int</span> max = prices[len-<span class="number">1</span>];</span><br><span class="line">    right[len-<span class="number">1</span>] = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = len-<span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;                                    </span><br><span class="line">        <span class="keyword">if</span> (prices[i] &lt; prices[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            right[i] = Math.max(max-prices[i], right[i+<span class="number">1</span>]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right[i] = right[i+<span class="number">1</span>];</span><br><span class="line">            max = Math.max(max, prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = Math.max(left[len-<span class="number">1</span>], right[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len-<span class="number">1</span>; i++) &#123;</span><br><span class="line">        res = Math.max(left[i]+right[i+<span class="number">1</span>], res); </span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isOneBitCharacter</span><span class="params">(<span class="keyword">int</span>[] bits)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> check(<span class="number">0</span>,bits);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span>[] bits)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= bits.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (index == bits.length-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (index == bits.length-<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (bits[index] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (bits[index] == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> check(index+<span class="number">2</span>,bits);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> check(index+<span class="number">1</span>,bits);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Add Two Numbers</title>
+    <url>/2020/05/24/Add-Two-Numbers/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
+<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
+<p>Example:<br>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">leetcode.com/problems/add-two-numbers</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummyHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode p = l1, q = l2, curr = dummyHead;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span> || q != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> x = (p != <span class="keyword">null</span> ) ? p.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = (q != <span class="keyword">null</span> ) ? q.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = carry + x + y;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        curr = curr.next;</span><br><span class="line">        <span class="keyword">if</span> (p != <span class="keyword">null</span>) p = p.next;</span><br><span class="line">        <span class="keyword">if</span> (q != <span class="keyword">null</span>) q = q.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>LinkedList</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Best Time to Buy and Sell Stock II</title>
+    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock-II/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array prices for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 7<br>Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">联想一下直方图，求最大的差距</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxprofit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>])</span><br><span class="line">            maxprofit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxprofit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>LeetCode</category>
         <category>Array</category>
@@ -33,37 +88,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Best Time to Buy and Sell Stock II</title>
-    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock-II/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array prices for which the ith element is the price of a given stock on day i.</p>
-<p>Design an algorithm to find the maximum profit. You may complete as many transactions as you like (i.e., buy one and sell one share of the stock multiple times).<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
-<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 7<br>Explanation: Buy on day 2 (price = 1) and sell on day 3 (price = 5), profit = 5-1 = 4. Then buy on day 4 (price = 3) and sell on day 5 (price = 6), profit = 6-3 = 3.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-ii</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">联想一下直方图，求最大的差距</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> maxprofit = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i - <span class="number">1</span>])</span><br><span class="line">            maxprofit += prices[i] - prices[i - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> maxprofit;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1-bit and 2-bit Characters</title>
-    <url>/2020/05/16/1-bit-and-2-bit-Characters/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>We have two special characters. The first character can be represented by one bit 0. The second character can be represented by two bits (10 or 11).</p>
-<p>Now given a string represented by several bits. Return whether the last character must be a one-bit character or not. The given string will always end with a zero.</p>
-<p>Example 1:<br>Input:<br>bits = [1, 0, 0]<br>Output: True<br>Explanation:<br>The only way to decode it is two-bit character and one-bit character. So the last character is one-bit character.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/1-bit-and-2-bit-characters/" target="_blank" rel="noopener">leetcode.com/problems/1-bit-and-2-bit-characters</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isOneBitCharacter</span><span class="params">(<span class="keyword">int</span>[] bits)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> check(<span class="number">0</span>,bits);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> index, <span class="keyword">int</span>[] bits)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (index &gt;= bits.length) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (index == bits.length-<span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (index == bits.length-<span class="number">2</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (bits[index] == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (bits[index] == <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> check(index+<span class="number">2</span>,bits);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> check(index+<span class="number">1</span>,bits);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Best Time to Buy and Sell Stock IV</title>
     <url>/2020/05/16/Best-Time-to-Buy-and-Sell-Stock-IV/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the i-th element is the price of a given stock on day i.</p>
@@ -79,6 +103,59 @@
       <tags>
         <tag>Stock</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Best Time to Buy and Sell Stock III</title>
+    <url>/2020/05/16/Best-Time-to-Buy-and-Sell-Stock-III/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>Design an algorithm to find the maximum profit. You may complete at most two transactions.<br>Note: You may not engage in multiple transactions at the same time (i.e., you must sell the stock before you buy again).</p>
+<p>Example 1:<br>Input: [3,3,5,0,0,3,1,4]<br>Output: 6<br>Explanation: Buy on day 4 (price = 0) and sell on day 6 (price = 3), profit = 3-0 = 3. Then buy on day 7 (price = 1) and sell on day 8 (price = 4), profit = 4-1 = 3</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iii/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock-iii</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">brute force的优化</span></span><br><span class="line"><span class="comment">双向dp: 一个从左往右计算max profit, 另一个从右往左计算，最后分割，然后取max</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (prices.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> len = prices.length;</span><br><span class="line">    <span class="keyword">int</span>[] left = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    <span class="keyword">int</span>[] right = <span class="keyword">new</span> <span class="keyword">int</span>[len];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>];</span><br><span class="line">    left[<span class="number">0</span>] = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; prices.length; i++) &#123;                        </span><br><span class="line">        <span class="keyword">if</span> (prices[i] &gt; prices[i-<span class="number">1</span>]) &#123;</span><br><span class="line">            left[i] = Math.max(prices[i]-min, left[i-<span class="number">1</span>]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            left[i] = left[i-<span class="number">1</span>];</span><br><span class="line">            min = Math.min(min, prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">        </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//注意计算从右往左的时候是记录max</span></span><br><span class="line">    <span class="keyword">int</span> max = prices[len-<span class="number">1</span>];</span><br><span class="line">    right[len-<span class="number">1</span>] = <span class="number">0</span>;        </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = len-<span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;                                    </span><br><span class="line">        <span class="keyword">if</span> (prices[i] &lt; prices[i+<span class="number">1</span>]) &#123;</span><br><span class="line">            right[i] = Math.max(max-prices[i], right[i+<span class="number">1</span>]);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right[i] = right[i+<span class="number">1</span>];</span><br><span class="line">            max = Math.max(max, prices[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> res = Math.max(left[len-<span class="number">1</span>], right[<span class="number">0</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; len-<span class="number">1</span>; i++) &#123;</span><br><span class="line">        res = Math.max(left[i]+right[i+<span class="number">1</span>], res); </span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Best Time to Buy and Sell Stock</title>
+    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
+<p>If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.<br>Note that you cannot sell a stock before you buy one.</p>
+<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 5<br>Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.Not 7-1 = 6, as selling price needs to be larger than buying price.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[] prices</span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">Algorithm: 记录最小价值，和之后的最大值，计算最大差值max即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( prices.length &lt;= <span class="number">1</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> ( prices[i] &lt; min)&#123;</span><br><span class="line">            min = prices[i];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            max = Math.max(max, prices[i] - min);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Stock</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ConcurrentHashMap</title>
+    <url>/2020/05/21/ConcurrentHashMap/</url>
+    <content><![CDATA[<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p>ConcurrentHashMap使用分段锁来实现同步 （ReentrantLock实现CAS来实现的）</p>
+<p>默认16线程<br>get使用volatile实现可见性不需要加锁<br>put使用segmentShift / segmentMask来定位segment<br>HashTable 则对这些方法加synchronize来实现锁，效率很低</p>
+<h4 id="JDK1-8进行了改进"><a href="#JDK1-8进行了改进" class="headerlink" title="JDK1.8进行了改进"></a>JDK1.8进行了改进</h4><p>使用链表头节点加锁，同一时间只有一个线程可以put，解决并发问题</p>
+<ul>
+<li>首先new一个新的hash表(nextTable)出来，大小是原来的2倍。后面的rehash都是针对这个新的hash表操作，不涉及原hash表(table)。</li>
+<li>然后会对原hash表(table)中的每个链表进行rehash，此时会尝试获取头节点的锁。这一步就保证了在rehash的过程中不能对这个链表执行put操作。</li>
+<li>通过sizeCtl控制，使扩容过程中不会new出多个新hash表来。</li>
+<li>最后，将所有键值对重新rehash到新表(nextTable)中后，用nextTable将table替换。这就避免了HashMap中get和扩容并发时，可能get到null的问题。</li>
+<li>在整个过程中，共享变量的存储和读取全部通过volatile或CAS的方式，保证了线程安全。</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>数据结构</category>
+      </categories>
   </entry>
   <entry>
     <title>Check If a Number Is Majority Element in a Sorted Array</title>
@@ -144,39 +221,33 @@
       </categories>
   </entry>
   <entry>
-    <title>Best Time to Buy and Sell Stock</title>
-    <url>/2020/05/15/Best-Time-to-Buy-and-Sell-Stock/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Say you have an array for which the ith element is the price of a given stock on day i.</p>
-<p>If you were only permitted to complete at most one transaction (i.e., buy one and sell one share of the stock), design an algorithm to find the maximum profit.<br>Note that you cannot sell a stock before you buy one.</p>
-<p>Example 1:<br>Input: [7,1,5,3,6,4]<br>Output: 5<br>Explanation: Buy on day 2 (price = 1) and sell on day 5 (price = 6), profit = 6-1 = 5.Not 7-1 = 6, as selling price needs to be larger than buying price.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/" target="_blank" rel="noopener">leetcode.com/problems/best-time-to-buy-and-sell-stock</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[] prices</span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">Algorithm: 记录最小价值，和之后的最大值，计算最大差值max即可。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxProfit</span><span class="params">(<span class="keyword">int</span>[] prices)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( prices.length &lt;= <span class="number">1</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> min = prices[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> ( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; prices.length; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span> ( prices[i] &lt; min)&#123;</span><br><span class="line">            min = prices[i];</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            max = Math.max(max, prices[i] - min);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Stock</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java线程池</title>
-    <url>/2020/05/16/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
-    <content><![CDATA[<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>管理线程，避免增加创建线程和销毁线程的资源损耗。因为线程其实也是一个对象，创建一个对象，需要经过类加载过程，销毁一个对象，需要走GC垃圾回收流程，都是需要资源开销的。<br>提高响应速度。 如果任务到达了，相对于从线程池拿线程，重新去创建一条线程执行，速度肯定慢很多。<br>重复利用。 线程用完，再放回池子，可以达到重复利用的效果，节省资源。</p>
-<h4 id="线程池参数"><a href="#线程池参数" class="headerlink" title="线程池参数"></a>线程池参数</h4><ul>
-<li>corePoolSize：指定了线程池中的线程数量。</li>
-<li>maximumPoolSize：指定了线程池中的最大线程数量。</li>
-<li>keepAliveTime：当线程池线程数量超过corePoolSize时，多余的空闲线程的存活时间，即超过corePoolSize的空闲线程，在多长时间内会被销毁。</li>
-<li>unit：keepAliveTime的单位。</li>
-<li>workQueue：任务队列，被提交但尚未被执行的任务。</li>
-<li>threadFactory：线程工厂，用于创建线程，一般用默认的即可。</li>
-<li>handler：拒绝策略。当任务太多来不及处理时，如何拒绝任务。<h4 id="线程池类型"><a href="#线程池类型" class="headerlink" title="线程池类型"></a>线程池类型</h4></li>
-<li>newFixedThreadPool (固定数目线程的线程池)</li>
-<li>newCachedThreadPool(可缓存线程的线程池)</li>
-<li>newSingleThreadExecutor(单线程的线程池)</li>
-<li>newScheduledThreadPool(定时及周期执行的线程池)</li>
+    <title>JVM调优</title>
+    <url>/2020/05/21/JVM%E8%B0%83%E4%BC%98/</url>
+    <content><![CDATA[<h4 id="程序检测异常"><a href="#程序检测异常" class="headerlink" title="程序检测异常"></a>程序检测异常</h4><ul>
+<li>jvm死机， jvm调优</li>
+<li>内存，cpu占用过高， GC调优</li>
+<li>检测无法停止</li>
+<li>检测无法开始</li>
+<li>磁盘空间出现问题 df -hl</li>
 </ul>
+<h4 id="HotSpot-VM"><a href="#HotSpot-VM" class="headerlink" title="HotSpot VM"></a>HotSpot VM</h4><ul>
+<li>栈区异常： stackOverFlow 如果栈可以动态扩展，直到内存不足会OOM —Xss</li>
+<li>堆区异常：OOM -Xms（min) -Xmx(max)指定内存，实例对象或者数组超出内存</li>
+<li>方法区异常：（存放加载过的类，静态变量，常量）永久代很少出现GC -XX PermSize -XX MaxPermSize</li>
+<li>运行时常量池：String.intern()生成常量导致OOM</li>
+<li>直接内存：虚拟机外内存，NIO有directByteBuffer操作</li>
+</ul>
+<p>Dump文件，内存泄漏查看GC root引用路径为什么无法自动回收<br>内存溢出 对象仍然存活，调大内存，或者降低对象生命周期</p>
+<p><strong>垃圾收集器</strong><br>CMS, ParNew</p>
+<h4 id="如何排查？"><a href="#如何排查？" class="headerlink" title="如何排查？"></a>如何排查？</h4><ul>
+<li>TOP命令查看cpu占用率</li>
+<li>ps查看进程pid， 线程tid</li>
+<li>jstack查看进程信息，可以看到哪一行出现了问题</li>
+<li>jmap 导出dump文件</li>
+<li>jstat查看分代变化情况</li>
+<li>启动时开启gc日志-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps来开启GC日志</li>
+</ul>
+<p>——OOM unable to create new native thread线程池有问题<br>解决：Xss减少单个thread stack的大小<br>——Exception in thread “main” java.lang.OutOfMemoryError: Java heap space<br>解决：这个意思是堆的内存占用已经达到-Xmx设置的最大值，应该是最常见的OOM错误了。解决思路仍然是先应该在代码中找，怀疑存在内存泄漏，通过jstack和jmap去定位问题。如果说一切都正常，才需要通过调整Xmx的值来扩大内存。<br>——Caused by: java.lang.OutOfMemoryError: Meta space<br>解决：这个意思是元数据区的内存占用已经达到XX:MaxMetaspaceSize设置的最大值，排查思路和上面的一致，参数方面可以通过XX:MaxPermSize来进行调整(这里就不说1.8以前的永久代了)</p>
 ]]></content>
       <categories>
         <category>计算机基础知识</category>
@@ -198,6 +269,46 @@
         <tag>Sort</tag>
         <tag>Heap</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Java反射</title>
+    <url>/2020/05/21/Java%E5%8F%8D%E5%B0%84/</url>
+    <content><![CDATA[<h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性，实现了基本的动态性。<br>有了反射，我们可以做以下事情：</p>
+<ul>
+<li>在运行时检查一个对象</li>
+<li>在运行时，根据一个class构造一个对象</li>
+<li>在运行时，检查一个对象的属性和方法</li>
+<li>在运行时，调用一个对象的任意一个方法</li>
+<li>在运行时，改变对象的构造函数，属性，方法的可见性</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Java多线程</title>
+    <url>/2020/05/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
+    <content><![CDATA[<h4 id="线程与进程区别："><a href="#线程与进程区别：" class="headerlink" title="线程与进程区别："></a>线程与进程区别：</h4><ol>
+<li>进程是资源分配的最小单位,线程是CPU调度的最小单位  </li>
+<li>一个进程由一个或多个线程组成  </li>
+<li>进程之间相互独立，每个进程都有独立的代码和数据空间,但同一进程下的各个线程之间共享进程的代码和内存空间，每个线程有独立的运行栈和程序计数器  </li>
+<li>线程上下文切换比进程上下文切换要快得多</li>
+</ol>
+<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全：就是说多线程访问同一代码，不会产生不确定的结果。（vector, hashTable是线程安全的， arrayList和 hashMap是不安全的）</p>
+<ol>
+<li>synchronized同步方法  即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。   也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类   </li>
+<li>synchronized同步代码块   即有synchronized关键字修饰的语句块。   当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞，但仍然可以访问该object中的非synchronized(this)同步代码块。 </li>
+<li>volatile实现线程同步  用volatile修饰的变量，线程在每次使用变量的时候，都会从主存中读取变量最新值。变量修改后会直接改变主存内容。保证可见性，不能保证原子性 </li>
+<li>使用重入锁实现线程同步ReentrantLock  ReentrantLock 拥有Synchronized相同的并发性和内存语义，此外还多了 锁投票，定时锁等候和中断锁等候,比如可以放弃锁等待先做别的事情（trylock），而Synchronized不能  synchronized是在JVM层面上实现的，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中  在资源竞争很激烈的情况下，ReetrantLock的性能要优于Synchronized  </li>
+<li>使用ThreadLocal管理变量  使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>Java虚拟机</title>
@@ -317,6 +428,29 @@
       </categories>
   </entry>
   <entry>
+    <title>Java线程池</title>
+    <url>/2020/05/16/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/</url>
+    <content><![CDATA[<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>管理线程，避免增加创建线程和销毁线程的资源损耗。因为线程其实也是一个对象，创建一个对象，需要经过类加载过程，销毁一个对象，需要走GC垃圾回收流程，都是需要资源开销的。<br>提高响应速度。 如果任务到达了，相对于从线程池拿线程，重新去创建一条线程执行，速度肯定慢很多。<br>重复利用。 线程用完，再放回池子，可以达到重复利用的效果，节省资源。</p>
+<h4 id="线程池参数"><a href="#线程池参数" class="headerlink" title="线程池参数"></a>线程池参数</h4><ul>
+<li>corePoolSize：指定了线程池中的线程数量。</li>
+<li>maximumPoolSize：指定了线程池中的最大线程数量。</li>
+<li>keepAliveTime：当线程池线程数量超过corePoolSize时，多余的空闲线程的存活时间，即超过corePoolSize的空闲线程，在多长时间内会被销毁。</li>
+<li>unit：keepAliveTime的单位。</li>
+<li>workQueue：任务队列，被提交但尚未被执行的任务。</li>
+<li>threadFactory：线程工厂，用于创建线程，一般用默认的即可。</li>
+<li>handler：拒绝策略。当任务太多来不及处理时，如何拒绝任务。<h4 id="线程池类型"><a href="#线程池类型" class="headerlink" title="线程池类型"></a>线程池类型</h4></li>
+<li>newFixedThreadPool (固定数目线程的线程池)</li>
+<li>newCachedThreadPool(可缓存线程的线程池)</li>
+<li>newSingleThreadExecutor(单线程的线程池)</li>
+<li>newScheduledThreadPool(定时及周期执行的线程池)</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Majority Element II</title>
     <url>/2020/05/15/Majority-Element-II/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an integer array of size n, find all elements that appear more than ⌊ n/3 ⌋ times.</p>
@@ -332,6 +466,33 @@
       <tags>
         <tag>Majority</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Java设计模式</title>
+    <url>/2020/05/21/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>更好的解法</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line"> 	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"> 	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">testHolder</span></span>&#123;</span><br><span class="line"> 		<span class="keyword">private</span> <span class="keyword">static</span> Singleton intance = <span class="keyword">new</span> Singleton();</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getIntance</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> 		<span class="keyword">return</span> testHolder.intance;</span><br><span class="line"> 	&#125; 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="i-线程同步"><a href="#i-线程同步" class="headerlink" title="i++线程同步"></a>i++线程同步</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"><span class="comment">//    private static AtomicInteger atomicInteger = new AtomicInteger(0);</span></span><br><span class="line"><span class="comment">//    private void increase() &#123;</span></span><br><span class="line"><span class="comment">//        atomicInteger.incrementAndGet();</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//如果是static 则给类加锁，没有static则给方法加锁。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">            increase();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="comment">//给类加锁则可以实现2个实例并行安全</span></span><br><span class="line">        <span class="comment">//给方法加锁只能实现单个实例的线程安全</span></span><br><span class="line">        Test test = <span class="keyword">new</span> Test();</span><br><span class="line">        Thread thread1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line">        Thread thread2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line"></span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="不变模式"><a href="#不变模式" class="headerlink" title="不变模式"></a>不变模式</h3><p>final 修饰变量</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">product</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String no;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Product</span><span class="params">(String no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="生产者消费者模型"><a href="#生产者消费者模型" class="headerlink" title="生产者消费者模型"></a>生产者消费者模型</h3><ul>
+<li>blockQueue（加阻塞锁）</li>
+<li>disruptor（环形队列，CAS实现无锁操作）</li>
+</ul>
+<h3 id="future-模型"><a href="#future-模型" class="headerlink" title="future 模型"></a>future 模型</h3><ul>
+<li>异步调用。如果函数执行的慢，让被调用者立即返回，后台慢慢处理。</li>
+<li>充分利用等待时间</li>
+</ul>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
   </entry>
   <entry>
     <title>Majority Element</title>
@@ -412,6 +573,145 @@
       </tags>
   </entry>
   <entry>
+    <title>Sqrt(x)</title>
+    <url>/2020/05/24/Sqrt-x/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Implement int sqrt(int x).</p>
+<p>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.</p>
+<p>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.</p>
+<p>Example 1:<br>Input: 4<br>Output: 2</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="noopener">leetcode.com/problems/sqrtx</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">牛顿迭代法：x^2 = a</span></span><br><span class="line"><span class="comment">某一点x0的切线方程为 f(x) - f(x0) = f'(x0) (x-x0);</span></span><br><span class="line"><span class="comment">=&gt; x = (x0 + a/x0) / 2;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x0 = x;</span><br><span class="line">    <span class="keyword">double</span> x1 = (x0 + x/x0) / <span class="number">2.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> accuracy = <span class="number">1e-6</span>;</span><br><span class="line">    <span class="keyword">while</span> (Math.abs(x0-x1) &gt;= accuracy) &#123;</span><br><span class="line">        x0 = x1;</span><br><span class="line">        x1 = (x0 + x/x0) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) x1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Mathematics</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Redis</title>
+    <url>/2020/05/21/Redis/</url>
+    <content><![CDATA[<h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul>
+<li>RDB(二进制）</li>
+<li>AOF bgrewriteaof</li>
+<li>AOF 重写<br>主从复制<br>slaveof</li>
+</ul>
+<h4 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h4><ul>
+<li>字符串String</li>
+<li>列表lists</li>
+<li>集合 set</li>
+<li>有序集合 sorted set </li>
+<li>哈希 hash</li>
+</ul>
+<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><ul>
+<li>MULTI组装事务</li>
+<li>EXEC执行一个事务</li>
+<li>DISCARD取消一个事务</li>
+<li>WATCH检测key，一旦key执行书屋之前被改变，则取消事务执行</li>
+</ul>
+<h4 id="Redis与memcache的不同"><a href="#Redis与memcache的不同" class="headerlink" title="Redis与memcache的不同"></a>Redis与memcache的不同</h4><p><strong>value大小不同</strong><br>memcache是一个内存缓存，key的长度小于250字符，单个item存储要小于1M，不适合虚拟机使用</p>
+<p><strong>数据一致性不同</strong></p>
+<ul>
+<li>Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis，虽然Redis最近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。 </li>
+<li>redis使用的是单线程模型，保证了数据按顺序提交。</li>
+<li>memcache需要使用cas保证数据一致性。CAS 是一个确保并发一致性的机制，属于“乐观锁”范畴；原理很简单：拿版本号，操作，对比版本号，如果一致就操作，不一致就放弃任何操作 </li>
+</ul>
+<p><strong>cpu利用</strong><br>redis单线程模型只能使用一个cpu，可以开启多个redis进程</p>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Spring框架</title>
+    <url>/2020/05/21/Spring%E6%A1%86%E6%9E%B6/</url>
+    <content><![CDATA[<h4 id="Spring四种关键策略"><a href="#Spring四种关键策略" class="headerlink" title="Spring四种关键策略"></a>Spring四种关键策略</h4><ul>
+<li>基于POJO (plain old java object) 的轻量级和最小侵入性编程</li>
+<li>通过依赖注入和面向接口实现松耦合</li>
+<li>基于切面和惯例进行声明式编程</li>
+<li>通过切面和模板减少样版式代码 </li>
+</ul>
+<p>依赖注入DI </p>
+<ul>
+<li>构造器注入（参数中传入对象）</li>
+<li>n ID</li>
+</ul>
+<p>应用切面</p>
+<ul>
+<li>关注点分离</li>
+<li>beforeMethod</li>
+<li>afterMethod</li>
+<li>在xml声明AOP属性</li>
+</ul>
+<p>模板消除样版式代码</p>
+<ul>
+<li>使用JDBCTemplate封装JDBC的操作</li>
+</ul>
+<p>Spring容器</p>
+<ul>
+<li>bean工厂（beanFactory）</li>
+<li>应用上下文ApplicationContext(AnnotationApplicationConext, pathContext)</li>
+</ul>
+<h4 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h4><ul>
+<li>实例化</li>
+<li>值与bean引用注入到bean中</li>
+<li>如果实现了BeanNameAware 将Bean传递到SetBeanName()方法中</li>
+<li>如果实现了BeanFactoryAwere则将bean工厂传入</li>
+<li>如果实现了ApplicationConextAware则将上下文引用传入</li>
+<li>如果实现了PostProecess接口则掉调用BeforeInitialization</li>
+<li>如果bean实现了InitializaingBean接口，则调用AfterPropertSet()方法</li>
+<li>如果AfterInitialization方法</li>
+<li>disposable销毁</li>
+</ul>
+<h4 id="如何装配Bean"><a href="#如何装配Bean" class="headerlink" title="如何装配Bean"></a>如何装配Bean</h4><ul>
+<li>xml, </li>
+<li>java显式装配，</li>
+<li>自动化装配</li>
+</ul>
+<p>自动化装配<br>组件扫描<br>自动装备 @component注解，告知Spring创建Bean<br>@componentScan<br>@Autowired 可以修饰构造方法，可以修改普通方法，自动装配参数， 接口</p>
+<h4 id="Spring设计模式"><a href="#Spring设计模式" class="headerlink" title="Spring设计模式"></a>Spring设计模式</h4><ul>
+<li>工厂模式：BeanFactory就是简单工厂模式的体现，用来创建对象的实例</li>
+<li>单例模式：Bean默认为单例模式</li>
+<li>代理模式：Spring的AOP功能用到了JDK的动态代理和CGLIB字节码生成技术</li>
+<li>模板方法：用来解决代码重复的问题。比如. RestTemplate, JmsTemplate, JpaTemplate</li>
+<li>观察者模式：定义对象键一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都会得到通知被制动更新，如Spring中listener的实现–ApplicationListener。</li>
+</ul>
+<p>JDK动态代理要求被代理的类必须实现一个接口：InvocationHandler 接口，Proxy newProxyInstance()，java反射<br>CGLIB通过继承的方式动态代理： cglib.jar, asm.jar。通过MethodInterceptor 接口  Enhancer 类，调用父类，继承的方式实例化</p>
+<h4 id="Spring作用域"><a href="#Spring作用域" class="headerlink" title="Spring作用域"></a>Spring作用域</h4><ul>
+<li>singleton : bean在每个Spring ioc 容器中只有一个实例</li>
+<li>prototype：一个bean的定义可以有多个实例</li>
+<li>request：每次http请求都会创建一个bean，该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li>session：在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li>global-session：在一个全局的HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
+<li><em>注意：*</em> 缺省的Spring bean 的作用域是Singleton。使用 prototype 作用域需要慎重的思考，因为频繁创建和销毁 bean 会带来很大的性能开销。</li>
+</ul>
+<h4 id="IOC容器加载过程"><a href="#IOC容器加载过程" class="headerlink" title="IOC容器加载过程"></a>IOC容器加载过程</h4><ol>
+<li>刷新预处理</li>
+<li>将配置信息解析，注册到BeanFactory</li>
+<li>设置bean的类加载器</li>
+<li>如果有第三方想再bean加载注册完成后，初始化前做点什么(例如修改属性的值，修改bean的scope为单例或者多例。)，提供了相应的模板方法，后面还调用了这个方法的实现，并且把这些个实现类注册到对应的容器中</li>
+<li>初始化当前的事件广播器</li>
+<li>初始化所有的bean</li>
+<li>广播applicationcontext初始化完成。</li>
+</ol>
+<h4 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h4><p>四个特性</p>
+<ul>
+<li>Spring Boot starter 依赖整合，合并Maven Gradle构建</li>
+<li>自动配置，Spring Boot 4对条件化配置的支持，合理推测所需的bean并自动化配置</li>
+<li>命令行接口</li>
+<li>Actuator 管理特性</li>
+</ul>
+<p>Spring Boot为不同的Spring模块提供了许多依赖项。一些最常用的是：<br>spring-boot-starter-data-jpa<br>spring-boot-starter-security<br>spring-boot-starter-test<br>spring-boot-starter-web<br>spring-boot-starter-thymeleaf</p>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Summary Ranges</title>
     <url>/2020/05/16/Summary-Ranges/</url>
     <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a sorted integer array without duplicates, return the summary of its ranges.</p>
@@ -423,6 +723,23 @@
         <category>LeetCode</category>
         <category>Array</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Trapping Rain Water</title>
+    <url>/2020/05/21/Trapping-Rain-Water/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
+<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
+<p>Example:<br>Input: [0,1,0,2,1,0,1,3,2,1,2,1]<br>Output: 6</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">leetcode.com/problems/trapping-rain-water</a></cite></footer></blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[] height, height of bar;</span></span><br><span class="line"><span class="comment">@return: int, maximum rain water;</span></span><br><span class="line"><span class="comment">Algorithm: 保持两个指针从左右两端，逐渐逼近</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (height.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// two pointer, left and right;</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> leftHeight = height[left];</span><br><span class="line">    <span class="keyword">int</span> rightHeight = height[right];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">if</span> (leftHeight &lt; rightHeight) &#123;</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span> (leftHeight &lt; height[left]) &#123;</span><br><span class="line">                leftHeight = height[left];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                result += leftHeight - height[left];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right--;</span><br><span class="line">            <span class="keyword">if</span> (rightHeight &lt; height[right]) &#123;</span><br><span class="line">                rightHeight = height[right];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                result += rightHeight - height[right];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Two Pointers</tag>
+      </tags>
   </entry>
   <entry>
     <title>Task Scheduler</title>
@@ -440,6 +757,37 @@
       <tags>
         <tag>Mathematics</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Tree</title>
+    <url>/2020/05/21/Tree/</url>
+    <content><![CDATA[<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ol>
+<li>节点是红色或黑色。</li>
+<li>根节点是黑色。</li>
+<li>每个叶子节点都是黑色的空节点（NIL节点）。</li>
+<li>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)</li>
+<li>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。<br>插入,变色,左旋转,右旋转</li>
+</ol>
+<p>应用： TreeSet TreeMap</p>
+<h3 id="B树-B-tree"><a href="#B树-B-tree" class="headerlink" title="B树(B-tree)"></a>B树(B-tree)</h3><p>注意:之前有看到有很多文章把B树和B-tree理解成了两种不同类别的树，其实这两个是同一种树;</p>
+<p><strong>概念：</strong><br>B树和平衡二叉树稍有不同的是B树属于多叉树又名平衡多路查找树（查找路径不只两个），数据库索引技术里大量使用者B树和B+树的数据结构，让我们来看看他有什么特点;</p>
+<p><strong>规则：</strong></p>
+<ol>
+<li>排序方式：所有节点关键字是按递增次序排列，并遵循左小右大原则；</li>
+<li>子节点数：非叶节点的子节点数&gt;1，且&lt;=M ，且M&gt;=2，空树除外（注：M阶代表一个树节点最多有多少个查找路径，M=M路,当M=2则是2叉树,M=3则是3叉）；</li>
+<li>关键字数：枝节点的关键字数量大于等于ceil(m/2)-1个且小于等于M-1个（注：ceil()是个朝正无穷方向取整的函数 如ceil(1.1)结果为2);</li>
+<li>所有叶子节点均在同一层、叶子节点除了包含了关键字和关键字记录的指针外也有指向其子节点的指针只不过其指针地址都为null对应下图最后一层节点的空格子;<br>最后我们用一个图和一个实际的例子来理解B树（这里为了理解方便我就直接用实际字母的大小来排列C&gt;B&gt;A）</li>
+</ol>
+<p><strong>优点：</strong><br>B树相对于平衡二叉树的不同是，每个节点包含的关键字增多了，特别是在B树应用到数据库中的时候，数据库充分利用了磁盘块的原理（磁盘数据存储是采用块的形式存储的，每个块的大小为4K，每次IO进行数据读取时，同一个磁盘块的数据可以一次性读取出来）把节点大小限制和充分使用在磁盘快大小范围；把树的节点关键字增多后树的层级比原来的二叉树少了，减少数据查找的次数和复杂度;</p>
+<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><ol>
+<li>B+跟B树不同B+树的非叶子节点不保存关键字记录的指针，只进行数据索引，这样使得B+树每个非叶子节点所能保存的关键字大大增加；</li>
+<li>B+树叶子节点保存了父节点的所有关键字记录的指针，所有数据地址必须要到叶子节点才能获取到。所以每次数据查询的次数都一样；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机基础知识</category>
+        <category>数据结构</category>
+      </categories>
   </entry>
   <entry>
     <title>Two Sum</title>
@@ -482,47 +830,6 @@
         <tag>DFS</tag>
         <tag>Backtracking</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>字节跳动</title>
-    <url>/2020/05/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/</url>
-    <content><![CDATA[<p>在2020年1月15日左右找人内推简历，第二天收到HR面试邀请，约了2月上旬，面试岗位：Java后台研发实习（广告业务组）。</p>
-<h3 id="一面技术面（约60分钟）"><a href="#一面技术面（约60分钟）" class="headerlink" title="一面技术面（约60分钟）"></a>一面技术面（约60分钟）</h3><ol>
-<li>简单自我介绍</li>
-<li>关于项目介绍，期间提到并发多线程，所以面试官引出一个问题</li>
-<li>写一个变量i++的代码，要求保证线程同步。<br>——类似于读写锁，楼主用Synchronized 给 object方法写了Lock() 和 UnLock()锁实现。<br>追问：锁的机制是如何实现的：object锁还是方法锁？<br>——回答的object锁，感觉面试官反馈不太对，也没有追问了。</li>
-<li>Http协议，详细介绍下浏览器输入<a href="http://www.baidu.com之后的过程" target="_blank" rel="noopener">www.baidu.com之后的过程</a><br>——DNS，GET, POST方法都涉及到了。<br>追问TCP/IP 三次握手过程，为什么需要三次？<br>—— 介绍TCP/IP过程，然后第三次保证信息同步，服务器需要知道客户端收到response的反馈<br>追问如果第三次握手丢包怎么办？<br>——服务器重新发送response一定次数，直到client回复，若超过次数则断开连接</li>
-<li>为什么说TCP/IP是可靠传输？<br>——拥塞控制，超时重传，滑动窗口</li>
-<li>介绍下Java GC机制<br>——计数器法，可达性算法<br>追问可达性算法<br>——GC root从跟节点树引用遍历，如果没有被引用的对象则被回收，<br>追问如何判断引用？<br>——举例创建一个object会添加一次引用<br>追问jvm如何知道什么时候回收？<br>——举例类似读写操作，可以调用System.gc()方法来触发；</li>
-<li>数据库相关，SQL语句熟不熟？出了一个双表查询算平均分的题<br>——楼主表示不太熟，马马虎虎写了一个select语句，面试官也没有追问了</li>
-<li>数据库事务隔离机制<br>—— 未提交读，提交读，可重复读，序列化, 分别介绍了可能存在的问题依次是脏读，不可重复度，幻读<br>追问MySQL用的哪种？<br>——可重复读<br>追问如何实现的？<br>——不太清楚，某种读写锁？<br>追问MySQL索引怎么实现？<br>——B+ Tree<br>追问能否实现以下？<br>—— 实现B+树。。。放弃，说可以解释下原理，面试官直接说不用解释了。</li>
-</ol>
-<p><strong>算法题：</strong> ABC全排列，dfs+backtracking秒了，少许错误</p>
-<h3 id="二面技术面（约40分钟）"><a href="#二面技术面（约40分钟）" class="headerlink" title="二面技术面（约40分钟）"></a>二面技术面（约40分钟）</h3><ol>
-<li>自我介绍</li>
-<li>楼主之前搞安全的， 追问你知道哪些安全攻击，介绍下xss？<br>——表示某种注入攻击，具体不太熟，然后说 syn, dos, ddos可以<br>追问介绍下dos<br>——拒绝服务攻击，伪造报文向服务器发送大量请求，造成服务器过载，无法提供正常服务，ddos加分布式</li>
-<li>介绍 https<br>——在http基础上添加了ssl ，对称秘钥加密体制，公钥加密，私钥解密，然后又介绍了下非对称加密</li>
-<li>介绍下进程死锁<br>——4个条件：互斥，占有等待，非抢占，循环等待。分别解释了下</li>
-<li>解释下Java创建一个object，如何创建的，内存怎么分配的？<br>——举例创建一个String，系统会给这个Object分配一个内存地址，然后加引用指针，然后存入value值。<br>追问equals 和 hashcode方法<br>——equals判断value是否相等，hashcode通过hash function计算，这里答的不太好…</li>
-<li>介绍信Java如何实现线程同步<br>—— synchronize, lock, volatile, atomic<br>追问解释下volatile<br>——从Java 内存开始解释，然后解释了可见性，原子性，有序性<br>追问乐观锁与悲观锁<br>——乐观锁可以挂起做其他事情，悲观锁一直等待</li>
-</ol>
-<p><strong>算法题：</strong> trap rain，留了20分钟，楼主15分钟不到bug free秒了，用two pointers.</p>
-<h3 id="三面BOSS面（约30分）"><a href="#三面BOSS面（约30分）" class="headerlink" title="三面BOSS面（约30分）"></a>三面BOSS面（约30分）</h3><ol>
-<li>简单自我介绍</li>
-<li>最近有看什么书啊？</li>
-<li>为什么实习，之前的实习收获了什么，想从实习中学什么？</li>
-<li>结束下浏览器是如何知道哪些客户的，与服务器怎么交互？<br>——cookie 和session解释了一通</li>
-<li>linux熟悉哪些指令？</li>
-<li>关于业务有什么想问的？</li>
-</ol>
-<p><strong>算法题：</strong> permution 1234 -&gt; 1243，先要求解释一下算法，大概用了8分钟，然后要求7分钟内写完代码。楼主只完成了一种case。。。</p>
-<p>总体下来感觉还是比较难的，楼主面试美西时间22：00，直到凌晨0：20左右结束，三面考算法题的时候已经非常疲惫，体验一般。也是吃了一堑，后续面试都约到下午了。</p>
-<p>字节是我准备回国实习后面试的第一家公司，没什么面试经验，准备也不太充分，整体表现也一般。</p>
-]]></content>
-      <categories>
-        <category>面试</category>
-        <category>2020春招</category>
-      </categories>
   </entry>
   <entry>
     <title>Weekly Contest 189</title>
@@ -568,6 +875,129 @@
         <tag>Mathematics</tag>
         <tag>Circle</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Weekly Contest 190</title>
+    <url>/2020/05/23/Weekly-Contest-190/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><ol start="1455">
+<li>Check If a Word Occurs As a Prefix of Any Word in a Sentence<blockquote><p>Given a sentence that consists of some words separated by a single space, and a searchWord.You have to check if searchWord is a prefix of any word in sentence.</p>
+<p>Return the index of the word in sentence where searchWord is a prefix of this word (1-indexed).</p>
+<a id="more"></a>
+<p>If searchWord is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.</p>
+<p>A prefix of a string S is any leading contiguous substring of S.</p>
+<p>Example 1:<br>Input: sentence = “i love eating burger”, searchWord = “burg”<br>Output: 4<br>Explanation: “burg” is prefix of “burger” which is the 4th word in the sentence.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/" target="_blank" rel="noopener">leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence</a></cite></footer></blockquote>
+
+</li>
+</ol>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">isPrefixOfWord</span><span class="params">(String sentence, String searchWord)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sentence.length() &lt; searchWord.length()) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    String[] str = sentence.split(<span class="string">" "</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;            </span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; searchWord.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == str[i].length()) &#123;</span><br><span class="line">                <span class="keyword">break</span>;    </span><br><span class="line">            &#125;<span class="keyword">if</span> (j &lt; str[i].length() &amp;&amp; str[i].charAt(j) != searchWord.charAt(j)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (j == searchWord.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><ol start="1456">
+<li>Maximum Number of Vowels in a Substring of Given Length<blockquote><p>Given a string s and an integer k.</p>
+<p>Return the maximum number of vowel letters in any substring of s with length k.</p>
+<p>Vowel letters in English are (a, e, i, o, u).</p>
+<p>Example 1:</p>
+<p>Input: s = “abciiidef”, k = 3<br>Output: 3<br>Explanation: The substring “iii” contains 3 vowel letters.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/" target="_blank" rel="noopener">leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length</a></cite></footer></blockquote>
+
+</li>
+</ol>
+<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxVowels</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">0</span> || k == <span class="number">0</span> || s.length() &lt; k) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; s.length() &amp;&amp; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s.charAt(j);</span><br><span class="line">        <span class="keyword">if</span> (j &lt; i+k) &#123;</span><br><span class="line">            <span class="keyword">if</span> (valid(c)) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;                </span><br><span class="line">            max = Math.max(max, count);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (valid(c)) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (valid(s.charAt(i))) &#123;</span><br><span class="line">            count--;</span><br><span class="line">            </span><br><span class="line">        &#125;       </span><br><span class="line">        i++;</span><br><span class="line">        max = Math.max(max, count);</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">valid</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'a'</span> || c == <span class="string">'e'</span> || c == <span class="string">'i'</span> || c == <span class="string">'o'</span> || c == <span class="string">'u'</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><ol start="1457">
+<li>Pseudo-Palindromic Paths in a Binary Tree<blockquote><p>Given a binary tree where node values are digits from 1 to 9. A path in the binary tree is said to be pseudo-palindromic if at least one permutation of the node values in the path is a palindrome.</p>
+<p>Return the number of pseudo-palindromic paths going from the root node to leaf nodes.</p>
+<p>Example 1:<br>Input: root = [2,3,1,3,1,null,1]<br>Output: 2 </p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/" target="_blank" rel="noopener">leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree</a></cite></footer></blockquote>
+
+</li>
+</ol>
+<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: dfs + backtracking</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pseudoPalindromicPaths</span> <span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">    dfs(root, num, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] num, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    num[root.val]++;</span><br><span class="line">    <span class="keyword">if</span> (num[root.val]%<span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        count--;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            res++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            dfs(root.left, num, count);                          </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            dfs(root.right, num, count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num[root.val]--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Question-3"><a href="#Question-3" class="headerlink" title="Question"></a>Question</h3><ol start="1458">
+<li>Max Dot Product of Two Subsequences<blockquote><p>Given two arrays nums1 and nums2.</p>
+<p>Return the maximum dot product between non-empty subsequences of nums1 and nums2 with the same length.</p>
+<p>A subsequence of a array is a new array which is formed from the original array by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, [2,3,5] is a subsequence of [1,2,3,4,5] while [1,5,3] is not).</p>
+<p>Example 1:</p>
+<p>Input: nums1 = [2,1,-2,5], nums2 = [3,0,-6]<br>Output: 18<br>Explanation: Take subsequence [2,-2] from nums1 and subsequence [3,-6] from nums2.<br>Their dot product is (2<em>3 + (-2)</em>(-6)) = 18.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/max-dot-product-of-two-subsequences/" target="_blank" rel="noopener">leetcode.com/problems/max-dot-product-of-two-subsequences</a></cite></footer></blockquote>
+
+</li>
+</ol>
+<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*        </span></span><br><span class="line"><span class="comment">Algorithm：这题一看应该能反应出是dp，题目类似于1143. Longest Common Subsequence。处理subsequence的解法</span></span><br><span class="line"><span class="comment">状态转移方程 设p = nums1[i] * nums2[j]，p &gt; 0, 则状态转移方程dp[i][j] = Max(dp[i-1][j-1]+p, dp[i-1][j], dp[i][j-1], p);</span></span><br><span class="line"><span class="comment">p &lt; 0 则状态转移方程 dp[i][j] = Max(dp[i-1][j-1], dp[i-1][j], dp[i][j-1], p);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDotProduct</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l1 = nums1.length;</span><br><span class="line">    <span class="keyword">int</span> l2 = nums2.length;</span><br><span class="line">    <span class="keyword">if</span> (nums1.length == <span class="number">0</span> || nums2.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[l1][l2];</span><br><span class="line">    </span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = nums1[<span class="number">0</span>] * nums2[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l1; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> p = nums1[i] * nums2[<span class="number">0</span>];</span><br><span class="line">        dp[i][<span class="number">0</span>] = Math.max(dp[i-<span class="number">1</span>][<span class="number">0</span>], p);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; l2; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> p = nums2[j] * nums1[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">0</span>][j] = Math.max(dp[<span class="number">0</span>][j-<span class="number">1</span>],p);</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l1; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; l2; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = nums1[i] * nums2[j];</span><br><span class="line">            <span class="keyword">if</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[i-<span class="number">1</span>][j-<span class="number">1</span>] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + p;                        </span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j] = p;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j-<span class="number">1</span>], p);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            dp[i][j] = Math.max(dp[i][j], Math.max(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>]));</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[l1-<span class="number">1</span>][l2-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Contest</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+        <tag>Subsequence</tag>
+        <tag>Product</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>前言</title>
+    <url>/2020/05/14/%E5%89%8D%E8%A8%80/</url>
+    <content><![CDATA[<p>大家好, 我是无尘(dustfree)，欢迎来到我的博客空间。</p>
+<p>目前是一名研一学生，计算机相关专业，坐标美国西雅图。一直以来都有写文档的习惯，记录自己在学习、面试、成长过程中的心得与感悟。主要包括LeetCode刷题笔记，计算机基础知识积累，技术学习笔记，以及一些面试经验与成长心得。由于在学习过程中踩过不少坑，走了不少弯路，所以记录下来提醒自己勿犯同样的错误，同时也是一份很好的复习资料。</p>
+<p>考虑到大家在学习过程中可能也会遇到同样的问题，索性将笔记分享出来，以免大家走同样的弯路，犯同样的错误。建站的初衷是为了让自己继续保持记录笔记的习惯，同时督促自己学习。如果这些笔记可以帮助到大家，再好不过了！</p>
+<p>如果大家在学习过程中遇到类似的问题，欢迎发邮件与我交流。</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>【随笔】1.偏见</title>
+    <url>/2020/05/24/%E3%80%90%E9%9A%8F%E7%AC%94%E3%80%911-%E5%81%8F%E8%A7%81/</url>
+    <content><![CDATA[<p>最近在休息期间看了《王牌对王牌》，让我彻底改变了对歌手华晨宇（花花）的看法，感觉就是一个聪明、单纯、善良、有才华的大男孩。然后听了他的好几首歌曲，莫名觉得特别好听，突然转粉了。回过头来仔细想想，对偏见与刻板印象有了新的理解，也算是这段时间最大的反思和感悟了。</p>
+<p>记得2013年的时候看过几期《快乐男声》，当时不知道为什么对花花印象特别差，认为他是个生活不能自理，台上“发神经”的男孩。其实当时都没有仔细听他唱过几首歌，就是因为镜头上的几个剪辑，对他留下了这种刻板印象，之后就再也没有关注过他。</p>
+<p>现在想来感觉自己真是幼稚。评价一个歌手，主要通过他的歌曲，而我甚至都没有听过他几首歌，就仅由于他的一些行为，就给出了负面评价，形成了刻板印象，导致我否定了他的一切。这种行为跟网络喷子相比，除了没有到处写评论当键盘侠，还有何异？</p>
+<p>留学期间最大的感受是可以接触到来自全球各地的人，刚开始遇到的时候可能会留有之前存在的某种偏见和刻板印象。可是通过接触下来，不管是同学、邻居还是路上的行人，感觉大家都很不错。生活了一段时间后，我对世界观有了新的理解：不轻易的评价别人，即使之前的某些经历给我留下了某种印记，但是在没有深入了解对方之前，带着偏见待人都是不礼貌、不成熟的。</p>
+<p>我又想为什么会存在偏见？这里引用花花说过的话：人们一直以来不断追求新鲜的事物，但是当新鲜的事物来临的时候，一开始却是不愿意接受的。我非常认同，也在反思自己随着年龄的增长是否不愿意接受一些新鲜的事物，心态是否逐渐老化。这种思维模式一旦形成，会阻碍自己接触新鲜事物，甚至去抵触，抨击。</p>
+<p>所以时刻提醒自己要以一种开放的心态对待新鲜的人和事，不轻易评价别人和给别人贴标签，保持包容和尊重，做一个有素质的新青年。</p>
+]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>字节跳动</title>
+    <url>/2020/05/17/%E5%AD%97%E8%8A%82%E8%B7%B3%E5%8A%A8/</url>
+    <content><![CDATA[<p>在2020年1月15日左右找人内推简历，第二天收到HR面试邀请，约了2月上旬，面试岗位：Java后台研发实习（广告业务组）。</p>
+<h3 id="一面技术面（约60分钟）"><a href="#一面技术面（约60分钟）" class="headerlink" title="一面技术面（约60分钟）"></a>一面技术面（约60分钟）</h3><ol>
+<li>简单自我介绍</li>
+<li>关于项目介绍，期间提到并发多线程，所以面试官引出一个问题</li>
+<li>写一个变量i++的代码，要求保证线程同步。<br>——类似于读写锁，楼主用Synchronized 给 object方法写了Lock() 和 UnLock()锁实现。<br>追问：锁的机制是如何实现的：object锁还是方法锁？<br>——回答的object锁，感觉面试官反馈不太对，也没有追问了。</li>
+<li>Http协议，详细介绍下浏览器输入<a href="http://www.baidu.com之后的过程" target="_blank" rel="noopener">www.baidu.com之后的过程</a><br>——DNS，GET, POST方法都涉及到了。<br>追问TCP/IP 三次握手过程，为什么需要三次？<br>—— 介绍TCP/IP过程，然后第三次保证信息同步，服务器需要知道客户端收到response的反馈<br>追问如果第三次握手丢包怎么办？<br>——服务器重新发送response一定次数，直到client回复，若超过次数则断开连接</li>
+<li>为什么说TCP/IP是可靠传输？<br>——拥塞控制，超时重传，滑动窗口</li>
+<li>介绍下Java GC机制<br>——计数器法，可达性算法<br>追问可达性算法<br>——GC root从跟节点树引用遍历，如果没有被引用的对象则被回收，<br>追问如何判断引用？<br>——举例创建一个object会添加一次引用<br>追问jvm如何知道什么时候回收？<br>——举例类似读写操作，可以调用System.gc()方法来触发；</li>
+<li>数据库相关，SQL语句熟不熟？出了一个双表查询算平均分的题<br>——楼主表示不太熟，马马虎虎写了一个select语句，面试官也没有追问了</li>
+<li>数据库事务隔离机制<br>—— 未提交读，提交读，可重复读，序列化, 分别介绍了可能存在的问题依次是脏读，不可重复度，幻读<br>追问MySQL用的哪种？<br>——可重复读<br>追问如何实现的？<br>——不太清楚，某种读写锁？<br>追问MySQL索引怎么实现？<br>——B+ Tree<br>追问能否实现以下？<br>—— 实现B+树。。。放弃，说可以解释下原理，面试官直接说不用解释了。</li>
+</ol>
+<p><strong>算法题：</strong> ABC全排列，dfs+backtracking秒了，少许错误</p>
+<h3 id="二面技术面（约40分钟）"><a href="#二面技术面（约40分钟）" class="headerlink" title="二面技术面（约40分钟）"></a>二面技术面（约40分钟）</h3><ol>
+<li>自我介绍</li>
+<li>楼主之前搞安全的， 追问你知道哪些安全攻击，介绍下xss？<br>——表示某种注入攻击，具体不太熟，然后说 syn, dos, ddos可以<br>追问介绍下dos<br>——拒绝服务攻击，伪造报文向服务器发送大量请求，造成服务器过载，无法提供正常服务，ddos加分布式</li>
+<li>介绍 https<br>——在http基础上添加了ssl ，对称秘钥加密体制，公钥加密，私钥解密，然后又介绍了下非对称加密</li>
+<li>介绍下进程死锁<br>——4个条件：互斥，占有等待，非抢占，循环等待。分别解释了下</li>
+<li>解释下Java创建一个object，如何创建的，内存怎么分配的？<br>——举例创建一个String，系统会给这个Object分配一个内存地址，然后加引用指针，然后存入value值。<br>追问equals 和 hashcode方法<br>——equals判断value是否相等，hashcode通过hash function计算，这里答的不太好…</li>
+<li>介绍信Java如何实现线程同步<br>—— synchronize, lock, volatile, atomic<br>追问解释下volatile<br>——从Java 内存开始解释，然后解释了可见性，原子性，有序性<br>追问乐观锁与悲观锁<br>——乐观锁可以挂起做其他事情，悲观锁一直等待</li>
+</ol>
+<p><strong>算法题：</strong> trap rain，留了20分钟，楼主15分钟不到bug free秒了，用two pointers.</p>
+<h3 id="三面BOSS面（约30分）"><a href="#三面BOSS面（约30分）" class="headerlink" title="三面BOSS面（约30分）"></a>三面BOSS面（约30分）</h3><ol>
+<li>简单自我介绍</li>
+<li>最近有看什么书啊？</li>
+<li>为什么实习，之前的实习收获了什么，想从实习中学什么？</li>
+<li>结束下浏览器是如何知道哪些客户的，与服务器怎么交互？<br>——cookie 和session解释了一通</li>
+<li>linux熟悉哪些指令？</li>
+<li>关于业务有什么想问的？</li>
+</ol>
+<p><strong>算法题：</strong> permution 1234 -&gt; 1243，先要求解释一下算法，大概用了8分钟，然后要求7分钟内写完代码。楼主只完成了一种case。。。</p>
+<p>总体下来感觉还是比较难的，楼主面试美西时间22：00，直到凌晨0：20左右结束，三面考算法题的时候已经非常疲惫，体验一般。也是吃了一堑，后续面试都约到下午了。</p>
+<p>字节是我准备回国实习后面试的第一家公司，没什么面试经验，准备也不太充分，整体表现也一般。</p>
+]]></content>
+      <categories>
+        <category>面试</category>
+        <category>2020春招</category>
+      </categories>
   </entry>
   <entry>
     <title>微软中国</title>
@@ -693,6 +1123,21 @@
       </categories>
   </entry>
   <entry>
+    <title>负数计数法</title>
+    <url>/2020/05/24/%E8%B4%9F%E6%95%B0%E8%AE%A1%E6%95%B0%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>给定一个长度为n的数组，该数组中的每个元素在1到n范围内，要求在O(n)的时间复杂度，O(1)的空间复杂度下，打印1到n这n个数各出现了多少次。</p>
+</blockquote>
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] input = &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</span><br><span class="line"> 		</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; input.length) &#123;</span><br><span class="line">    <span class="keyword">int</span> val = input[i];</span><br><span class="line">    <span class="keyword">if</span> (val &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (val != i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (input[val] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            swap(input, val, i);</span><br><span class="line">            input[val] = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            input[val]—;</span><br><span class="line">            <span class="comment">//计数器清0</span></span><br><span class="line">            input[i] = <span class="number">0</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;			</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; input.length; i++) &#123;			</span><br><span class="line">    System.out.print(input[i] * (-<span class="number">1</span>) +<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>杂题</category>
+        <category>算法题</category>
+      </categories>
+      <tags>
+        <tag>O(n)</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>阿里巴巴</title>
     <url>/2020/05/17/%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4/</url>
     <content><![CDATA[<p>找人内推的2020暑期Java研发工程师实习生，新零售国际化事业部，共计2轮OA, 6轮技术面试+交叉面（面试过程还有2轮coding)，1轮HR面。断断续续持续了一个月，非常疲惫。</p>
@@ -784,451 +1229,6 @@
       <categories>
         <category>面试</category>
         <category>2020春招</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>2020春招总结与感悟</title>
-    <url>/2020/05/18/2020%E6%98%A5%E6%8B%9B%E6%80%BB%E7%BB%93%E4%B8%8E%E6%84%9F%E6%82%9F/</url>
-    <content><![CDATA[<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>2020春招持续了3个多月，整体感觉下来非常疲惫，主要是由于很多不确定因素导致的心力交瘁。由于美国疫情不断加剧，导致机票被取消，再加上我的签证有效期只有一年，美国签证办理政策尚未明确，入境政策也尚未开放，回国之后也需隔离14天才能实习。综合种种因素，经过慎重考虑，我决定放弃回国，申请远程实习。最后决定去鹅厂了，幸运的是鹅厂接受我远程实习，非常感谢！</p>
-<p>非常感谢春招期间帮我内推的朋友，其中有些是我的同学，有些是地里以及论坛认识的大牛，还有一些是校招宣讲会认识的HR，在他们的帮助下，很顺利拿到了面试。内推的确是拿面试非常有效的手段，所以建议大家能找内推还是尽量找内推。</p>
-<p>我组建的Mock小组里的同学也基本都在去年秋招和今年春招拿到大厂的实习，期间大家相互Mock,相互分享，相互鼓励，相互吐槽，甚至时不时攒个酒局，气氛非常的和谐、愉快。很幸运能有这么一群小伙伴一起奋斗，让我想到了本科期间一起参加竞赛的队友，有这么一群朋友为了共同的目标一起努力奋斗真的是一件很幸运和开心的事情。为了紧跟大家的步伐，我也得好好练练酒量了，哈哈哈！</p>
-<p>接下来的一段时间当然是实习和准备秋招了，虽然当前形势不太乐观，但是做好自己的事情，总会有好运的。疫情当下，一起努力，加油！</p>
-<h3 id="感悟"><a href="#感悟" class="headerlink" title="感悟"></a>感悟</h3><p>面试国内企业坑点：</p>
-<ul>
-<li>约面试注意好时差，最好约北京时间上午，是美西时间下午，有些公司会连着面技术面和coding，太晚面试精力和状态会跟不上</li>
-<li>相比外企的研发岗，国内企业会注重基础和项目，简历上的项目要吃透，提到的每一个技术点要摸清楚原理，要有被面试官刨根问底的准备</li>
-<li>HR面试很关键，尤其是留学生，会问很多关于回国的事项</li>
-</ul>
-<p>经验总结：</p>
-<ul>
-<li>保持自信，面试官一定会问到你不懂的知识点，这时候不要慌，尽量按照自己的理解，结合所学知识回答</li>
-<li>实在没办法回答的点，直接坦白说这块知识点不熟悉，切忌胡编乱造</li>
-<li>面经可以提前刷一下，可以大概了解下面试的范围和高频面试题，但不要太依赖面经。从腾讯和阿里面试来看很多都是面经没有的点，很多都是结合简历来延伸的知识点</li>
-<li>切忌表现出傲慢的姿态，面试官基本都是以后工作的师兄和leader，会给人留下一种不容易沟通的印象</li>
-<li>面试其实一件看运气和缘分的事情，发挥好坏存在很多偶然因素，也得看面试官对你感不感兴趣，总之坦然对待面试结果</li>
-</ul>
-]]></content>
-      <categories>
-        <category>面试</category>
-        <category>2020春招</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>前言</title>
-    <url>/2020/05/14/%E5%89%8D%E8%A8%80/</url>
-    <content><![CDATA[<p>大家好, 我是无尘(dustfree)，欢迎来到我的博客空间。</p>
-<p>目前是一名研一学生，计算机相关专业，坐标美国西雅图。一直以来都有写文档的习惯，记录自己在学习、面试、成长过程中的心得与感悟。主要包括LeetCode刷题笔记，计算机基础知识积累，技术学习笔记，以及一些面试经验与成长心得。由于在学习过程中踩过不少坑，走了不少弯路，所以记录下来提醒自己勿犯同样的错误，同时也是一份很好的复习资料。</p>
-<p>考虑到大家在学习过程中可能也会遇到同样的问题，索性将笔记分享出来，以免大家走同样的弯路，犯同样的错误。建站的初衷是为了让自己继续保持记录笔记的习惯，同时督促自己学习。如果这些笔记可以帮助到大家，再好不过了！</p>
-<p>如果大家在学习过程中遇到类似的问题，欢迎发邮件与我交流。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Spring框架</title>
-    <url>/2020/05/21/Spring%E6%A1%86%E6%9E%B6/</url>
-    <content><![CDATA[<h4 id="Spring四种关键策略"><a href="#Spring四种关键策略" class="headerlink" title="Spring四种关键策略"></a>Spring四种关键策略</h4><ul>
-<li>基于POJO (plain old java object) 的轻量级和最小侵入性编程</li>
-<li>通过依赖注入和面向接口实现松耦合</li>
-<li>基于切面和惯例进行声明式编程</li>
-<li>通过切面和模板减少样版式代码 </li>
-</ul>
-<p>依赖注入DI </p>
-<ul>
-<li>构造器注入（参数中传入对象）</li>
-<li>n ID</li>
-</ul>
-<p>应用切面</p>
-<ul>
-<li>关注点分离</li>
-<li>beforeMethod</li>
-<li>afterMethod</li>
-<li>在xml声明AOP属性</li>
-</ul>
-<p>模板消除样版式代码</p>
-<ul>
-<li>使用JDBCTemplate封装JDBC的操作</li>
-</ul>
-<p>Spring容器</p>
-<ul>
-<li>bean工厂（beanFactory）</li>
-<li>应用上下文ApplicationContext(AnnotationApplicationConext, pathContext)</li>
-</ul>
-<h4 id="Bean生命周期"><a href="#Bean生命周期" class="headerlink" title="Bean生命周期"></a>Bean生命周期</h4><ul>
-<li>实例化</li>
-<li>值与bean引用注入到bean中</li>
-<li>如果实现了BeanNameAware 将Bean传递到SetBeanName()方法中</li>
-<li>如果实现了BeanFactoryAwere则将bean工厂传入</li>
-<li>如果实现了ApplicationConextAware则将上下文引用传入</li>
-<li>如果实现了PostProecess接口则掉调用BeforeInitialization</li>
-<li>如果bean实现了InitializaingBean接口，则调用AfterPropertSet()方法</li>
-<li>如果AfterInitialization方法</li>
-<li>disposable销毁</li>
-</ul>
-<h4 id="如何装配Bean"><a href="#如何装配Bean" class="headerlink" title="如何装配Bean"></a>如何装配Bean</h4><ul>
-<li>xml, </li>
-<li>java显式装配，</li>
-<li>自动化装配</li>
-</ul>
-<p>自动化装配<br>组件扫描<br>自动装备 @component注解，告知Spring创建Bean<br>@componentScan<br>@Autowired 可以修饰构造方法，可以修改普通方法，自动装配参数， 接口</p>
-<h4 id="Spring设计模式"><a href="#Spring设计模式" class="headerlink" title="Spring设计模式"></a>Spring设计模式</h4><ul>
-<li>工厂模式：BeanFactory就是简单工厂模式的体现，用来创建对象的实例</li>
-<li>单例模式：Bean默认为单例模式</li>
-<li>代理模式：Spring的AOP功能用到了JDK的动态代理和CGLIB字节码生成技术</li>
-<li>模板方法：用来解决代码重复的问题。比如. RestTemplate, JmsTemplate, JpaTemplate</li>
-<li>观察者模式：定义对象键一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都会得到通知被制动更新，如Spring中listener的实现–ApplicationListener。</li>
-</ul>
-<p>JDK动态代理要求被代理的类必须实现一个接口：InvocationHandler 接口，Proxy newProxyInstance()，java反射<br>CGLIB通过继承的方式动态代理： cglib.jar, asm.jar。通过MethodInterceptor 接口  Enhancer 类，调用父类，继承的方式实例化</p>
-<h4 id="Spring作用域"><a href="#Spring作用域" class="headerlink" title="Spring作用域"></a>Spring作用域</h4><ul>
-<li>singleton : bean在每个Spring ioc 容器中只有一个实例</li>
-<li>prototype：一个bean的定义可以有多个实例</li>
-<li>request：每次http请求都会创建一个bean，该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
-<li>session：在一个HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
-<li>global-session：在一个全局的HTTP Session中，一个bean定义对应一个实例。该作用域仅在基于web的Spring ApplicationContext情形下有效。</li>
-<li><em>注意：*</em> 缺省的Spring bean 的作用域是Singleton。使用 prototype 作用域需要慎重的思考，因为频繁创建和销毁 bean 会带来很大的性能开销。</li>
-</ul>
-<h4 id="IOC容器加载过程"><a href="#IOC容器加载过程" class="headerlink" title="IOC容器加载过程"></a>IOC容器加载过程</h4><ol>
-<li>刷新预处理</li>
-<li>将配置信息解析，注册到BeanFactory</li>
-<li>设置bean的类加载器</li>
-<li>如果有第三方想再bean加载注册完成后，初始化前做点什么(例如修改属性的值，修改bean的scope为单例或者多例。)，提供了相应的模板方法，后面还调用了这个方法的实现，并且把这些个实现类注册到对应的容器中</li>
-<li>初始化当前的事件广播器</li>
-<li>初始化所有的bean</li>
-<li>广播applicationcontext初始化完成。</li>
-</ol>
-<h4 id="Spring-Boot"><a href="#Spring-Boot" class="headerlink" title="Spring Boot"></a>Spring Boot</h4><p>四个特性</p>
-<ul>
-<li>Spring Boot starter 依赖整合，合并Maven Gradle构建</li>
-<li>自动配置，Spring Boot 4对条件化配置的支持，合理推测所需的bean并自动化配置</li>
-<li>命令行接口</li>
-<li>Actuator 管理特性</li>
-</ul>
-<p>Spring Boot为不同的Spring模块提供了许多依赖项。一些最常用的是：<br>spring-boot-starter-data-jpa<br>spring-boot-starter-security<br>spring-boot-starter-test<br>spring-boot-starter-web<br>spring-boot-starter-thymeleaf</p>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>ConcurrentHashMap</title>
-    <url>/2020/05/21/ConcurrentHashMap/</url>
-    <content><![CDATA[<h4 id="ConcurrentHashMap"><a href="#ConcurrentHashMap" class="headerlink" title="ConcurrentHashMap"></a>ConcurrentHashMap</h4><p>ConcurrentHashMap使用分段锁来实现同步 （ReentrantLock实现CAS来实现的）</p>
-<p>默认16线程<br>get使用volatile实现可见性不需要加锁<br>put使用segmentShift / segmentMask来定位segment<br>HashTable 则对这些方法加synchronize来实现锁，效率很低</p>
-<h4 id="JDK1-8进行了改进"><a href="#JDK1-8进行了改进" class="headerlink" title="JDK1.8进行了改进"></a>JDK1.8进行了改进</h4><p>使用链表头节点加锁，同一时间只有一个线程可以put，解决并发问题</p>
-<ul>
-<li>首先new一个新的hash表(nextTable)出来，大小是原来的2倍。后面的rehash都是针对这个新的hash表操作，不涉及原hash表(table)。</li>
-<li>然后会对原hash表(table)中的每个链表进行rehash，此时会尝试获取头节点的锁。这一步就保证了在rehash的过程中不能对这个链表执行put操作。</li>
-<li>通过sizeCtl控制，使扩容过程中不会new出多个新hash表来。</li>
-<li>最后，将所有键值对重新rehash到新表(nextTable)中后，用nextTable将table替换。这就避免了HashMap中get和扩容并发时，可能get到null的问题。</li>
-<li>在整个过程中，共享变量的存储和读取全部通过volatile或CAS的方式，保证了线程安全。</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>数据结构</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Redis</title>
-    <url>/2020/05/21/Redis/</url>
-    <content><![CDATA[<h4 id="Redis持久化"><a href="#Redis持久化" class="headerlink" title="Redis持久化"></a>Redis持久化</h4><ul>
-<li>RDB(二进制）</li>
-<li>AOF bgrewriteaof</li>
-<li>AOF 重写<br>主从复制<br>slaveof</li>
-</ul>
-<h4 id="Redis数据结构"><a href="#Redis数据结构" class="headerlink" title="Redis数据结构"></a>Redis数据结构</h4><ul>
-<li>字符串String</li>
-<li>列表lists</li>
-<li>集合 set</li>
-<li>有序集合 sorted set </li>
-<li>哈希 hash</li>
-</ul>
-<h4 id="Redis-事务"><a href="#Redis-事务" class="headerlink" title="Redis 事务"></a>Redis 事务</h4><ul>
-<li>MULTI组装事务</li>
-<li>EXEC执行一个事务</li>
-<li>DISCARD取消一个事务</li>
-<li>WATCH检测key，一旦key执行书屋之前被改变，则取消事务执行</li>
-</ul>
-<h4 id="Redis与memcache的不同"><a href="#Redis与memcache的不同" class="headerlink" title="Redis与memcache的不同"></a>Redis与memcache的不同</h4><p><strong>value大小不同</strong><br>memcache是一个内存缓存，key的长度小于250字符，单个item存储要小于1M，不适合虚拟机使用</p>
-<p><strong>数据一致性不同</strong></p>
-<ul>
-<li>Redis只使用单核，而Memcached可以使用多核，所以平均每一个核上Redis在存储小数据时比Memcached性能更高。而在100k以上的数据中，Memcached性能要高于Redis，虽然Redis最近也在存储大数据的性能上进行优化，但是比起Memcached，还是稍有逊色。 </li>
-<li>redis使用的是单线程模型，保证了数据按顺序提交。</li>
-<li>memcache需要使用cas保证数据一致性。CAS 是一个确保并发一致性的机制，属于“乐观锁”范畴；原理很简单：拿版本号，操作，对比版本号，如果一致就操作，不一致就放弃任何操作 </li>
-</ul>
-<p><strong>cpu利用</strong><br>redis单线程模型只能使用一个cpu，可以开启多个redis进程</p>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>JVM调优</title>
-    <url>/2020/05/21/JVM%E8%B0%83%E4%BC%98/</url>
-    <content><![CDATA[<h4 id="程序检测异常"><a href="#程序检测异常" class="headerlink" title="程序检测异常"></a>程序检测异常</h4><ul>
-<li>jvm死机， jvm调优</li>
-<li>内存，cpu占用过高， GC调优</li>
-<li>检测无法停止</li>
-<li>检测无法开始</li>
-<li>磁盘空间出现问题 df -hl</li>
-</ul>
-<h4 id="HotSpot-VM"><a href="#HotSpot-VM" class="headerlink" title="HotSpot VM"></a>HotSpot VM</h4><ul>
-<li>栈区异常： stackOverFlow 如果栈可以动态扩展，直到内存不足会OOM —Xss</li>
-<li>堆区异常：OOM -Xms（min) -Xmx(max)指定内存，实例对象或者数组超出内存</li>
-<li>方法区异常：（存放加载过的类，静态变量，常量）永久代很少出现GC -XX PermSize -XX MaxPermSize</li>
-<li>运行时常量池：String.intern()生成常量导致OOM</li>
-<li>直接内存：虚拟机外内存，NIO有directByteBuffer操作</li>
-</ul>
-<p>Dump文件，内存泄漏查看GC root引用路径为什么无法自动回收<br>内存溢出 对象仍然存活，调大内存，或者降低对象生命周期</p>
-<p><strong>垃圾收集器</strong><br>CMS, ParNew</p>
-<h4 id="如何排查？"><a href="#如何排查？" class="headerlink" title="如何排查？"></a>如何排查？</h4><ul>
-<li>TOP命令查看cpu占用率</li>
-<li>ps查看进程pid， 线程tid</li>
-<li>jstack查看进程信息，可以看到哪一行出现了问题</li>
-<li>jmap 导出dump文件</li>
-<li>jstat查看分代变化情况</li>
-<li>启动时开启gc日志-verbose:gc -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintGCTimeStamps来开启GC日志</li>
-</ul>
-<p>——OOM unable to create new native thread线程池有问题<br>解决：Xss减少单个thread stack的大小<br>——Exception in thread “main” java.lang.OutOfMemoryError: Java heap space<br>解决：这个意思是堆的内存占用已经达到-Xmx设置的最大值，应该是最常见的OOM错误了。解决思路仍然是先应该在代码中找，怀疑存在内存泄漏，通过jstack和jmap去定位问题。如果说一切都正常，才需要通过调整Xmx的值来扩大内存。<br>——Caused by: java.lang.OutOfMemoryError: Meta space<br>解决：这个意思是元数据区的内存占用已经达到XX:MaxMetaspaceSize设置的最大值，排查思路和上面的一致，参数方面可以通过XX:MaxPermSize来进行调整(这里就不说1.8以前的永久代了)</p>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java设计模式</title>
-    <url>/2020/05/21/Java%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Singleton instance = <span class="keyword">new</span> Singleton();</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getInstance</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.instance;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>更好的解法</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Singleton</span> </span>&#123;</span><br><span class="line"> 	<span class="function"><span class="keyword">private</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;&#125;</span><br><span class="line"> 	<span class="keyword">private</span> <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">testHolder</span></span>&#123;</span><br><span class="line"> 		<span class="keyword">private</span> <span class="keyword">static</span> Singleton intance = <span class="keyword">new</span> Singleton();</span><br><span class="line"> 	&#125;</span><br><span class="line"> 	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Singleton <span class="title">getIntance</span><span class="params">()</span> </span>&#123;</span><br><span class="line"> 		<span class="keyword">return</span> testHolder.intance;</span><br><span class="line"> 	&#125; 	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="i-线程同步"><a href="#i-线程同步" class="headerlink" title="i++线程同步"></a>i++线程同步</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line"><span class="comment">//    private static AtomicInteger atomicInteger = new AtomicInteger(0);</span></span><br><span class="line"><span class="comment">//    private void increase() &#123;</span></span><br><span class="line"><span class="comment">//        atomicInteger.incrementAndGet();</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> n = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//如果是static 则给类加锁，没有static则给方法加锁。</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">increase</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        n++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">100000</span>; i++) &#123;</span><br><span class="line">            increase();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">        <span class="comment">//给类加锁则可以实现2个实例并行安全</span></span><br><span class="line">        <span class="comment">//给方法加锁只能实现单个实例的线程安全</span></span><br><span class="line">        Test test = <span class="keyword">new</span> Test();</span><br><span class="line">        Thread thread1 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line">        Thread thread2 = <span class="keyword">new</span> Thread(<span class="keyword">new</span> Test());</span><br><span class="line"></span><br><span class="line">        thread1.start();</span><br><span class="line">        thread2.start();</span><br><span class="line">        thread1.join();</span><br><span class="line">        thread2.join();</span><br><span class="line"></span><br><span class="line">        System.out.println(n);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="不变模式"><a href="#不变模式" class="headerlink" title="不变模式"></a>不变模式</h3><p>final 修饰变量</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">final</span> <span class="class"><span class="keyword">class</span> <span class="title">product</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> String no;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Product</span><span class="params">(String no)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>();</span><br><span class="line">        <span class="keyword">this</span>.num = num;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getNum</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> num;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="生产者消费者模型"><a href="#生产者消费者模型" class="headerlink" title="生产者消费者模型"></a>生产者消费者模型</h3><ul>
-<li>blockQueue（加阻塞锁）</li>
-<li>disruptor（环形队列，CAS实现无锁操作）</li>
-</ul>
-<h3 id="future-模型"><a href="#future-模型" class="headerlink" title="future 模型"></a>future 模型</h3><ul>
-<li>异步调用。如果函数执行的慢，让被调用者立即返回，后台慢慢处理。</li>
-<li>充分利用等待时间</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Tree</title>
-    <url>/2020/05/21/Tree/</url>
-    <content><![CDATA[<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><ol>
-<li>节点是红色或黑色。</li>
-<li>根节点是黑色。</li>
-<li>每个叶子节点都是黑色的空节点（NIL节点）。</li>
-<li>每个红色节点的两个子节点都是黑色。(从每个叶子到根的所有路径上不能有两个连续的红色节点)</li>
-<li>从任一节点到其每个叶子的所有路径都包含相同数目的黑色节点。<br>插入,变色,左旋转,右旋转</li>
-</ol>
-<p>应用： TreeSet TreeMap</p>
-<h3 id="B树-B-tree"><a href="#B树-B-tree" class="headerlink" title="B树(B-tree)"></a>B树(B-tree)</h3><p>注意:之前有看到有很多文章把B树和B-tree理解成了两种不同类别的树，其实这两个是同一种树;</p>
-<p><strong>概念：</strong><br>B树和平衡二叉树稍有不同的是B树属于多叉树又名平衡多路查找树（查找路径不只两个），数据库索引技术里大量使用者B树和B+树的数据结构，让我们来看看他有什么特点;</p>
-<p><strong>规则：</strong></p>
-<ol>
-<li>排序方式：所有节点关键字是按递增次序排列，并遵循左小右大原则；</li>
-<li>子节点数：非叶节点的子节点数&gt;1，且&lt;=M ，且M&gt;=2，空树除外（注：M阶代表一个树节点最多有多少个查找路径，M=M路,当M=2则是2叉树,M=3则是3叉）；</li>
-<li>关键字数：枝节点的关键字数量大于等于ceil(m/2)-1个且小于等于M-1个（注：ceil()是个朝正无穷方向取整的函数 如ceil(1.1)结果为2);</li>
-<li>所有叶子节点均在同一层、叶子节点除了包含了关键字和关键字记录的指针外也有指向其子节点的指针只不过其指针地址都为null对应下图最后一层节点的空格子;<br>最后我们用一个图和一个实际的例子来理解B树（这里为了理解方便我就直接用实际字母的大小来排列C&gt;B&gt;A）</li>
-</ol>
-<p><strong>优点：</strong><br>B树相对于平衡二叉树的不同是，每个节点包含的关键字增多了，特别是在B树应用到数据库中的时候，数据库充分利用了磁盘块的原理（磁盘数据存储是采用块的形式存储的，每个块的大小为4K，每次IO进行数据读取时，同一个磁盘块的数据可以一次性读取出来）把节点大小限制和充分使用在磁盘快大小范围；把树的节点关键字增多后树的层级比原来的二叉树少了，减少数据查找的次数和复杂度;</p>
-<h3 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h3><ol>
-<li>B+跟B树不同B+树的非叶子节点不保存关键字记录的指针，只进行数据索引，这样使得B+树每个非叶子节点所能保存的关键字大大增加；</li>
-<li>B+树叶子节点保存了父节点的所有关键字记录的指针，所有数据地址必须要到叶子节点才能获取到。所以每次数据查询的次数都一样；</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>数据结构</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java反射</title>
-    <url>/2020/05/21/Java%E5%8F%8D%E5%B0%84/</url>
-    <content><![CDATA[<h4 id="反射机制的作用"><a href="#反射机制的作用" class="headerlink" title="反射机制的作用"></a>反射机制的作用</h4><p>JAVA反射机制是在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意方法和属性，实现了基本的动态性。<br>有了反射，我们可以做以下事情：</p>
-<ul>
-<li>在运行时检查一个对象</li>
-<li>在运行时，根据一个class构造一个对象</li>
-<li>在运行时，检查一个对象的属性和方法</li>
-<li>在运行时，调用一个对象的任意一个方法</li>
-<li>在运行时，改变对象的构造函数，属性，方法的可见性</li>
-</ul>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Java多线程</title>
-    <url>/2020/05/21/Java%E5%A4%9A%E7%BA%BF%E7%A8%8B/</url>
-    <content><![CDATA[<h4 id="线程与进程区别："><a href="#线程与进程区别：" class="headerlink" title="线程与进程区别："></a>线程与进程区别：</h4><ol>
-<li>进程是资源分配的最小单位,线程是CPU调度的最小单位  </li>
-<li>一个进程由一个或多个线程组成  </li>
-<li>进程之间相互独立，每个进程都有独立的代码和数据空间,但同一进程下的各个线程之间共享进程的代码和内存空间，每个线程有独立的运行栈和程序计数器  </li>
-<li>线程上下文切换比进程上下文切换要快得多</li>
-</ol>
-<h4 id="线程安全"><a href="#线程安全" class="headerlink" title="线程安全"></a>线程安全</h4><p>线程安全：就是说多线程访问同一代码，不会产生不确定的结果。（vector, hashTable是线程安全的， arrayList和 hashMap是不安全的）</p>
-<ol>
-<li>synchronized同步方法  即有synchronized关键字修饰的方法。由于java的每个对象都有一个内置锁，当用此关键字修饰方法时，内置锁会保护整个方法。   也可以修饰静态方法，此时如果调用该静态方法，将会锁住整个类   </li>
-<li>synchronized同步代码块   即有synchronized关键字修饰的语句块。   当一个线程访问object的一个synchronized(this)同步代码块时，它就获得了这个object的对象锁。结果，其它线程对该object对象所有同步代码部分的访问都被暂时阻塞，但仍然可以访问该object中的非synchronized(this)同步代码块。 </li>
-<li>volatile实现线程同步  用volatile修饰的变量，线程在每次使用变量的时候，都会从主存中读取变量最新值。变量修改后会直接改变主存内容。保证可见性，不能保证原子性 </li>
-<li>使用重入锁实现线程同步ReentrantLock  ReentrantLock 拥有Synchronized相同的并发性和内存语义，此外还多了 锁投票，定时锁等候和中断锁等候,比如可以放弃锁等待先做别的事情（trylock），而Synchronized不能  synchronized是在JVM层面上实现的，JVM会自动释放锁定，但是使用Lock则不行，lock是通过代码实现的，要保证锁定一定会被释放，就必须将unLock()放到finally{}中  在资源竞争很激烈的情况下，ReetrantLock的性能要优于Synchronized  </li>
-<li>使用ThreadLocal管理变量  使用该变量的线程都获得该变量的副本，副本之间相互独立，这样每一个线程都可以随意修改自己的变量副本，而不会对其他线程产生影响。</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机基础知识</category>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Trapping Rain Water</title>
-    <url>/2020/05/21/Trapping-Rain-Water/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given n non-negative integers representing an elevation map where the width of each bar is 1, compute how much water it is able to trap after raining.</p>
-<p>The above elevation map is represented by array [0,1,0,2,1,0,1,3,2,1,2,1]. In this case, 6 units of rain water (blue section) are being trapped. Thanks Marcos for contributing this image!</p>
-<p>Example:<br>Input: [0,1,0,2,1,0,1,3,2,1,2,1]<br>Output: 6</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/trapping-rain-water/" target="_blank" rel="noopener">leetcode.com/problems/trapping-rain-water</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[] height, height of bar;</span></span><br><span class="line"><span class="comment">@return: int, maximum rain water;</span></span><br><span class="line"><span class="comment">Algorithm: 保持两个指针从左右两端，逐渐逼近</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (height.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// two pointer, left and right;</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = height.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> leftHeight = height[left];</span><br><span class="line">    <span class="keyword">int</span> rightHeight = height[right];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">        <span class="keyword">if</span> (leftHeight &lt; rightHeight) &#123;</span><br><span class="line">            left++;</span><br><span class="line">            <span class="keyword">if</span> (leftHeight &lt; height[left]) &#123;</span><br><span class="line">                leftHeight = height[left];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                result += leftHeight - height[left];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            right--;</span><br><span class="line">            <span class="keyword">if</span> (rightHeight &lt; height[right]) &#123;</span><br><span class="line">                rightHeight = height[right];</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                result += rightHeight - height[right];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Array</category>
-      </categories>
-      <tags>
-        <tag>Two Pointers</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Weekly Contest 190</title>
-    <url>/2020/05/23/Weekly-Contest-190/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><ol start="1455">
-<li>Check If a Word Occurs As a Prefix of Any Word in a Sentence<blockquote><p>Given a sentence that consists of some words separated by a single space, and a searchWord.You have to check if searchWord is a prefix of any word in sentence.</p>
-<p>Return the index of the word in sentence where searchWord is a prefix of this word (1-indexed).</p>
-<a id="more"></a>
-<p>If searchWord is a prefix of more than one word, return the index of the first word (minimum index). If there is no such word return -1.</p>
-<p>A prefix of a string S is any leading contiguous substring of S.</p>
-<p>Example 1:<br>Input: sentence = “i love eating burger”, searchWord = “burg”<br>Output: 4<br>Explanation: “burg” is prefix of “burger” which is the 4th word in the sentence.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/" target="_blank" rel="noopener">leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence</a></cite></footer></blockquote>
-
-</li>
-</ol>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">isPrefixOfWord</span><span class="params">(String sentence, String searchWord)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (sentence.length() &lt; searchWord.length()) &#123;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    String[] str = sentence.split(<span class="string">" "</span>,<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;            </span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; searchWord.length()) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j == str[i].length()) &#123;</span><br><span class="line">                <span class="keyword">break</span>;    </span><br><span class="line">            &#125;<span class="keyword">if</span> (j &lt; str[i].length() &amp;&amp; str[i].charAt(j) != searchWord.charAt(j)) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (j == searchWord.length()) &#123;</span><br><span class="line">            <span class="keyword">return</span> i+<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Question-1"><a href="#Question-1" class="headerlink" title="Question"></a>Question</h3><ol start="1456">
-<li>Maximum Number of Vowels in a Substring of Given Length<blockquote><p>Given a string s and an integer k.</p>
-<p>Return the maximum number of vowel letters in any substring of s with length k.</p>
-<p>Vowel letters in English are (a, e, i, o, u).</p>
-<p>Example 1:</p>
-<p>Input: s = “abciiidef”, k = 3<br>Output: 3<br>Explanation: The substring “iii” contains 3 vowel letters.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/" target="_blank" rel="noopener">leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length</a></cite></footer></blockquote>
-
-</li>
-</ol>
-<h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxVowels</span><span class="params">(String s, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() &lt;= <span class="number">0</span> || k == <span class="number">0</span> || s.length() &lt; k) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>, j = <span class="number">0</span>; i &lt; s.length() &amp;&amp; j &lt; s.length(); j++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = s.charAt(j);</span><br><span class="line">        <span class="keyword">if</span> (j &lt; i+k) &#123;</span><br><span class="line">            <span class="keyword">if</span> (valid(c)) &#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;                </span><br><span class="line">            max = Math.max(max, count);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (valid(c)) &#123;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (valid(s.charAt(i))) &#123;</span><br><span class="line">            count--;</span><br><span class="line">            </span><br><span class="line">        &#125;       </span><br><span class="line">        i++;</span><br><span class="line">        max = Math.max(max, count);</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">valid</span><span class="params">(<span class="keyword">char</span> c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">'a'</span> || c == <span class="string">'e'</span> || c == <span class="string">'i'</span> || c == <span class="string">'o'</span> || c == <span class="string">'u'</span> ) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Question-2"><a href="#Question-2" class="headerlink" title="Question"></a>Question</h3><ol start="1457">
-<li>Pseudo-Palindromic Paths in a Binary Tree<blockquote><p>Given a binary tree where node values are digits from 1 to 9. A path in the binary tree is said to be pseudo-palindromic if at least one permutation of the node values in the path is a palindrome.</p>
-<p>Return the number of pseudo-palindromic paths going from the root node to leaf nodes.</p>
-<p>Example 1:<br>Input: root = [2,3,1,3,1,null,1]<br>Output: 2 </p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/" target="_blank" rel="noopener">leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree</a></cite></footer></blockquote>
-
-</li>
-</ol>
-<h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: dfs + backtracking</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pseudoPalindromicPaths</span> <span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span>[] num = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">    dfs(root, num, <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">dfs</span><span class="params">(TreeNode root, <span class="keyword">int</span>[] num, <span class="keyword">int</span> count)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    num[root.val]++;</span><br><span class="line">    <span class="keyword">if</span> (num[root.val]%<span class="number">2</span> == <span class="number">0</span>) &#123;</span><br><span class="line">        count--;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        count++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.left == <span class="keyword">null</span> &amp;&amp; root.right == <span class="keyword">null</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (count &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            res++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">            dfs(root.left, num, count);                          </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">            dfs(root.right, num, count);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    num[root.val]--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="Question-3"><a href="#Question-3" class="headerlink" title="Question"></a>Question</h3><ol start="1458">
-<li>Max Dot Product of Two Subsequences<blockquote><p>Given two arrays nums1 and nums2.</p>
-<p>Return the maximum dot product between non-empty subsequences of nums1 and nums2 with the same length.</p>
-<p>A subsequence of a array is a new array which is formed from the original array by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, [2,3,5] is a subsequence of [1,2,3,4,5] while [1,5,3] is not).</p>
-<p>Example 1:</p>
-<p>Input: nums1 = [2,1,-2,5], nums2 = [3,0,-6]<br>Output: 18<br>Explanation: Take subsequence [2,-2] from nums1 and subsequence [3,-6] from nums2.<br>Their dot product is (2<em>3 + (-2)</em>(-6)) = 18.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/max-dot-product-of-two-subsequences/" target="_blank" rel="noopener">leetcode.com/problems/max-dot-product-of-two-subsequences</a></cite></footer></blockquote>
-
-</li>
-</ol>
-<h3 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*        </span></span><br><span class="line"><span class="comment">Algorithm：这题一看应该能反应出是dp，题目类似于1143. Longest Common Subsequence。处理subsequence的解法</span></span><br><span class="line"><span class="comment">状态转移方程 设p = nums1[i] * nums2[j]，p &gt; 0, 则状态转移方程dp[i][j] = Max(dp[i-1][j-1]+p, dp[i-1][j], dp[i][j-1], p);</span></span><br><span class="line"><span class="comment">p &lt; 0 则状态转移方程 dp[i][j] = Max(dp[i-1][j-1], dp[i-1][j], dp[i][j-1], p);</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maxDotProduct</span><span class="params">(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l1 = nums1.length;</span><br><span class="line">    <span class="keyword">int</span> l2 = nums2.length;</span><br><span class="line">    <span class="keyword">if</span> (nums1.length == <span class="number">0</span> || nums2.length == <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[l1][l2];</span><br><span class="line">    </span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>] = nums1[<span class="number">0</span>] * nums2[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l1; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> p = nums1[i] * nums2[<span class="number">0</span>];</span><br><span class="line">        dp[i][<span class="number">0</span>] = Math.max(dp[i-<span class="number">1</span>][<span class="number">0</span>], p);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; l2; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> p = nums2[j] * nums1[<span class="number">0</span>];</span><br><span class="line">        dp[<span class="number">0</span>][j] = Math.max(dp[<span class="number">0</span>][j-<span class="number">1</span>],p);</span><br><span class="line">    &#125;</span><br><span class="line">            </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; l1; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; l2; j++) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = nums1[i] * nums2[j];</span><br><span class="line">            <span class="keyword">if</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span> (dp[i-<span class="number">1</span>][j-<span class="number">1</span>] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">                    dp[i][j] = dp[i-<span class="number">1</span>][j-<span class="number">1</span>] + p;                        </span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j] = p;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                dp[i][j] = Math.max(dp[i-<span class="number">1</span>][j-<span class="number">1</span>], p);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            dp[i][j] = Math.max(dp[i][j], Math.max(dp[i-<span class="number">1</span>][j],dp[i][j-<span class="number">1</span>]));</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[l1-<span class="number">1</span>][l2-<span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Contest</category>
-      </categories>
-      <tags>
-        <tag>DP</tag>
-        <tag>Subsequence</tag>
-        <tag>Product</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Sqrt(x)</title>
-    <url>/2020/05/24/Sqrt-x/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Implement int sqrt(int x).</p>
-<p>Compute and return the square root of x, where x is guaranteed to be a non-negative integer.</p>
-<p>Since the return type is an integer, the decimal digits are truncated and only the integer part of the result is returned.</p>
-<p>Example 1:<br>Input: 4<br>Output: 2</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="noopener">leetcode.com/problems/sqrtx</a></cite></footer></blockquote>
-
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">牛顿迭代法：x^2 = a</span></span><br><span class="line"><span class="comment">某一点x0的切线方程为 f(x) - f(x0) = f'(x0) (x-x0);</span></span><br><span class="line"><span class="comment">=&gt; x = (x0 + a/x0) / 2;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">mySqrt</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> x0 = x;</span><br><span class="line">    <span class="keyword">double</span> x1 = (x0 + x/x0) / <span class="number">2.0</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">double</span> accuracy = <span class="number">1e-6</span>;</span><br><span class="line">    <span class="keyword">while</span> (Math.abs(x0-x1) &gt;= accuracy) &#123;</span><br><span class="line">        x0 = x1;</span><br><span class="line">        x1 = (x0 + x/x0) / <span class="number">2.0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> (<span class="keyword">int</span>) x1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>Mathematics</category>
-      </categories>
-      <tags>
-        <tag>Mathematics</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>负数计数法</title>
-    <url>/2020/05/24/%E8%B4%9F%E6%95%B0%E8%AE%A1%E6%95%B0%E6%B3%95/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>给定一个长度为n的数组，该数组中的每个元素在1到n范围内，要求在O(n)的时间复杂度，O(1)的空间复杂度下，打印1到n这n个数各出现了多少次。</p>
-</blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span>[] input = &#123;<span class="number">3</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>,<span class="number">3</span>&#125;;</span><br><span class="line"> 		</span><br><span class="line"><span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; input.length) &#123;</span><br><span class="line">    <span class="keyword">int</span> val = input[i];</span><br><span class="line">    <span class="keyword">if</span> (val &lt; <span class="number">0</span>) &#123;</span><br><span class="line">        i++;</span><br><span class="line">        <span class="keyword">continue</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (val != i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (input[val] &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            swap(input, val, i);</span><br><span class="line">            input[val] = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            input[val]—;</span><br><span class="line">            <span class="comment">//计数器清0</span></span><br><span class="line">            input[i] = <span class="number">0</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;			</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">for</span>(i = <span class="number">1</span>; i &lt; input.length; i++) &#123;			</span><br><span class="line">    System.out.print(input[i] * (-<span class="number">1</span>) +<span class="string">" "</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>杂题</category>
-        <category>算法题</category>
-      </categories>
-      <tags>
-        <tag>O(n)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>【随笔】1.偏见</title>
-    <url>/2020/05/24/%E3%80%90%E9%9A%8F%E7%AC%94%E3%80%911-%E5%81%8F%E8%A7%81/</url>
-    <content><![CDATA[<p>最近在休息期间看了《王牌对王牌》，让我彻底改变了对歌手华晨宇（花花）的看法，感觉就是一个聪明、单纯、善良、有才华的大男孩。然后听了他的好几首歌曲，莫名觉得特别好听，突然转粉了。回过头来仔细想想，对偏见与刻板印象有了新的理解，也算是这段时间最大的反思和感悟了。</p>
-<p>记得2013年的时候看过几期《快乐男声》，当时不知道为什么对花花印象特别差，认为他是个生活不能自理，台上“发神经”的男孩。其实当时都没有仔细听他唱过几首歌，就是因为镜头上的几个剪辑，对他留下了这种刻板印象，之后就再也没有关注过他。</p>
-<p>现在想来感觉自己真是幼稚。评价一个歌手，主要通过他的歌曲，而我甚至都没有听过他几首歌，就仅由于他的一些行为，就给出了负面评价，形成了刻板印象，导致我否定了他的一切。这种行为跟网络喷子相比，除了没有到处写评论当键盘侠，还有何异？</p>
-<p>留学期间最大的感受是可以接触到来自全球各地的人，刚开始遇到的时候可能会留有之前存在的某种偏见和刻板印象。可是通过接触下来，不管是同学、邻居还是路上的行人，感觉大家都很不错。生活了一段时间后，我对世界观有了新的理解：不轻易的评价别人，即使之前的某些经历给我留下了某种印记，但是在没有深入了解对方之前，带着偏见待人都是不礼貌、不成熟的。</p>
-<p>我又想为什么会存在偏见？这里引用花花说过的话：人们一直以来不断追求新鲜的事物，但是当新鲜的事物来临的时候，一开始却是不愿意接受的。我非常认同，也在反思自己随着年龄的增长是否不愿意接受一些新鲜的事物，心态是否逐渐老化。这种思维模式一旦形成，会阻碍自己接触新鲜事物，甚至去抵触，抨击。</p>
-<p>所以时刻提醒自己要以一种开放的心态对待新鲜的人和事，不轻易评价别人和给别人贴标签，保持包容和尊重，做一个有素质的新青年。</p>
-]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Add Two Numbers</title>
-    <url>/2020/05/24/Add-Two-Numbers/</url>
-    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order and each of their nodes contain a single digit. Add the two numbers and return it as a linked list.</p>
-<p>You may assume the two numbers do not contain any leading zero, except the number 0 itself.</p>
-<p>Example:<br>Input: (2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)<br>Output: 7 -&gt; 0 -&gt; 8<br>Explanation: 342 + 465 = 807.</p>
-<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/add-two-numbers/" target="_blank" rel="noopener">leetcode.com/problems/add-two-numbers</a></cite></footer></blockquote>
-
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">    ListNode dummyHead = <span class="keyword">new</span> ListNode(<span class="number">0</span>);</span><br><span class="line">    ListNode p = l1, q = l2, curr = dummyHead;</span><br><span class="line">    <span class="keyword">int</span> carry = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (p != <span class="keyword">null</span> || q != <span class="keyword">null</span>)&#123;</span><br><span class="line">        <span class="keyword">int</span> x = (p != <span class="keyword">null</span> ) ? p.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> y = (q != <span class="keyword">null</span> ) ? q.val : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> sum = carry + x + y;</span><br><span class="line">        carry = sum / <span class="number">10</span>;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(sum % <span class="number">10</span>);</span><br><span class="line">        curr = curr.next;</span><br><span class="line">        <span class="keyword">if</span> (p != <span class="keyword">null</span>) p = p.next;</span><br><span class="line">        <span class="keyword">if</span> (q != <span class="keyword">null</span>) q = q.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (carry &gt; <span class="number">0</span>)&#123;</span><br><span class="line">        curr.next = <span class="keyword">new</span> ListNode(carry);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dummyHead.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>LeetCode</category>
-        <category>LinkedList</category>
       </categories>
   </entry>
   <entry>
