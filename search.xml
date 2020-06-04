@@ -1550,6 +1550,48 @@
       </tags>
   </entry>
   <entry>
+    <title>Distribute Coins in Binary Tree</title>
+    <url>/2020/06/03/Distribute-Coins-in-Binary-Tree/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given the root of a binary tree with N nodes, each node in the tree has node.val coins, and there are N coins total.</p>
+<p>In one move, we may choose two adjacent nodes and move one coin from one node to another.  (The move may be from parent to child, or from child to parent.)</p>
+<a id="more"></a>
+<p>Return the number of moves required to make every node have exactly one coin.</p>
+<p>Example 1:<br>Input: [3,0,0]<br>Output: 2<br>Explanation: From the root of the tree, we move one coin to its left child, and one coin to its right child.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/distribute-coins-in-binary-tree/" target="_blank" rel="noopener">leetcode.com/problems/distribute-coins-in-binary-tree</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: TreeNode </span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">Algorithm: divide and conquer </span></span><br><span class="line"><span class="comment">左右子树返回需要的硬币数。用res记录需要移动的步数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">distributeCoins</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    dfs(root);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">dfs</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> l = dfs(root.left);</span><br><span class="line">    <span class="keyword">int</span> r = dfs(root.right);</span><br><span class="line">    res = res + Math.abs(l) + Math.abs(r);</span><br><span class="line">    <span class="keyword">return</span> root.val + l + r - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Tree</category>
+      </categories>
+      <tags>
+        <tag>D&amp;C</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Sum of Distances in Tree</title>
+    <url>/2020/06/03/Sum-of-Distances-in-Tree/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>An undirected, connected tree with N nodes labelled 0…N-1 and N-1 edges are given.</p>
+<p>The ith edge connects nodes edges[i][0] and edges[i][1] together.</p>
+<p>Return a list ans, where ans[i] is the sum of the distances between node i and all other nodes.</p>
+<a id="more"></a>
+<p>Example 1:</p>
+<p>Input: N = 6, edges = [[0,1],[0,2],[2,3],[2,4],[2,5]]<br>Output: [8,12,6,10,10,10]<br>Explanation:<br>Here is a diagram of the given tree:<br>  0<br> / <br>1   2<br>   /|<br>  3 4 5<br>We can see that dist(0,1) + dist(0,2) + dist(0,3) + dist(0,4) + dist(0,5)<br>equals 1 + 1 + 2 + 2 + 2 = 8.  Hence, answer[0] = 8, and so on.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/sum-of-distances-in-tree/" target="_blank" rel="noopener">leetcode.com/problems/sum-of-distances-in-tree</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[][] edges</span></span><br><span class="line"><span class="comment">@return: int[]</span></span><br><span class="line"><span class="comment">Algorithm: 第一遍dfs先把count[] 和 child[] 计算出来</span></span><br><span class="line"><span class="comment">count[i]: i节点subtree的sum， child[i]: i节点的subtree的节点数</span></span><br><span class="line"><span class="comment">第二遍dfs 计算每一个点的sum</span></span><br><span class="line"><span class="comment">当从i走到j时，有child[j]个节点的sum-1，N-child[j]个节点sum+1；</span></span><br><span class="line"><span class="comment">count[j] = count[i] - child[j] + N - child[j];</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">int</span>[] count, child;</span><br><span class="line"><span class="keyword">int</span> l;</span><br><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] sumOfDistancesInTree(<span class="keyword">int</span> N, <span class="keyword">int</span>[][] edges) &#123;        </span><br><span class="line">    Map&lt;Integer,List&lt;Integer&gt;&gt; neighbors = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span>[] n : edges) &#123;</span><br><span class="line">        <span class="keyword">int</span> a = n[<span class="number">0</span>], b = n[<span class="number">1</span>];</span><br><span class="line">        neighbors.computeIfAbsent(a, k -&gt; <span class="keyword">new</span> ArrayList&lt;&gt;());</span><br><span class="line">        neighbors.computeIfAbsent(b, k -&gt; <span class="keyword">new</span> ArrayList&lt;&gt;());</span><br><span class="line">        neighbors.get(a).add(b);</span><br><span class="line">        neighbors.get(b).add(a);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    l = N;</span><br><span class="line">    child = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">    count = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">    Arrays.fill(child, <span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (neighbors.containsKey(<span class="number">0</span>))&#123;</span><br><span class="line">        dfs1(<span class="number">0</span>, -<span class="number">1</span>, neighbors);</span><br><span class="line">        dfs2(<span class="number">0</span>, -<span class="number">1</span>, neighbors);            </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(<span class="keyword">int</span> cur, <span class="keyword">int</span> pre, Map&lt;Integer,List&lt;Integer&gt;&gt; neighbors)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> nxt : neighbors.get(cur)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nxt == pre) <span class="keyword">continue</span>;</span><br><span class="line">        dfs1(nxt, cur, neighbors);</span><br><span class="line">        child[cur] += child[nxt];</span><br><span class="line">        count[cur] += count[nxt] + child[nxt];</span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(<span class="keyword">int</span> cur, <span class="keyword">int</span> pre, Map&lt;Integer,List&lt;Integer&gt;&gt; neighbors)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> nxt : neighbors.get(cur)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nxt == pre) <span class="keyword">continue</span>;</span><br><span class="line">        count[nxt] = count[cur] - child[nxt] + l - child[nxt];</span><br><span class="line">        dfs2(nxt, cur, neighbors);</span><br><span class="line">    &#125;        </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Tree</category>
+      </categories>
+      <tags>
+        <tag>DFS</tag>
+        <tag>Sum of Tree</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>I’ve always believed in numbers, in the equations and logics that lead to reason.</p>
