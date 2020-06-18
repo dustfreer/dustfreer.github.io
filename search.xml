@@ -1839,6 +1839,103 @@ Output: [3,1,null,null,2]
       </tags>
   </entry>
   <entry>
+    <title>Clone Binary Tree With Random Pointer</title>
+    <url>/2020/06/17/Clone-Binary-Tree-With-Random-Pointer/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A binary tree is given such that each node contains an additional random pointer which could point to any node in the tree or null.</p>
+<p>Return a deep copy of the tree.</p>
+<p>The tree is represented in the same input/output way as normal binary trees where each node is represented as a pair of [val, random_index] where:</p>
+<a id="more"></a>
+<p>val: an integer representing Node.val<br>random_index: the index of the node (in the input) where the random pointer points to, or null if it does not point to any node.<br>You will be given the tree in class Node and you should return the cloned tree in class NodeCopy. NodeCopy class is just a clone of Node class with the same attributes and constructors.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/clone-binary-tree-with-random-pointer/" target="_blank" rel="noopener">leetcode.com/problems/clone-binary-tree-with-random-pointer</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: Node</span></span><br><span class="line"><span class="comment">@return: NodeCopy</span></span><br><span class="line"><span class="comment">Algorithm: hashMap同133, 138</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Map&lt;Node, NodeCopy&gt; map;</span><br><span class="line"><span class="function"><span class="keyword">public</span> NodeCopy <span class="title">copyRandomBinaryTree</span><span class="params">(Node root)</span> </span>&#123;</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;();        </span><br><span class="line">    dfs1(root);</span><br><span class="line">    dfs2(root);</span><br><span class="line">    NodeCopy res = map.get(root);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs1</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    map.putIfAbsent(node, <span class="keyword">new</span> NodeCopy(node.val, <span class="keyword">null</span>, <span class="keyword">null</span>, <span class="keyword">null</span>));        </span><br><span class="line">    dfs1(node.left);</span><br><span class="line">    dfs1(node.right);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">dfs2</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (node == <span class="keyword">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    </span><br><span class="line">    map.get(node).left = map.get(node.left);</span><br><span class="line">    map.get(node).right = map.get(node.right);</span><br><span class="line">    map.get(node).random = map.get(node.random);</span><br><span class="line">    dfs2(node.left);</span><br><span class="line">    dfs2(node.right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Tree</category>
+      </categories>
+      <tags>
+        <tag>DeepCopy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Clone Graph</title>
+    <url>/2020/06/17/Clone-Graph/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a reference of a node in a connected undirected graph.</p>
+<p>Return a deep copy (clone) of the graph.</p>
+<a id="more"></a>
+<p>Each node in the graph contains a val (int) and a list (List[Node]) of its neighbors.</p>
+<p>class Node {<br>    public int val;<br>    public List<Node> neighbors;<br>}</p>
+<p>Test case format:</p>
+<p>For simplicity sake, each node’s value is the same as the node’s index (1-indexed). For example, the first node with val = 1, the second node with val = 2, and so on. The graph is represented in the test case using an adjacency list.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/clone-graph/" target="_blank" rel="noopener">leetcode.com/problems/clone-graph</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: Node</span></span><br><span class="line"><span class="comment">@return: Node </span></span><br><span class="line"><span class="comment">Algorithm: bfs遍历deep copy</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">cloneGraph</span><span class="params">(Node node)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( node == <span class="keyword">null</span> ) <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    </span><br><span class="line">    Map&lt;Node, Node&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Set&lt;Node&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    Queue&lt;Node&gt; queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    queue.offer(node);</span><br><span class="line">    set.add(node);</span><br><span class="line">    map.put(node, <span class="keyword">new</span> Node(node.val, <span class="keyword">new</span> ArrayList&lt;&gt;()));        </span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty())&#123;            </span><br><span class="line">        Node cur = queue.poll();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> ( Node temp : cur.neighbors)&#123;</span><br><span class="line">            <span class="keyword">if</span> ( !set.contains(temp))&#123;</span><br><span class="line">                set.add(temp);</span><br><span class="line">                queue.offer(temp);</span><br><span class="line">                map.put(temp,<span class="keyword">new</span> Node(temp.val, <span class="keyword">new</span> ArrayList&lt;&gt;()));</span><br><span class="line">            &#125;</span><br><span class="line">            map.get(cur).neighbors.add(map.get(temp));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;        </span><br><span class="line">    <span class="keyword">return</span> map.get(node);         </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Graph</category>
+      </categories>
+      <tags>
+        <tag>DeepCopy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Copy List with Random Pointer</title>
+    <url>/2020/06/17/Copy-List-with-Random-Pointer/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A linked list is given such that each node contains an additional random pointer which could point to any node in the list or null.</p>
+<p>Return a deep copy of the list.</p>
+<a id="more"></a>
+<p>The Linked List is represented in the input/output as a list of n nodes. Each node is represented as a pair of [val, random_index] where:</p>
+<p>val: an integer representing Node.val<br>random_index: the index of the node (range from 0 to n-1) where random pointer points to, or null if it does not point to any node.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/copy-list-with-random-pointer/" target="_blank" rel="noopener">leetcode.com/problems/copy-list-with-random-pointer</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: Node</span></span><br><span class="line"><span class="comment">@return: Node</span></span><br><span class="line"><span class="comment">Algorithm: 1.用hashmap存所有原Node, value放一个新的Node,其中val相等;</span></span><br><span class="line"><span class="comment">2.遍历一遍原node，依次将value中的next和random节点连起来；</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> Node <span class="title">copyRandomList</span><span class="params">(Node head)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> ( head == <span class="keyword">null</span> ) <span class="keyword">return</span> head;</span><br><span class="line">    </span><br><span class="line">    HashMap&lt;Node, Node&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> ( Node temp = head; temp != <span class="keyword">null</span>; temp = temp.next)&#123;</span><br><span class="line">        map.put(temp, <span class="keyword">new</span> Node(temp.val, temp.next, temp.random));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Node result = <span class="keyword">new</span> Node(-<span class="number">1</span>,<span class="keyword">null</span>,<span class="keyword">null</span>);</span><br><span class="line">    Node node = result;</span><br><span class="line">    <span class="keyword">for</span> ( Node temp = head; temp != <span class="keyword">null</span>; temp = temp.next)&#123;</span><br><span class="line">        map.get(temp).next = map.get(map.get(temp).next);</span><br><span class="line">        map.get(temp).random = map.get(map.get(temp).random);</span><br><span class="line">        node.next = map.get(temp);</span><br><span class="line">        node = node.next;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result.next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Linked List</category>
+      </categories>
+      <tags>
+        <tag>DeepCopy</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>First Unique Number</title>
+    <url>/2020/06/17/First-Unique-Number/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You have a queue of integers, you need to retrieve the first unique integer in the queue.</p>
+<p>Implement the FirstUnique class:</p>
+<a id="more"></a>
+<p>FirstUnique(int[] nums) Initializes the object with the numbers in the queue.<br>int showFirstUnique() returns the value of the first unique integer of the queue, and returns -1 if there is no such integer.<br>void add(int value) insert value to the queue.</p>
+<p>Example 1:<br>Input:<br>[“FirstUnique”,”showFirstUnique”,”add”,”showFirstUnique”,”add”,”showFirstUnique”,”add”,”showFirstUnique”]<br>[[[2,3,5]],[],[5],[],[2],[],[3],[]]<br>Output:<br>[null,2,null,2,null,3,null,-1]<br>Explanation:<br>FirstUnique firstUnique = new FirstUnique([2,3,5]);<br>firstUnique.showFirstUnique(); // return 2<br>firstUnique.add(5);            // the queue is now [2,3,5,5]<br>firstUnique.showFirstUnique(); // return 2<br>firstUnique.add(2);            // the queue is now [2,3,5,5,2]<br>firstUnique.showFirstUnique(); // return 3<br>firstUnique.add(3);            // the queue is now [2,3,5,5,2,3]<br>firstUnique.showFirstUnique(); // return -1</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/first-unique-number/" target="_blank" rel="noopener">leetcode.com/problems/first-unique-number</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Algorithm: 一个map查重，一个queue取firstUnique</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line">Queue&lt;Integer&gt; queue;</span><br><span class="line">Map&lt;Integer, Boolean&gt; map;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">FirstUnique</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    queue = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n : nums) add(n);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">showFirstUnique</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (!queue.isEmpty() &amp;&amp; !map.get(queue.peek())) &#123;</span><br><span class="line">        queue.poll();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> queue.size() &gt; <span class="number">0</span> ? queue.peek() : -<span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!map.containsKey(value)) &#123;</span><br><span class="line">        queue.add(value);</span><br><span class="line">        map.put(value, <span class="keyword">true</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        map.put(value, <span class="keyword">false</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Design</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Longest Consecutive Sequence</title>
+    <url>/2020/06/17/Longest-Consecutive-Sequence/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an unsorted array of integers, find the length of the longest consecutive elements sequence.</p>
+<p>Your algorithm should run in O(n) complexity.</p>
+<p>Example:<br>Input: [100, 4, 200, 1, 3, 2]<br>Output: 4<br>Explanation: The longest consecutive elements sequence is [1, 2, 3, 4]. Therefore its length is 4.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/longest-consecutive-sequence/" target="_blank" rel="noopener">leetcode.com/problems/longest-consecutive-sequence</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int[]</span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">放到set里面，然后遍历检查每一个数的+1，-1是否存在，存在则remove。记录每一个序列up和down即可，求max</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">longestConsecutive</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nums.length &lt;= <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> nums.length;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        set.add(nums[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> up = nums[i];</span><br><span class="line">        <span class="keyword">while</span> (set.contains(up)) &#123;</span><br><span class="line">            set.remove(up);</span><br><span class="line">            up++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">int</span> down = nums[i]-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (set.contains(down)) &#123;</span><br><span class="line">            set.remove(down);</span><br><span class="line">            down--;</span><br><span class="line">        &#125;</span><br><span class="line">        result = Math.max(result, up-down-<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Mathematics</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>I’ve always believed in numbers, in the equations and logics that lead to reason.</p>
