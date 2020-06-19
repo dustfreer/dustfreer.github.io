@@ -1936,6 +1936,57 @@ Output: [3,1,null,null,2]
       </tags>
   </entry>
   <entry>
+    <title>Decode Ways</title>
+    <url>/2020/06/19/Decode-Ways/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A message containing letters from A-Z is being encoded to numbers using the following mapping:</p>
+<p>‘A’ -&gt; 1<br>‘B’ -&gt; 2<br>…<br>‘Z’ -&gt; 26<br>Given a non-empty string containing only digits, determine the total number of ways to decode it.</p>
+<a id="more"></a>
+<p>Example 1:</p>
+<p>Input: “12”<br>Output: 2<br>Explanation: It could be decoded as “AB” (1 2) or “L” (12).</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/decode-ways/" target="_blank" rel="noopener">leetcode.com/problems/decode-ways</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: String</span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">Algorithm: dp[i]表示i个字符的解码总数</span></span><br><span class="line"><span class="comment">1. 如果当前字符是1~9 则可以单独解码 dp[i] += dp[i-1];</span></span><br><span class="line"><span class="comment">2. 如果当前字符是10~26则可以2位一起解码 dp[i] += dp[i-2];</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numDecodings</span><span class="params">(String s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length() == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[s.length()+<span class="number">1</span>];</span><br><span class="line">    </span><br><span class="line">    dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    dp[<span class="number">1</span>] = s.charAt(<span class="number">0</span>) == <span class="string">'0'</span> ? <span class="number">0</span> : <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= s.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> one = Integer.valueOf(s.substring(i-<span class="number">1</span>,i));</span><br><span class="line">        <span class="keyword">int</span> two = Integer.valueOf(s.substring(i-<span class="number">2</span>,i));</span><br><span class="line">        <span class="keyword">if</span> (one &gt;= <span class="number">1</span> &amp;&amp; one &lt;= <span class="number">9</span>) dp[i] += dp[i-<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (two &gt;= <span class="number">10</span> &amp;&amp; two &lt;= <span class="number">26</span>) dp[i] += dp[i-<span class="number">2</span>];            </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[s.length()];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>String</category>
+      </categories>
+      <tags>
+        <tag>DP</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Remove K Digits</title>
+    <url>/2020/06/18/Remove-K-Digits/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a non-negative integer num represented as a string, remove k digits from the number so that the new number is the smallest possible.</p>
+<p>Note:<br>The length of num is less than 10002 and will be ≥ k.<br>The given num does not contain any leading zero.<br>Example 1:</p>
+<p>Input: num = “1432219”, k = 3<br>Output: “1219”<br>Explanation: Remove the three digits 4, 3, and 2 to form the new number 1219 which is the smallest.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/remove-k-digits/" target="_blank" rel="noopener">leetcode.com/problems/remove-k-digits</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: String, int</span></span><br><span class="line"><span class="comment">@return: String</span></span><br><span class="line"><span class="comment">Algorithm: 用stack来存放char, 如果下一个char &lt; stack.peek(),则pop();</span></span><br><span class="line"><span class="comment">直到k == 0，主要corner case: 首位不能为0，pop()之前要判断stack.isEmpty();</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">removeKdigits</span><span class="params">(String num, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k &gt;= num.length()) <span class="keyword">return</span> <span class="string">"0"</span>;</span><br><span class="line">    </span><br><span class="line">    Stack&lt;Character&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; num.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">char</span> c = num.charAt(i);</span><br><span class="line">        <span class="keyword">while</span> (k &gt; <span class="number">0</span> &amp;&amp; !stack.isEmpty() &amp;&amp; c &lt; stack.peek()) &#123;</span><br><span class="line">            stack.pop();</span><br><span class="line">            k--;               </span><br><span class="line">        &#125;         </span><br><span class="line">        stack.push(c);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (k &gt; <span class="number">0</span>) &#123; stack.pop(); k--;&#125;</span><br><span class="line">    </span><br><span class="line">    StringBuilder res = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) res.append(stack.pop());</span><br><span class="line">    res.reverse();</span><br><span class="line">    <span class="keyword">while</span> (res.charAt(<span class="number">0</span>) == <span class="string">'0'</span> &amp;&amp; res.length() &gt; <span class="number">1</span>) res.deleteCharAt(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> res.toString();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>LeetCode</category>
+        <category>Array</category>
+      </categories>
+      <tags>
+        <tag>Stack</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Maximum Swap</title>
+    <url>/2020/06/18/Maximum-Swap/</url>
+    <content><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given a non-negative integer, you could swap two digits at most once to get the maximum valued number. Return the maximum valued number you could get.</p>
+<p>Example 1:<br>Input: 2736<br>Output: 7236<br>Explanation: Swap the number 2 and the number 7.</p>
+<footer><strong>LeetCode</strong><cite><a href="https://leetcode.com/problems/maximum-swap/" target="_blank" rel="noopener">leetcode.com/problems/maximum-swap</a></cite></footer></blockquote>
+
+
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">@param: int</span></span><br><span class="line"><span class="comment">@return: int</span></span><br><span class="line"><span class="comment">Algorithm: Bruteforce 数据两不大，可解O(n^2);</span></span><br><span class="line"><span class="comment">Greedy: 记录每一个数位最大的index，然后从头遍历，如果发现后面有比当前数字大的交换并return。</span></span><br><span class="line"><span class="comment">tips: 数字转array以及array转数字</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">maximumSwap</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">char</span>[] digit = Integer.toString(num).toCharArray();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span>[] pos = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digit.length; i++) </span><br><span class="line">        pos[digit[i]-<span class="string">'0'</span>] = i;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; digit.length; i++) </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">9</span>; j &gt; digit[i]-<span class="string">'0'</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (pos[j] &gt; i) &#123;</span><br><span class="line">                <span class="keyword">char</span> tmp = digit[i];</span><br><span class="line">                digit[i] = (<span class="keyword">char</span>)(j+<span class="string">'0'</span>);</span><br><span class="line">                digit[pos[j]] = tmp;</span><br><span class="line">                <span class="keyword">return</span> Integer.valueOf(<span class="keyword">new</span> String(digit));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> num;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>Greedy</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>About</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p>I’ve always believed in numbers, in the equations and logics that lead to reason.</p>
