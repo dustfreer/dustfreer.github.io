@@ -28,7 +28,7 @@
 <meta property="og:description" content="线程池管理线程，避免增加创建线程和销毁线程的资源损耗。因为线程其实也是一个对象，创建一个对象，需要经过类加载过程，销毁一个对象，需要走GC垃圾回收流程，都是需要资源开销的。提高响应速度。 如果任务到达了，相对于从线程池拿线程，重新去创建一条线程执行，速度肯定慢很多。重复利用。 线程用完，再放回池子，可以达到重复利用的效果，节省资源。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-05-16T08:30:17.000Z">
-<meta property="article:modified_time" content="2020-05-16T21:34:33.965Z">
+<meta property="article:modified_time" content="2020-05-16T21:34:33.000Z">
 <meta property="article:author" content="dustfree">
 <meta name="twitter:card" content="summary">
 
@@ -443,8 +443,6 @@
   </span>
   <span class="author" itemprop="copyrightHolder">dustfree</span>
 </div>
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
-  </div>
 
         
 <div class="busuanzi-count">
